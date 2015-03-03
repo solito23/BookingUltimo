@@ -25,18 +25,19 @@
  <div align="center"> <a href="Index.html"><span class="glyphicon glyphicon-home"></span> Inicio </a>
 </li>
         <center>
-    <%reserDTO  per= new reserDTO();
-      reserDAO pers = new reserDAO(); 
-      ArrayList<reserDTO> misReservas= new ArrayList();      
-      int numreg = pers.contarRegistros();
-      int numpg = numreg/5;  
+    <%
+      reserDTO  per= new reserDTO();
+      reserDAO perss = new reserDAO(); 
+      ArrayList<reserDTO> misReservas= new ArrayList();
+      
+      int numreg = perss.contarRegistros();
+      int numpg = numreg/2;  
       int pg =0; //pagona a mostrar
       if(request.getParameter("pg")==null){
       pg=1;
       }else{
       pg=Integer.valueOf(request.getParameter("pg"));
-      }  
-      misReservas =(ArrayList<reserDTO>) pers.Paginacion(pg,5);
+      }    misReservas =(ArrayList<reserDTO>) perss.Paginacion(pg,2);  
       %>    
 <div class="ba">
       <h1> Mis Reservas</h1>

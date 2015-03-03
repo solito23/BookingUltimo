@@ -4,8 +4,8 @@
  * and open the template in the editor.
  */
 package co.sena.edu.booking.vista;
-import co.sena.edu.booking.DAO.personasDAO;
-import co.sena.edu.booking.DTO.personasDTO;
+import co.sena.edu.booking.DAO.reserDAO;
+import co.sena.edu.booking.DTO.reserDTO;
 /**
  *
  * @author user
@@ -13,8 +13,8 @@ import co.sena.edu.booking.DTO.personasDTO;
 public class ppppp {
     public static void main(String[] args){
     
-     personasDAO per = new personasDAO();
-        personasDTO pers = new personasDTO();
+     reserDAO per = new reserDAO();
+        reserDTO pers = new reserDTO();
         
         int regb = per.contarRegistros();
                 System.out.print(regb);
