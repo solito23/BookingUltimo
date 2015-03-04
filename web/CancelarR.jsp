@@ -25,7 +25,7 @@
         <li><a href="Index.html"><span class="glyphicon glyphicon-home"></span> Inicio</li></a>
         <li><a href="#"><span class="glyphicon glyphicon-plane"></span> Reservas</a>
                             <ul class="submain">
-                                <li><a href="reserva.jsp">Solicita Reserva</a></li>
+                                <li><a href="reserva.jsp">Solicitar Reservas</a></li>
                                 <li><a href="CancelarR.jsp">Cancelar Reservas</a> </li>
                                 <li><a href="ModificarReservas.jsp">Modificar Reserva</a> </li>
                                 </ul>
