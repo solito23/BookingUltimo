@@ -48,7 +48,7 @@ public class personasDAO {
             pstmt.setString(5, personas.getApellidos());
             pstmt.setString(6, personas.getFechaNto());
             pstmt.setInt(7, personas.getTelefono());
-            pstmt.setInt(8, personas.getContraseña());
+            pstmt.setString(8, personas.getContraseña());
             pstmt.setString(9, personas.getEstado());
             pstmt.setString(10, personas.getObservaciones());
             pstmt.setLong(11, personas.getIdPersona());
@@ -81,7 +81,7 @@ public class personasDAO {
             pstmt.setString(6, newPersona.getApellidos());
             pstmt.setString(7, newPersona.getFechaNto());
             pstmt.setInt(8, newPersona.getTelefono());
-             pstmt.setInt(9, newPersona.getContraseña());
+             pstmt.setString(9, newPersona.getContraseña());
             pstmt.setString(10, newPersona.getEstado());
             pstmt.setString(11, newPersona.getObservaciones());
            
@@ -128,7 +128,7 @@ public class personasDAO {
                 newPersona.setApellidos(rs.getString("apellidos"));
                 newPersona.setFechaNto(rs.getString("fechaNto"));
                 newPersona.setTelefono(rs.getInt("telefono"));
-                newPersona.setContraseña(rs.getInt("contraseña"));
+                newPersona.setContraseña(rs.getString("contraseña"));
                 newPersona.setEstado(rs.getString("estado"));
                 newPersona.setObservaciones(rs.getString("observaciones"));
                 listaPersonas.add(newPersona);
@@ -162,7 +162,7 @@ public class personasDAO {
                 Rdao.setApellidos(rs.getString("apellidos"));
                 Rdao.setFechaNto(rs.getString("fechaNto"));
                 Rdao.setTelefono(rs.getInt("telefono"));
-                Rdao.setContraseña(rs.getInt("contraseña"));
+                Rdao.setContraseña(rs.getString("contraseña"));
                 Rdao.setEstado(rs.getString("estado"));
                 Rdao.setObservaciones(rs.getString("observaciones"));
             }
@@ -191,7 +191,7 @@ public class personasDAO {
                 Rdao.setApellidos(rs.getString("apellidos"));
                 Rdao.setFechaNto(rs.getString("fechaNto"));
                 Rdao.setTelefono(rs.getInt("telefono"));
-                Rdao.setContraseña(rs.getInt("contraseña"));
+                Rdao.setContraseña(rs.getString("contraseña"));
                 Rdao.setEstado(rs.getString("estado"));
                 Rdao.setObservaciones(rs.getString("observaciones"));
                 listarPersonas.add(Rdao);
@@ -225,7 +225,7 @@ public class personasDAO {
                 Rdao.setApellidos(rs.getString("apellidos"));
                 Rdao.setFechaNto(rs.getString("fechaNto"));
                 Rdao.setTelefono(rs.getInt("telefono"));
-                Rdao.setContraseña(rs.getInt("contraseña"));
+                Rdao.setContraseña(rs.getString("contraseña"));
                 Rdao.setEstado(rs.getString("estado"));
                 Rdao.setObservaciones(rs.getString("observaciones"));
                 Paginacion.add(Rdao);
@@ -277,7 +277,7 @@ public class personasDAO {
         try {
 
             pstmt = cnn.prepareStatement("UPDATE personas SET contraseña=? WHERE idPersona=?");
-            pstmt.setInt(1, personas.getContraseña());
+            pstmt.setString(1, personas.getContraseña());
             pstmt.setLong(2, personas.getIdPersona());
 
             per = pstmt.executeUpdate();
@@ -293,29 +293,24 @@ public class personasDAO {
         return msgSalida;
 
     }
-public long isAcountExists(int contraseña, Long idPersona) throws SQLException {
+public long isAcountExists(String contraseña, Long idPersona) throws SQLException {
        
        long y = 1;
        
        try {
 
            personasDTO pde = new personasDTO();
-           
-        
-           
            String sql = "select idPersona,contraseña from personas where idPersona = ? and contraseña = ?";        
            pstmt = cnn.prepareStatement(sql);           
            pstmt.setLong(1, idPersona);
-           pstmt.setInt(2, contraseña);
+           pstmt.setString(2, contraseña);
            rs = pstmt.executeQuery();
            
-          
-           if (rs != null) {
-               
+           if (rs != null) { 
                while (rs.next()) {
 
                    pde.setIdPersona(rs.getLong("idPersona"));
-                   pde.setContraseña(rs.getInt("contraseña"));
+                   pde.setContraseña(rs.getString("contraseña"));
                  }
                y = pde.getIdPersona();
            }

@@ -22,7 +22,7 @@
 </li>
 </ul>
 <center>
-<form name="form1" action="Controlador" method="post" > 
+
 <table id="registro">
 <div class="ba">
 <h1>Ingreso Usuarios Registrados</h1>
@@ -32,7 +32,7 @@
                                   -->
                                   <a href="registro.jsp" style="color: black; text-decoration: none;">Ingreso</a>
      </div><br>
-     
+<form name="form1" action="Controlador" method="post" >      
 <label for="usu" class="labele"><strong>Cedúla<font color="#FF0000">*</strong></label></font>
 <input name="idPersona" type="text" style="width:250px; height:25px " autofocus id="usu" placeholder="usuario" required class="form-control inputtext"  onChange="requisitos(nombre)" minlenght=3>
 
@@ -42,8 +42,9 @@
 <input name="contraseña" type="password" style="width:250px; height:25px " required id="con" placeholder="*******" required class="form-control inputtext"  minlenght=3>
 <br>
 <input name="submit10" class="btn btn-success"  type="submit" id="submit10" onClick= "rol()" value="Ingresar">
-</table>
 </form>
+</table>
+
 </center>
 
 <%

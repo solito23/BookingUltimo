@@ -54,7 +54,7 @@ public class Controlador1 extends HttpServlet {
             pdto.setIdNacionalidad(request.getParameter("paisnac"));
             pdto.setPais(request.getParameter("ciunac"));
             pdto.setTelefono(Integer.parseInt(request.getParameter("tel")));
-            pdto.setContraseña(Integer.parseInt(request.getParameter("con")));
+            pdto.setContraseña(request.getParameter("con"));
             
             String mensaje = pdao.crearPersona(pdto);
             HttpSession misesion = request.getSession(true);
@@ -72,7 +72,7 @@ public class Controlador1 extends HttpServlet {
            
           
            
-        long x =   pert.isAcountExists(Integer.parseInt(request.getParameter("contraseña")),Long.parseLong(request.getParameter("idPersona")));
+        long x =   pert.isAcountExists(request.getParameter("contraseña"),Long.parseLong(request.getParameter("idPersona")));
            
            if ( x != 0 && x != 10301023) {
                personasDTO per = new personasDTO();

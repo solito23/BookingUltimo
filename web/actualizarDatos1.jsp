@@ -99,6 +99,10 @@
                                             <td>&nbsp;</td>
                                             </tr>
                                            
+                                            
+                                                <tr>
+                                                <td><label for="con" class="labele"><strong>Contraseña <font color="#FF0000">*</strong></label></font></td>
+                                                <td><input name="con" type="password" value="<%=persona.getContraseña()%>" style="width:250px; height:30px" autofocus readonly="readonly" id="con" placeholder="" required class="form-control inputtext" tabindex="8"></td>
                                             <tr>
                                                 
                                                 <td><input name="submit10" class="btn btn-success" type="submit" id="submit10" tabindex="20"  value="Guardar Cambios" onClick="validar(registro)" style="position:relative; left:350px"></td>

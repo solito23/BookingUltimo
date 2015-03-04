@@ -49,6 +49,7 @@ public class modificar extends HttpServlet {
             pdto.setIdNacionalidad(request.getParameter("paisnac"));
             pdto.setPais(request.getParameter("ciunac"));
             pdto.setTelefono(Integer.parseInt(request.getParameter("tel")));
+            pdto.setContraseña(request.getParameter("con"));
          
             
             String mensaje = pdao.actualizarRegistro(pdto);

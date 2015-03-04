@@ -41,7 +41,7 @@ public class cambiarClave1 extends HttpServlet {
             personasDAO pdao = new personasDAO();
             
             pdto.setIdPersona(Long.parseLong(request.getParameter("id")));
-            pdto.setContraseña(Integer.parseInt(request.getParameter("con")));
+            pdto.setContraseña(request.getParameter("con"));
             
             String mensaje = pdao.actualizarContraseña(pdto);
             response.sendRedirect("menu1.jsp?msg="+mensaje);

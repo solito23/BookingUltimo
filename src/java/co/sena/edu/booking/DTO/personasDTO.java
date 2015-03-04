@@ -19,7 +19,7 @@ public class personasDTO {
     private String apellidos;
     private String fechaNto;
     private int telefono;
-    private int contraseña;
+    private String contraseña;
     private String estado;
     private String observaciones;
 
@@ -141,14 +141,14 @@ public class personasDTO {
     /**
      * @return the contraseña
      */
-    public int getContraseña() {
+    public String getContraseña() {
         return contraseña;
     }
 
     /**
      * @param contraseña the contraseña to set
      */
-    public void setContraseña(int contraseña) {
+    public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
 

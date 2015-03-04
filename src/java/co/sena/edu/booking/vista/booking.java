@@ -194,7 +194,7 @@ public class booking {
                 System.out.println("telefono");
                 pers.setTelefono(in.nextInt());
                 System.out.println("contraseña");
-                pers.setContraseña(in.nextInt());
+                pers.setContraseña(in.next());
                 System.out.println(per.crearPersona(pers));
                 break;
             case 6:
