@@ -17,13 +17,26 @@
 <title>..::Booking Routers::..</title>
 </head>
 <body>
-    <div class ="contenedor">
+<div class ="contenedor">
 <div class="banner"> 
 <p><a href="Index.html"><img src="imagenes/Logo.png" alt="Booking Routers" width="1360" height="126" title="Forget the rest, call the best"  /></a></p>
 </div>
-<li>
- <div align="center"> <a href="Index.html"><span class="glyphicon glyphicon-home"></span> Inicio </a>
-</li>
+    <ul id="main">
+<li><a href="Index.html"><span class="glyphicon glyphicon-home"></span> Inicio</li></a>
+        <li><a href="#"><span class="glyphicon glyphicon-plane"></span> Reservas</a>
+                            <ul class="submain">
+                                <li><a href="reserva.jsp">Solicita Reserva</a></li>
+                                <li><a href="CancelarR.jsp">Cancelar Reservas</a> </li>
+                                <li><a href="ModificarReservas.jsp">Modificar Reserva</a> </li>
+                                </ul>
+                        </li>
+                          <li><a href="#"><span class="glyphicon glyphicon-list-alt"></span> Mi Cuenta</a>
+                            <ul class="submain">
+                                <li><a href="actualizarDatos1.jsp">Mis Datos</a></li>
+                                <li><a href="cambiarContraseña.jsp">Cambiar Contraseña</a> </li>
+                                </ul>
+                        </li>
+    </ul>
         <center>
     <%
       reserDTO  per= new reserDTO();

@@ -46,7 +46,7 @@
                         
                   
                     
-     <%
+      <%
                                     HttpSession misesion = request.getSession(false);
 
                                     if (misesion.getAttribute("logueado") != null) {
@@ -63,31 +63,31 @@
                                  <form id="registro" action="modificarRol" method="post">
                                 <table align="center" id="registro" >
                                  <div class="ba">
-                                       <h1>Asignar Rol</h1>
+                                       <h1>Verificar Registros</h1>
                                         </div>
                                          <tr>
-                                            <td><label for="nombre" class="labele"><strong>Nombres<font color="#FF0000">*</font></strong></label></td>
+                                            <td><label for="nombre" class="labele">Nombres</label></td>
                                             <td><input name="nombres" type="text" id="nombre" value="<%=persona.getNombres()%>" style="width:250px; height:25px " readonly="readonly" autofocus required class="form-control inputtext"></td>
                                        
-                                            <td><label for="ape" class="labele"><strong>Apellidos<font color="#FF0000">*</font></strong></label></td>
+                                            <td><label for="ape" class="labele">Apellidos<font color="#FF0000"></label></td>
                                             <td><input name="apellidos" type="text" id="ape" value="<%=persona.getApellidos()%>" style="width:250px; height:25px" readonly="readonly" autofocus required class="form-control inputtext"></td>
                                          </tr> 
                                          <tr>
-                                             <td><label for="doc" class="labele"><strong>Documento <font color="#FF0000">*</font></strong></label></td>
+                                             <td><label for="doc" class="labele">Documento <font color="#FF0000"></label></td>
                                              <td><input name="doc" type="number"  id="doc" value="<%=persona.getIdPersona()%>" style="width:250px; height:30px" readonly="readonly" autofocus required class="form-control inputtext"></td>    
                                        
-                                             <td><label for="date" class="labele"><strong>Fecha Nacimiento<font color="#FF0000">* </font></strong></label></td>
+                                             <td><label for="date" class="labele">Fecha Nacimiento<font color="#FF0000"></label></td>
                                              <td><input name="date" type="text" id="date" value="<%=persona.getFechaNto()%>" style="width:250px; height:25px" readonly="readonly"  autofocus required class="form-control inputtext"></td>   
                                          </tr>
                                          <tr>
-                                         <td><label for="tel" class="labele"><strong> Telefono <font color="#FF0000">*</font></strong></label></td>
+                                         <td><label for="tel" class="labele">Telefono <font color="#FF0000"></label></td>
                                          <td><input name="tel" type="text" id="tel" value="<%=persona.getTelefono()%>" style="width:250px; height:25px" readonly="readonly"  autofocus required class="form-control inputtext"></td>   
                                         
-                                         <td><label for="cor" class="labele"><strong>Correo<font color="#ff0000">*</font></strong></label></td>
+                                         <td><label for="cor" class="labele">Correo<font color="#ff0000"></label></td>
                                          <td><input name="cor" type="email" id="cor" value="<%=persona.getCorreoElectronico()%>" style="width:250px; height:25px" readonly="readonly"  autofocus required class="form-control inputtext"></td>
                                          </tr>
                                          <tr>
-                                         <td><label for="paisnac" class="labele"><strong>País <font color="#ff0000">*</font></strong></label></td>
+                                         <td><label for="paisnac" class="labele">País<font color="#ff0000"></label></td>
                                          <td><input name="paisnac" id="paisnac" value="<%=persona.getIdNacionalidad()%>" style="width:250px; height:30px"list="paises" readonly="readonly"  autofocus required class="form-control inputtext"></td>
                                          <datalist id="paises">
                                                         <option value="Argentina">Argentina</option>
@@ -98,7 +98,7 @@
                                                         <option value="Perú">Perú</option>
                                                         </datalist>                                               
                                                    
-                                         <td><label for="ciunac" class="labele"><strong>Ciudad<font color="#FF0000">*</font></strong></label></td>
+                                         <td><label for="ciunac" class="labele">Ciudad<font color="#FF0000"></label></td>
                                          <td><input name="ciunac" id="ciunac"value="<%=persona.getPais()%>" style="width:250px; height:30px"  list="ciudades" readonly="readonly"  autofocus required class="form-control inputtext"></td>
                                         <datalist id="ciudades">
                                                     <option label="BOG">Bogota</option>
@@ -107,32 +107,29 @@
                                                     <option label="BAR">Barranquilla</option>
                                                     </datalist>                                     
                                      </tr>
+                                          
+                         
                                      <tr>
-                                         <td><label for="es" class="labele"><strong>Estado</strong></label></td>
-                                         <td><input name="es" id="es"style="width:250px; height:30px" list="estados" autofocus required class="form-control inputtext"></td>                                    
-                                     <datalist id="estados">
-                                     <option value="Sin validar">1</option>                             
-                                     <option value="Activo">2</option>   
-                                     <option value="Cancelada">3</option> 
-                                     </datalist>
-                                     <td><label for="obs" class="labele"><strong>Observaciones</strong></label></td>
-                                     <td><textarea cols=50 rows=3 name="info" autofocus required class="form-control inputtext"></textarea></td>
-                                      </tr>	
-                                     <tr>                                                                                          
-                                     <td><input name="submit10" class="btn btn-success" type="submit" id="submit10" value="Guardar Cambios" onClick="validar(registro)" style="position:relative; left:380px"></td>
-                                     </tr>                                                 
-                                     
-                                        
-                                     </table>
-                                  
-                                    <%
+                                        </table> 
+                                       
+                                        <center>
+                                    <label for="obs" class="labele">Observaciones</label>
+                                     <textarea cols=50 rows=3 name="info" value="<%=persona.getObservaciones()%>" autofocus required class="form-control inputtext" style="position:relative; left:50px"></textarea
+                                      <br>
+                                      <br>
+                                      <input name="submit10" class="btn btn-success" type="submit" id="submit10" value="Guardar Cambios">
+                                        </center>                                        
+                                                                           
+                                                                   
+                                                                                        
+                                                             <%
                                         }
                                     %>
-                                </form>
-                            </div>                            
-                       
+                                     </form>
+        </div>
+        
                            <div class="idioma4">
-    <img src="imagenes/dddd.png"><a href="verificarRegistro1.jsp">English</a> ||  <img src="imagenes/original.jpg"><a href="verificarRegistro.jsp">Spanish</a>
+                           <a href="actualizarDatos2.jsp">English</a> ||  <a href="actualizarDatos1.jsp">Spanish</a>
                           </div>
                                 
     </body>

@@ -21,9 +21,11 @@
 <div class="banner"> 
 <p><a href="Index1.html"><img src="imagenes/Logo.png" alt="Booking Routers" width="1360" height="126" title="Forget the rest, call the best"  /></a></p>
 </div>
+         <ul id="main">
 <li>
  <div align="center"> <a href="Index1.html"><span class="glyphicon glyphicon-home"></span> Home </a>
 </li>
+         </ul>
         <center>
     <%reserDTO  per= new reserDTO();
       reserDAO pers = new reserDAO(); 
@@ -37,7 +39,7 @@
 <div class="ba">
       <h1> My Reservations</h1>
 </div>
-<table border="6" id="one-column-emphasis">
+<table border="6" class="paginated" id="divTabla">
     <tr>
         <th style="background: #0C4391;">id Reserve</th>
      
