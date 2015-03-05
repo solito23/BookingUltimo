@@ -20,6 +20,10 @@
         <servlet-name>controlador</servlet-name>
         <servlet-class>Controlador.controlador</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>poolBooking</servlet-name>
+        <servlet-class>Controlador.poolBooking</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
@@ -40,13 +44,17 @@
         <servlet-name>controlador</servlet-name>
         <url-pattern>/controlador</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>poolBooking</servlet-name>
+        <url-pattern>/poolBooking</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
         </session-timeout>
     </session-config>
     <error-page>
-        <error-code>404</error-code>   
-        <location>/error404.html</location> 
+        <error-code>404</error-code>
+        <location>/error404.html</location>
     </error-page>
 </web-app>

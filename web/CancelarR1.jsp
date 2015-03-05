@@ -53,7 +53,7 @@
       <div class="ba">
       <h1>Reservations</h1>
       </div>
-<table border="6" id="one-column-emphasis">
+<table border="6" class="paginated" id="divTabla">
     <tr>
         <th style="background: #0C4391;">idReserve</th>
         <th style="background: #0C4391;">idStateReserve</th>

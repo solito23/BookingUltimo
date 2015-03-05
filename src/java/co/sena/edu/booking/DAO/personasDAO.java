@@ -141,6 +141,8 @@ public class personasDAO {
 
         return listaPersonas;
     }
+    
+    
 
     public personasDTO ListarUnaPersona(Long cedula) throws SQLException {
         personasDTO Rdao = null;
