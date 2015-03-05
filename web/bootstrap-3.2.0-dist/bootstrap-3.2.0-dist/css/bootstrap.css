@@ -909,8 +909,8 @@ textarea {
   font-size: inherit;
   line-height: inherit;
 }
-a {
-  color:  #428bca;
+nav a {
+  color:  white;
   text-decoration: none;
 }
 a:hover,

@@ -17,40 +17,27 @@
 <title>..::Booking Routers::..</title>
 </head>
 <body>
-<div class ="contenedor">
+    <div class ="contenedor">
 <div class="banner"> 
 <p><a href="Index.html"><img src="imagenes/Logo.png" alt="Booking Routers" width="1360" height="126" title="Forget the rest, call the best"  /></a></p>
 </div>
-    <ul id="main">
-<li><a href="Index.html"><span class="glyphicon glyphicon-home"></span> Inicio</li></a>
-        <li><a href="#"><span class="glyphicon glyphicon-plane"></span> Reservas</a>
-                            <ul class="submain">
-                                <li><a href="reserva.jsp">Solicita Reserva</a></li>
-                                <li><a href="CancelarR.jsp">Cancelar Reservas</a> </li>
-                                <li><a href="ModificarReservas.jsp">Modificar Reserva</a> </li>
-                                </ul>
-                        </li>
-                          <li><a href="#"><span class="glyphicon glyphicon-list-alt"></span> Mi Cuenta</a>
-                            <ul class="submain">
-                                <li><a href="actualizarDatos1.jsp">Mis Datos</a></li>
-                                <li><a href="cambiarContraseña.jsp">Cambiar Contraseña</a> </li>
-                                </ul>
-                        </li>
-    </ul>
-        <center>
-    <%
-      reserDTO  per= new reserDTO();
-      reserDAO perss = new reserDAO(); 
-      ArrayList<reserDTO> misReservas= new ArrayList();
+        <ul id="main">
+            
+        
+<li>
+ <div align="center"> <a href="Index.html"><span class="glyphicon glyphicon-home"></span> Inicio </a>
+</li>
+</ul>        
+<center>
+            
+    <%reserDTO  per= new reserDTO();
+      reserDAO pers = new reserDAO(); 
+      ArrayList<reserDTO> misReservas= new ArrayList();      
+      misReservas =(ArrayList<reserDTO>) pers.listarReservas();
+
       
-      int numreg = perss.contarRegistros();
-      int numpg = numreg/2;  
-      int pg =0; //pagona a mostrar
-      if(request.getParameter("pg")==null){
-      pg=1;
-      }else{
-      pg=Integer.valueOf(request.getParameter("pg"));
-      }    misReservas =(ArrayList<reserDTO>) perss.Paginacion(pg,2);  
+      
+      
       %>    
 <div class="ba">
       <h1> Mis Reservas</h1>
@@ -89,29 +76,8 @@
     }
     %>
 </table>
-<div class="pagination" id="">
-     <%
-     int adelanteA;
-     if (request.getParameter("pg")==null) {
-             adelanteA =1;
-         }else{
-     adelanteA =Integer.parseInt(request.getParameter("pg"));
-     }
-         
-     %> 
-    <a href="?pg=<%=adelanteA-1%>">&laquo</a>
-    
-    <%      
-       for(int j=0;j<numpg+1;j++){
-       %>  
-       <a href="?pg=<%=j+1%>"><%=j+1 %></a>
- <%
-     }
- %> 
-<a href="?pg=<%=adelanteA+1%>">&raquo</a>
-</div>
 <div style="width:100%; background: #0C4391; height: 30px; margin-top:10px; padding-top:5px; border-radius:3px;color:#e2c60f; margin-bottom:1%; float:left">
-    <img src="imagenes/dddd.png"><a href="ModificarReservas1.jsp">English</a> ||  <img src="imagenes/original.jpg"><a href="ModificarReservas.jsp">Spanish</a>
+    <a href="ModificarReservas1.jsp">English</a> ||  <a href="ModificarReservas.jsp">Spanish</a>
 </div>
 
 </table>

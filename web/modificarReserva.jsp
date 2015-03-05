@@ -24,7 +24,7 @@
 <div class="banner"> 
 <p><a href="Index.html"><img src="imagenes/Logo.png" alt="Booking Routers" width="1360" height="126" title="Forget the rest, call the best"  /></a></p>
 </div>
-                
+                <nav> 
                     <ul id="main">  
                         <li><a align="center" href="Index.html"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
                         <li><a align="center" href="#"><span class="glyphicon glyphicon-plane"></span> Reservas</a>
@@ -38,7 +38,7 @@
                         </li>
                         <li><div align="center"><a href="Index.html"><span class="glyphicon glyphicon-remove-sign"></span> Salir</a> 
                         </li>
-                        
+                        </ul> 
                     </nav>
 
      <%

@@ -17,7 +17,8 @@
 <div class="banner"> 
 <p><a href="Index.html"><img src="imagenes/Logo.png" alt="Booking Routers" width="1360" height="126" title="Forget the rest, call the best"  /></a></p>
 </div>
-<ul id="main">
+<nav> 
+    <ul id="main">
     <li><a href="Index.html"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
             <li><a href="#"><span class="glyphicon glyphicon-plane"></span> Reservas</a>
                             <ul class="submain">
@@ -43,6 +44,7 @@
          
 </ul>
 </ul> 
+            </nav> 
             
  </div>                        
 <br>

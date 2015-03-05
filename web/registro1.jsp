@@ -15,13 +15,14 @@
             <div class="banner"> 
                 <p><a href="Index1.html"><img src="imagenes/Logo.png" alt="Bookin Routers" width="1360" height="126" title="Forget the rest, call the best"/></a></p>
             </div>
-              <ul id="main">  
+            <nav>  
+            <ul id="main">  
                     <li>
                         <div align="center"><a href="Index1.html"><span class="glyphicon glyphicon-home"></span> Home</a>    
                         </div>
                     </li>
               </ul>
-                 
+            </nav>      
                         <form name="form1" action="Controlador1" method="post" > 
                             <table width="744" align="center" id="registro">
                                 <div class="ba">

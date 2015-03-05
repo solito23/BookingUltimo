@@ -33,7 +33,8 @@
 <div class="banner"> 
 <p><a href="Index.html"><img src="imagenes/Logo.png" alt="Booking Routers" width="1360" height="126" title="Forget the rest, call the best"  /></a></p>
 </div>
-<ul id="main">
+    <nav>
+    <ul id="main">
    <li><div align="center"><a href="Index.html"><span class="glyphicon glyphicon-home"></span> Inicio</li></a>
    <li><div align="center"><a href="#"><span class="glyphicon glyphicon-send"></span> Gestion Rutas</a>
    <ul class="submain">
@@ -41,7 +42,9 @@
    <li><a href="ModRuta.jsp?msj=">Modificación de Rutas</a> </li>
    </ul>
    </div>
+       
    </li>
+   
    <li><div align="center"><a href="#"><span class="glyphicon glyphicon-folder-open"></span> Reportes</a> 
     <ul class="submain">
     <li><div align="center"><a href="#">Reservas</a> 
@@ -53,7 +56,8 @@
      </li>
   </ul>
 </li>
- 
+ </ul>
+        </nav>
 <center>
     <%
      personasDTO  per= new personasDTO();

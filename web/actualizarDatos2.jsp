@@ -17,6 +17,7 @@
 <p><a href="Index.html"><img src="imagenes/Logo.png" alt="Booking Routers" width="1360" height="126" title="Forget the rest, call the best"  /></a></p>
 </div>
                 <nav>
+                    <nav> 
                     <ul id="main">  
                         <li><div align="center"><a href="Index1.html"><span class="glyphicon glyphicon-home"></span> Home </a></li>
                         <li><div align="center"><a href="#"><span class="glyphicon glyphicon-plane"></span> Reservations</a>
@@ -25,6 +26,7 @@
                                 <li><a href="#">Modify Reservation</a> </li>
                                 <li><a href="#">New Reservation</a></li>
                             </ul>
+                                <nav> 
                         </li>                    
                        
                         <li><div align="center"><a href="menu1.jsp"><span class="glyphicon glyphicon-list"></span> Main</a> 

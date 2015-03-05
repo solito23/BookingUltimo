@@ -12,6 +12,7 @@
  <div class="banner">
  <p><a href="Index.html"><img src="imagenes/Logo.png" alt="Bookin Routers" width="1360" height="126" title="Forget the rest, call the best" /></a></p>
  </div>
+<nav> 
 <ul id="main"> 
     <li> <div align="center"> <a href="Index.html" style="text-decoration:none;"><span class="glyphicon glyphicon-home"></span> Inicio</a>
  </div>
@@ -21,6 +22,7 @@
 </div>
 </li>
 </ul>
+    </nav> 
 <center>
 
 <table id="registro">
