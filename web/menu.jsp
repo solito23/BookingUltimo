@@ -32,15 +32,23 @@
                                 <li><a href="actualizarDatos1.jsp">Mis Datos</a></li>
                                 <li><a href="cambiarContraseña.jsp">Cambiar Contraseña</a> </li>
                                 </ul>
-                     </li>                 
-            <ul id="ale">
-            <span class="glyphicon glyphicon-remove-sign"></span>
+                     </li>  
+                     <center>
+                     <table>
+                     <tr>
+                     <td colspan="2">
             <% if(request.getParameter("msg") != null) {%>
             <% if(!request.getParameter("msg").equals("")) { %> 
-            <%= "<span class='ruta'>" %>
+           <div class="alert alert-success" role="alert">
             <%= request.getParameter("msg") %>
-            <%= "</span>" %>
-            <% }}%> 
+            </div>
+            <%}%>
+            <%}%> 
+            </tr>
+                     </table>
+            </center>
+           
+                       
          
 </ul>
 </ul> 
