@@ -34,7 +34,20 @@
                                 <li><a href="cambiarContraseña1.jsp">Change Password</a> </li>
                                 </ul>
                         </li>
-      
+       <center>
+                     <table>
+                     <tr>
+                     <td colspan="2">
+            <% if(request.getParameter("msg") != null) {%>
+            <% if(!request.getParameter("msg").equals("")) { %> 
+           <div class="alert alert-success" role="alert">
+            <%= request.getParameter("msg") %>
+            </div>
+            <%}%>
+            <%}%> 
+            </tr>
+                     </table>
+            </center>
         </ul>
 </nav> 
 </nav>
