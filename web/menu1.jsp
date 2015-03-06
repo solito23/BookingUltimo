@@ -20,18 +20,18 @@
 <nav>
 <nav> 
     <ul id="main">
-    <li><div align="center"><a href="Index1.html"><span class="glyphicon glyphicon-home"></span> Home</li></a>
-            <li><div align="center"><a href="#"><span class="glyphicon glyphicon-plane"></span> Reservations</a>
+    <li><div align="center" style="text-decoration: none;"><a href="Index1.html"><span class="glyphicon glyphicon-home"></span> Home</li></a>
+            <li><div align="center" style="text-decoration: none;"><a href="#"><span class="glyphicon glyphicon-plane"></span> Reservations</a>
                             <ul class="submain">
-                                <li><a href="reserva1.jsp">New Reservation</a></li>
-                                <li><a href="CancelarR1.jsp">My Reservation</a> </li>
-                                <li><a href="ModificarReservas1.jsp">Modify Reservation</a> </li>
+                                <li><a href="reserva1.jsp" style="text-decoration: none;">New Reservation</a></li>
+                                <li><a href="CancelarR1.jsp" style="text-decoration: none;">My Reservation</a> </li>
+                                <li><a href="ModificarReservas1.jsp" style="text-decoration: none;">Modify Reservation</a> </li>
                                 </ul>
                         </li>
-                        <li><div align="center"><a href="#"><span class="glyphicon glyphicon-list-alt"></span> My Count</a>
+                        <li><div align="center"><a href="#" style="text-decoration: none;"><span class="glyphicon glyphicon-list-alt"></span> My Count</a>
                             <ul class="submain">
-                                <li><a href="actualizarDatos2.jsp">My Data</a></li>
-                                <li><a href="cambiarContraseña1.jsp">Change Password</a> </li>
+                                <li><a href="actualizarDatos2.jsp" style="text-decoration: none;">My Data</a></li>
+                                <li><a href="cambiarContraseña1.jsp" style="text-decoration: none;">Change Password</a> </li>
                                 </ul>
                         </li>
        <center>

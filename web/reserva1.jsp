@@ -15,17 +15,17 @@
 </div>
 <nav> 
 <ul id="main">
-    <li><div align="center"><a href="Index1.html"><span class="glyphicon glyphicon-home"></span> Home</li></a>
-            <li><a align="center"><a href="#"><span class="glyphicon glyphicon-plane"></span> Reservations</a>
+    <li><div align="center"><a href="Index1.html" style="text-decoration: none;"><span class="glyphicon glyphicon-home"></span> Home</li></a>
+            <li><a align="center"><a href="#" style="text-decoration: none;"><span class="glyphicon glyphicon-plane"></span> Reservations</a>
                             <ul class="submain">
-                                <li><a href="reserva1.jsp">Request reservation</a></li>
-                                <li><a href="CancelarR1.JSP">My reservations</a> </li>
+                                <li><a href="reserva1.jsp" style="text-decoration: none;">Request reservation</a></li>
+                                <li><a href="CancelarR1.JSP" style="text-decoration: none;">My reservations</a> </li>
                                 </ul>
                         </li>
-                        <li><div align="center"><a href="menu1.jsp"><span class="glyphicon glyphicon-list-alt"></span> Main</a>
+                        <li><div align="center"><a href="menu1.jsp" style="text-decoration: none;"><span class="glyphicon glyphicon-list-alt"></span> Main</a>
                             <ul class="submain">
-                                <li><a href="actualizarDatos1.jsp">My data</a></li>
-                                <li><a href="cambiarContraseña1.jsp">Change password</a> </li>
+                                <li><a href="actualizarDatos1.jsp" style="text-decoration: none;">My data</a></li>
+                                <li><a href="cambiarContraseña1.jsp" style="text-decoration: none;">Change password</a> </li>
                                 </ul>
                         </li>              
         </ul>

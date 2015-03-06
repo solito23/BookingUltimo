@@ -6,8 +6,8 @@
 package co.sena.edu.booking.DAO;
 
 import cao.sena.edu.booking.util.reserConex;
-import co.sena.edu.booking.DTO.personasDTO;
-import co.sena.edu.booking.DTO.personaxreservasDTO;
+//import co.sena.edu.booking.DTO.personasDTO;
+//import co.sena.edu.booking.DTO.personaxreservasDTO;
 import co.sena.edu.booking.DTO.reserDTO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -38,24 +38,53 @@ public class reserDAO {
         cnn = reserConex.getInstance();
     }
 
-    public String actualizarRegistro(reserDTO resert) {
+//    public String actualizarRegistro(reserDTO resert) {
+//
+//        try {
+//         
+//            pstmt = cnn.prepareStatement("UPDATE reservas SET idEstadoReserva= ?"
+//                    + ", idServicio=?, idTransporteLlegada=?, Responsable=?"
+//                    + ", horaReserva=?, fechaReserva=?"
+//                    + ",direccionDestino=?  WHERE IdReserva = ?; ");
+//         
+//            pstmt.setString(1, resert.getIdEstadoReserva());
+//            pstmt.setString(2, resert.getIdServicio());
+//            pstmt.setString(3, resert.getIdTransporteLlegada());
+//            pstmt.setString(4, resert.getResponsable());           
+//            pstmt.setString(5, resert.getHoraReserva());
+//            pstmt.setString(6, resert.getFechaReserva());
+//            pstmt.setString(7, resert.getDireccionDestino());
+//            pstmt.setInt(8, resert.getIdReserva());
+//            //
+//
+//            rtdo = pstmt.executeUpdate();
+//            if (rtdo > 0) {
+//                msgSalida = "se modificaron (" + rtdo + ") registros";
+//            } else {
+//                msgSalida = "NO se pudo actualizar el registro";
+//            }
+//        } catch (SQLException ex) {
+//            msgSalida = "Error al ejecutar la operación : " + ex.getSQLState() + " " + ex.getMessage();
+//        }
+//        return msgSalida;
+//    }
+    
+        public String actualizarReserva(reserDTO resert) {
 
         try {
          
-            pstmt = cnn.prepareStatement("UPDATE reservas SET idEstadoReserva= ?"
-                    + ", idServicio=?, idTransporteLlegada=?, Responsable=?"
+            pstmt = cnn.prepareStatement("UPDATE reservas SET , idServicio=?, idTransporteLlegada=?, Responsable=?"
                     + ", horaReserva=?, fechaReserva=?"
                     + ",direccionDestino=?  WHERE IdReserva = ?; ");
          
-            pstmt.setString(1, resert.getIdEstadoReserva());
-            pstmt.setString(2, resert.getIdServicio());
-            pstmt.setString(3, resert.getIdTransporteLlegada());
-            pstmt.setString(4, resert.getResponsable());           
-            pstmt.setString(5, resert.getHoraReserva());
-            pstmt.setString(6, resert.getFechaReserva());
-            pstmt.setString(7, resert.getDireccionDestino());
-            pstmt.setInt(8, resert.getIdReserva());
-            //
+            
+            pstmt.setString(1, resert.getIdServicio());
+            pstmt.setString(2, resert.getIdTransporteLlegada());
+            pstmt.setString(3, resert.getResponsable());           
+            pstmt.setString(4, resert.getHoraReserva());
+            pstmt.setString(5, resert.getFechaReserva());
+            pstmt.setString(6, resert.getDireccionDestino());
+            pstmt.setInt(7, resert.getIdReserva());
 
             rtdo = pstmt.executeUpdate();
             if (rtdo > 0) {

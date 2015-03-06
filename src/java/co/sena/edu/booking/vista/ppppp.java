@@ -6,6 +6,8 @@
 package co.sena.edu.booking.vista;
 import co.sena.edu.booking.DAO.reserDAO;
 import co.sena.edu.booking.DTO.reserDTO;
+import co.sena.edu.booking.DAO.personasDAO;
+import co.sena.edu.booking.DTO.personasDTO;
 /**
  *
  * @author user
@@ -20,4 +22,8 @@ public class ppppp {
                 System.out.print(regb);
     
     }
+    
+  
+    
+    
 }

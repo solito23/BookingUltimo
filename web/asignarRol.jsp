@@ -26,12 +26,12 @@
 </div>
                 <nav> 
                     <ul id="main">  
-                        <li><div align="center"><a href="Index1.html"><span class="glyphicon glyphicon-home"></span> Home</a></div></li>
-                        <li><div align="center"><a href="#"><span class="glyphicon glyphicon-plane"></span> Reservations</a></div>
+                        <li><div align="center"><a href="Index1.html" style="text-decoration: none;"><span class="glyphicon glyphicon-home"></span> Home</a></div></li>
+                        <li><div align="center"><a href="#" style="text-decoration: none;"><span class="glyphicon glyphicon-plane"></span> Reservations</a></div>
                             <ul class="submain">
-                                <li><a href="reserva1.jsp">Request reservations </a></li>
-                                <li><a href="#">Modify reservation</a> </li>
-                                <li><a href="#">Cancel reservation</a></li>
+                                <li><a href="reserva1.jsp" style="text-decoration: none;">Request reservations </a></li>
+                                <li><a href="modificarReserva1.jsp" style="text-decoration: none;">Modify reservation</a> </li>
+                                <li><a href="CancelarR1.jsp" style="text-decoration: none;">Cancel reservation</a></li>
                             </ul>
                         <nav> 
                         </li>
@@ -39,10 +39,10 @@
                         <li><div align="center"><a href="#"><span class="glyphicon glyphicon-folder-open"></span> Reports</a>
                             </div>
                                 <ul class="submain">
-                                <li><a align="center"  href="#">Reservations</a> </li>
+                                <li><a align="center"  href="#" style="text-decoration: none;">Reservations</a> </li>
                             </ul>
                         </li>                        
-                        <li><div align="center"><a href="menu1.jsp"><span class="glyphicon glyphicon-list"></span> Main</a> 
+                        <li><div align="center"><a href="menu1.jsp" style="text-decoration: none;"><span class="glyphicon glyphicon-list"></span> Main</a> 
                             </div>
                         </li>
                         

@@ -23,17 +23,17 @@
     <nav>
 <ul id="main">
     <li><a href="Index1.html">Home</li></a>
-       <li><a align="center" href="#">Reservations</a>
+       <li><a align="center" href="#" style="text-decoration: none;">Reservations</a>
                             <ul class="submain">
-                                <li><a href="reserva1.jsp">Request reserve</a></li>
-                                <li><a href="CancelarR1.jsp">Cancel reserve</a> </li>
-                                <li><a href="ModificarReservas1.jsp">Modify reserve</a> </li>
+                                <li><a href="reserva1.jsp" style="text-decoration: none;">Request reserve</a></li>
+                                <li><a href="CancelarR1.jsp" style="text-decoration: none;">Cancel reserve</a> </li>
+                                <li><a href="ModificarReservas1.jsp" style="text-decoration: none;">Modify reserve</a> </li>
                                 </ul>
                         </li>
-                         <li><a align="center" href="#">My account</a>
+                         <li><a align="center" href="#" style="text-decoration: none;">My account</a>
                             <ul class="submain">
-                                <li><a href="actualizarDatos2.jsp">My Imformation</a></li>
-                                <li><a href="cambiarContraseña1.jsp">Change Password</a> </li>
+                                <li><a href="actualizarDatos2.jsp" style="text-decoration: none;">My Imformation</a></li>
+                                <li><a href="cambiarContraseña1.jsp" style="text-decoration: none;">Change Password</a> </li>
                                 </ul>
                         </li>
       

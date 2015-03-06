@@ -1,3 +1,6 @@
+
+
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -39,7 +42,7 @@ public class personasDAO {
         try {
 
             pstmt = cnn.prepareStatement("UPDATE personas SET correoElectronico=?,pais=?,"
-                    + "idNacionalidad=?,nombres=?,apellidos=?,fechaNto=?,telefono=?,contraseña=?,estado=?,observaciones=? WHERE idPersona=?");
+                    + "idNacionalidad=?,nombres=?,apellidos=?,fechaNto=?,telefono=?,observaciones=? WHERE idPersona=?");
 
             pstmt.setString(1, personas.getCorreoElectronico());
             pstmt.setString(2, personas.getPais());
@@ -48,10 +51,10 @@ public class personasDAO {
             pstmt.setString(5, personas.getApellidos());
             pstmt.setString(6, personas.getFechaNto());
             pstmt.setInt(7, personas.getTelefono());
-            pstmt.setString(8, personas.getContraseña());
-            pstmt.setString(9, personas.getEstado());
-            pstmt.setString(10, personas.getObservaciones());
-            pstmt.setLong(11, personas.getIdPersona());
+//          pstmt.setString(8, personas.getContraseña());
+//          pstmt.setString(9, personas.getIdestadousuarios());
+            pstmt.setString(8, personas.getObservaciones());
+            pstmt.setLong(9, personas.getIdPersona());
             
             per = pstmt.executeUpdate();
             if (per > 0) {
@@ -82,7 +85,7 @@ public class personasDAO {
             pstmt.setString(7, newPersona.getFechaNto());
             pstmt.setInt(8, newPersona.getTelefono());
              pstmt.setString(9, newPersona.getContraseña());
-            pstmt.setString(10, newPersona.getEstado());
+            pstmt.setString(10, newPersona.getIdestadousuarios());
             pstmt.setString(11, newPersona.getObservaciones());
            
             
@@ -113,7 +116,7 @@ public class personasDAO {
         LinkedList<personasDTO> listaPersonas = new LinkedList<personasDTO>();
         try {
 
-            String query = "SELECT  idPersona, correoElectronico, pais, idNacionalidad, nombres, apellidos, fechaNto, telefono, contraseña, estado, observaciones "
+            String query = "SELECT  idPersona, correoElectronico, pais, idNacionalidad, nombres, apellidos, fechaNto, telefono, contraseña, idestadousuarios, observaciones "
                     + " FROM personas ";
             pstmt = cnn.prepareStatement(query);
             rs = pstmt.executeQuery();
@@ -129,7 +132,7 @@ public class personasDAO {
                 newPersona.setFechaNto(rs.getString("fechaNto"));
                 newPersona.setTelefono(rs.getInt("telefono"));
                 newPersona.setContraseña(rs.getString("contraseña"));
-                newPersona.setEstado(rs.getString("estado"));
+                newPersona.setIdestadousuarios(rs.getString("idestadousuarios"));
                 newPersona.setObservaciones(rs.getString("observaciones"));
                 listaPersonas.add(newPersona);
             }
@@ -141,14 +144,12 @@ public class personasDAO {
 
         return listaPersonas;
     }
-    
-    
 
     public personasDTO ListarUnaPersona(Long cedula) throws SQLException {
         personasDTO Rdao = null;
         try {
             pstmt = cnn.prepareStatement("select idPersona, correoElectronico, pais, idNacionalidad, "
-                    + " nombres, apellidos, fechaNto, telefono, contraseña, estado, observaciones from personas where idPersona=?;");
+                    + " nombres, apellidos, fechaNto, telefono, contraseña, idestadousuarios, observaciones from personas where idPersona=?;");
             pstmt.setLong(1, cedula);
             pstmt.executeQuery();
 
@@ -165,7 +166,7 @@ public class personasDAO {
                 Rdao.setFechaNto(rs.getString("fechaNto"));
                 Rdao.setTelefono(rs.getInt("telefono"));
                 Rdao.setContraseña(rs.getString("contraseña"));
-                Rdao.setEstado(rs.getString("estado"));
+                Rdao.setIdestadousuarios(rs.getString("idestadousuarios"));
                 Rdao.setObservaciones(rs.getString("observaciones"));
             }
         } catch (SQLException ex) {
@@ -179,7 +180,7 @@ public class personasDAO {
 
         try {
             String query = "select idPersona, correoElectronico, pais, idNacionalidad, "
-                    + " nombres, apellidos, fechaNto, telefono, contraseña, estado, observaciones from personas";
+                    + " nombres, apellidos, fechaNto, telefono, contraseña, idestadousuarios, observaciones from personas";
             pstmt = cnn.prepareStatement(query);
             rs = pstmt.executeQuery();
 
@@ -194,7 +195,7 @@ public class personasDAO {
                 Rdao.setFechaNto(rs.getString("fechaNto"));
                 Rdao.setTelefono(rs.getInt("telefono"));
                 Rdao.setContraseña(rs.getString("contraseña"));
-                Rdao.setEstado(rs.getString("estado"));
+                Rdao.setIdestadousuarios(rs.getString("idestadousuarios"));
                 Rdao.setObservaciones(rs.getString("observaciones"));
                 listarPersonas.add(Rdao);
 
@@ -214,7 +215,7 @@ public class personasDAO {
         try {
             
             pstmt = cnn.prepareStatement("select idPersona, correoElectronico, pais, idNacionalidad, "
-                    + " nombres, apellidos, fechaNto, telefono, contraseña, estado, observaciones from personas limit "+(pg-1)*limited+","+limited+";");
+                    + " nombres, apellidos, fechaNto, telefono, contraseña, idestadousuarios, observaciones from personas limit "+(pg-1)*limited+","+limited+";");
             rs = pstmt.executeQuery();
 
             while (rs.next()) {
@@ -228,7 +229,7 @@ public class personasDAO {
                 Rdao.setFechaNto(rs.getString("fechaNto"));
                 Rdao.setTelefono(rs.getInt("telefono"));
                 Rdao.setContraseña(rs.getString("contraseña"));
-                Rdao.setEstado(rs.getString("estado"));
+                Rdao.setIdestadousuarios(rs.getString("idestadousuarios"));
                 Rdao.setObservaciones(rs.getString("observaciones"));
                 Paginacion.add(Rdao);
 
@@ -302,13 +303,18 @@ public long isAcountExists(String contraseña, Long idPersona) throws SQLExcepti
        try {
 
            personasDTO pde = new personasDTO();
+           
+        
+           
            String sql = "select idPersona,contraseña from personas where idPersona = ? and contraseña = ?";        
            pstmt = cnn.prepareStatement(sql);           
            pstmt.setLong(1, idPersona);
            pstmt.setString(2, contraseña);
            rs = pstmt.executeQuery();
            
-           if (rs != null) { 
+          
+           if (rs != null) {
+               
                while (rs.next()) {
 
                    pde.setIdPersona(rs.getLong("idPersona"));
@@ -368,4 +374,22 @@ public int contarRegistros(){
         }
         return registros;
     }
+
+public String EnviarCorreo(String Correo){
+        String clave = null;
+       try{
+            
+        pstmt=cnn.prepareStatement("select contraseña from personas where correoElectronico=?");
+        pstmt.setString(1, Correo);
+        rs = pstmt.executeQuery();
+            while (rs.next()) {               
+                clave = rs.getString("contraseña");
+           }         
+        }catch(SQLException sqle){
+            msgSalida = sqle.getMessage();
+            }
+       return clave;  
+}  
+
+
 }

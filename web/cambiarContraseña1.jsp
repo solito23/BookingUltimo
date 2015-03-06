@@ -17,20 +17,20 @@
 </div>
 <nav> 
     <ul id="main">
-<li><div align="center"><a href="Index1.html"><span class="glyphicon glyphicon-home"></span> Home</li></a>
-<li><div align="center"><a href="#"><span class="glyphicon glyphicon-plane"></span> Reservations</a>
+<li><div align="center"><a href="Index1.html" style="text-decoration: none;"><span class="glyphicon glyphicon-home"></span> Home</li></a>
+<li><div align="center"><a href="#" style="text-decoration: none;"><span class="glyphicon glyphicon-plane"></span> Reservations</a>
 <ul class="submain">
-<li><a href="reserva1.jsp">New Reservation </a></li>
-<li><a href="">My Reservations</a></li>
+<li><a href="reserva1.jsp" style="text-decoration: none;">New Reservation </a></li>
+<li><a href="" style="text-decoration: none;">My Reservations</a></li>
 </ul>
 </li>
-<li><div align="center"><a href="#"><span class="glyphicon glyphicon-list-alt"></span> My Count</a>
+<li><div align="center"><a href="#" style="text-decoration: none;"><span class="glyphicon glyphicon-list-alt"></span> My Count</a>
     
 <ul class="submain">
-<li><a href="actualizarDatos2.jsp">My Data</a></li>
+<li><a href="actualizarDatos2.jsp" style="text-decoration: none;">My Data</a></li>
 </ul>
 </li>  
-<li><div align="center"><a href="menu1.jsp"><span class="glyphicon glyphicon-list"></span> Main</a></li>
+<li><div align="center"><a href="menu1.jsp" style="text-decoration: none;"><span class="glyphicon glyphicon-list"></span> Main</a></li>
 </ul>
     </nav> 
      <%

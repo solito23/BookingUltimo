@@ -114,7 +114,7 @@ public String actualizarRegistro(conductoresDTO conductores) {
         try {
 
 
-            String query = "SELECT  idconductor as id, idpersona, contacto "
+            String query = "SELECT  idConductor as id, idPersona, telContacto "
                     + " FROM conductores ";
             pstm = cnn.prepareStatement(query);
             rs = pstm.executeQuery();
@@ -123,7 +123,7 @@ public String actualizarRegistro(conductoresDTO conductores) {
                 conductoresDTO newConductor = new conductoresDTO();
                 newConductor.setIdConductor(rs.getInt("id"));
                 newConductor.setIdpersona(rs.getInt("nombres"));               
-                newConductor.setTelContacto(rs.getInt("contacto"));
+                newConductor.setTelContacto(rs.getInt("telContacto"));
                 listaconductores.add(newConductor);
             }
         } catch (SQLException ex) {

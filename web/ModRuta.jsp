@@ -33,23 +33,23 @@
 </div>
 <nav>
 <ul id="main">
-    <li><a href="Index.html">Inicio</li></a>
-       <li><a align="center" href="#">Reservas</a>
+    <li><a href="Index.html" style="text-decoration: none;">Inicio</li></a>
+       <li><a align="center" href="#" style="text-decoration: none;">Reservas</a>
                             <ul class="submain">
-                                <li><a href="reserva.jsp">Nueva Solicitud </a></li>
-                                <li><a href="mreserva.html">Mis Reservas</a> </li>
+                                <li><a href="reserva.jsp" style="text-decoration: none;">Nueva Solicitud </a></li>
+                                <li><a href="mreserva.html" style="text-decoration: none;">Mis Reservas</a> </li>
                                 </ul>
                         </li>
-        <li><a align="center" href="#">Gestion de Rutas</a>
+        <li><a align="center" href="#" style="text-decoration: none;">Gestion de Rutas</a>
                             <ul class="submain">
-                                <li><a href="CreaRuta.jsp?msj=">Creación de Rutas</a></li>
-                                <li><a href="ModRuta.jsp?msj=">Modificación de Rutas</a> </li>
+                                <li><a href="CreaRuta.jsp?msj=" style="text-decoration: none;">Creación de Rutas</a></li>
+                                <li><a href="ModRuta.jsp?msj=" style="text-decoration: none;">Modificación de Rutas</a> </li>
                                 </ul>
                         </li>
-                         <li><a align="center" href="#">Mi Cuenta</a>
+                         <li><a align="center" href="#" style="text-decoration: none;">Mi Cuenta</a>
                             <ul class="submain">
-                                <li><a href="actualizarDatos1.jsp">Mis Datos</a></li>
-                                <li><a href="cambiarContraseña.jsp">Cambiar Contraseña</a> </li>
+                                <li><a href="actualizarDatos1.jsp" style="text-decoration: none;">Mis Datos</a></li>
+                                <li><a href="cambiarContraseña.jsp" style="text-decoration: none;">Cambiar Contraseña</a> </li>
                                 </ul>
                         </li>
       

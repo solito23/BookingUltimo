@@ -3,30 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Controlador;
 
-
-import co.sena.edu.booking.DAO.reserDAO;
-
-import co.sena.edu.booking.DTO.reserDTO;
+import co.sena.edu.booking.DAO.personasDAO;
+import co.sena.edu.booking.DTO.personasDTO;
 import java.io.IOException;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author fabian
+ * @author user
  */
-@WebServlet(name = "Reserva", urlPatterns = {"/Reserva"})
-public class Reserva extends HttpServlet {
+public class EnviarCorreo extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,25 +30,20 @@ public class Reserva extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-           throws ServletException, IOException, SQLException {
-           response.setContentType("text/html;charset=UTF-8");
-           if (request.getParameter("registro") != null) {
-
-           reserDTO to = new reserDTO();
-           reserDAO dao = new reserDAO();
-           
-          
-           to.setIdEstadoReserva("valida");
-           to.setIdServicio(request.getParameter("ser"));
-           to.setIdTransporteLlegada(request.getParameter("aer"));
-           to.setResponsable(request.getParameter("res"));
-           to.setFechaReserva(request.getParameter("fec"));
-           to.setHoraReserva(request.getParameter("hora"));
-           to.setDireccionDestino(request.getParameter("aerop"));
-            
-            String mensaje = dao.insertar(to);
-            
-            response.sendRedirect("menu.jsp?msg="+mensaje);
+            throws ServletException, IOException {
+        
+        response.setContentType("text/html;charset=UTF-8");
+        personasDTO per = new personasDTO();
+        String correo = request.getParameter("correo");
+        
+        personasDAO pers = new personasDAO();
+        String clave=pers.EnviarCorreo("correo");
+        boolean envio=Correo.sendMail("asunto del mensaje",clave, correo);
+        
+        if (envio) {
+            response.sendRedirect("RecuperarContra.jsp?ms=enviado");
+        }else{
+            response.sendRedirect("RecuperarContra.jsp?ms=noenviado");
         }
     }
 
@@ -72,11 +59,7 @@ public class Reserva extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(Reserva.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -90,11 +73,7 @@ public class Reserva extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(Reserva.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**

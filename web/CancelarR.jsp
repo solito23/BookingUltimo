@@ -22,18 +22,18 @@
 </div>
     <nav>
 <ul id="main">
-    <li><a href="Index.html"><span class="glyphicon glyphicon-home"></span> Inicio</li></a>
-        <li><a href="#"><span class="glyphicon glyphicon-plane"></span> Reservas</a>
+    <li><a href="Index.html" style="text-decoration: none;"><span class="glyphicon glyphicon-home"></span> Inicio</li></a>
+        <li><a href="#" style="text-decoration: none;"><span class="glyphicon glyphicon-plane"></span> Reservas</a>
                             <ul class="submain">
-                                <li><a href="reserva.jsp">Solicita Reserva</a></li>
-                                <li><a href="CancelarR.jsp">Cancelar Reservas</a> </li>
-                                <li><a href="ModificarReservas.jsp">Modificar Reserva</a> </li>
+                                <li><a href="reserva.jsp" style="text-decoration: none;">Solicita Reserva</a></li>
+                                <li><a href="CancelarR.jsp" style="text-decoration: none;">Cancelar Reservas</a> </li>
+                                <li><a href="ModificarReservas.jsp" style="text-decoration: none;">Modificar Reserva</a> </li>
                                 </ul>
                         </li>
                           <li><a href="#"><span class="glyphicon glyphicon-list-alt"></span> Mi Cuenta</a>
                             <ul class="submain">
-                                <li><a href="actualizarDatos1.jsp">Mis Datos</a></li>
-                                <li><a href="cambiarContraseña.jsp">Cambiar Contraseña</a> </li>
+                                <li><a href="actualizarDatos1.jsp" style="text-decoration: none;">Mis Datos</a></li>
+                                <li><a href="cambiarContraseña.jsp" style="text-decoration: none;">Cambiar Contraseña</a> </li>
                                 </ul>
                         </li>
       

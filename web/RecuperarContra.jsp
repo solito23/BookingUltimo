@@ -22,13 +22,13 @@
 <nav> 
     <ul id="main"> 
 <li>
-    <div align="center" ><a href="Index.html"><span class="glyphicon glyphicon-home"></span> Inicio</a>
+    <div align="center" ><a href="Index.html" style="text-decoration: none;"><span class="glyphicon glyphicon-home"></span> Inicio</a>
 </div>
 </li>	
 </ul>
     </nav> 
 <center>
-<form name="form1" action="" method="post" > 
+<form name="form1" action="EnviarCorreo" method="post" > 
 
 <div class="ba">
 <h1>Recuperar Contraseña</h1>

@@ -35,23 +35,23 @@
 </div>
     <nav>
     <ul id="main">
-   <li><div align="center"><a href="Index.html"><span class="glyphicon glyphicon-home"></span> Inicio</li></a>
-   <li><div align="center"><a href="#"><span class="glyphicon glyphicon-send"></span> Gestion Rutas</a>
+   <li><div align="center"><a href="Index.html" style="text-decoration: none;"><span class="glyphicon glyphicon-home"></span> Inicio</li></a>
+   <li><div align="center"><a href="#" style="text-decoration: none;"><span class="glyphicon glyphicon-send"></span> Gestion Rutas</a>
    <ul class="submain">
-   <li><a href="CreaRuta.jsp?msj=">Creación de Rutas</a></li>
-   <li><a href="ModRuta.jsp?msj=">Modificación de Rutas</a> </li>
+   <li><a href="CreaRuta.jsp?msj=" style="text-decoration: none;">Creación de Rutas</a></li>
+   <li><a href="ModRuta.jsp?msj=" style="text-decoration: none;">Modificación de Rutas</a> </li>
    </ul>
    </div>
        
    </li>
    
-   <li><div align="center"><a href="#"><span class="glyphicon glyphicon-folder-open"></span> Reportes</a> 
+   <li><div align="center"><a href="#" style="text-decoration: none;"><span class="glyphicon glyphicon-folder-open"></span> Reportes</a> 
     <ul class="submain">
-    <li><div align="center"><a href="#">Reservas</a> 
-    <li><div align="center"><a href="#">Rutas</a>
-    <li><div align="center"><a href="#">Conductores</a> 
-    <li><div align="center"><a href="#">Clientes</a>
-    <li><div align="center"><a href="#">Turistas</a> 
+    <li><div align="center"><a href="#" style="text-decoration: none;">Reservas</a> 
+    <li><div align="center"><a href="#" style="text-decoration: none;">Rutas</a>
+    <li><div align="center"><a href="#" style="text-decoration: none;">Conductores</a> 
+    <li><div align="center"><a href="#" style="text-decoration: none;">Clientes</a>
+    <li><div align="center"><a href="ReporteM.jsp" style="text-decoration: none;">Reporte Multicriterio</a> 
     </div>
      </li>
   </ul>

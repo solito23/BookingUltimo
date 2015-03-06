@@ -18,15 +18,15 @@
 </div>
                <nav> 
                     <ul id="main">  
-                        <li><div align="center"><a href="Index.html"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
-                        <li><div align="center"><a href="#"><a href="#"><span class="glyphicon glyphicon-plane"></span> Gestion Reserva</a>
+                        <li><div align="center"><a href="Index.html" style="text-decoration: none;"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
+                        <li><div align="center"><a href="#" style="text-decoration: none;"><span class="glyphicon glyphicon-plane"></span> Gestion Reserva</a>
                             <ul class="submain">
-                                <li><a href="#">Solicitar Reservas </a></li>
-                                <li><a href="#">Modificar Reserva</a> </li>
-                                <li><a href="#">Cancelar Reserva</a></li>
+                                <li><a href="#" style="text-decoration: none;">Solicitar Reservas </a></li>
+                                <li><a href="#" style="text-decoration: none;">Modificar Reserva</a> </li>
+                                <li><a href="#" style="text-decoration: none;">Cancelar Reserva</a></li>
                             </ul>
                         </li>                        
-                        <li><div align="center"><a href="menu.jsp"><span class="glyphicon glyphicon-list"></span> Menu</a> 
+                        <li><div align="center"><a href="menu.jsp" style="text-decoration: none;"><span class="glyphicon glyphicon-list"></span> Menu</a> 
                         </li>                  
                         </ul>
                    </nav> 

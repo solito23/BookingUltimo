@@ -20,178 +20,110 @@ public class personasDTO {
     private String fechaNto;
     private int telefono;
     private String contraseña;
-    private String estado;
+    private String idestadousuarios;
     private String observaciones;
-
-  
-
 
     @Override
     public String toString() {
-        return "\nidPersona " + this.getIdPersona()
-                + "\ncorreo " + this.getCorreoElectronico()
-                + "\nresidencia " + this.getPais()
-                + "\nidnacionalidad " + this.getIdNacionalidad()
-                + "\nnombres " + this.getNombres()
-                + "\napellidos " + this.getApellidos()
-                + "\nfechaNto " + this.getFechaNto()
-                + "\ntelefono " + this.getTelefono()
-                + "\ncontraseña " + this.getContraseña()
-                +"\nestado " + this.getEstado()
-                +"\nobservaciones " + this.getObservaciones();
-                }
+        return "personasDTO{" + "idPersona=" + idPersona + ","
+                + " correoElectronico=" + correoElectronico + 
+                ", pais=" + pais + ", idNacionalidad=" + idNacionalidad + 
+                ", nombres=" + nombres + ", apellidos=" + apellidos + ", "
+                + "fechaNto=" + fechaNto + ", telefono=" + telefono + ", "
+                + "contrase\u00f1a=" + contraseña + ", idestadousuarios=" + 
+                idestadousuarios + ", observaciones=" + observaciones + '}';
+    }
 
-    /**
-     * @return the idPersona
-     */
     public long getIdPersona() {
         return idPersona;
     }
 
-    /**
-     * @param idPersona the idPersona to set
-     */
     public void setIdPersona(long idPersona) {
         this.idPersona = idPersona;
     }
 
-    /**
-     * @return the correoElectronico
-     */
     public String getCorreoElectronico() {
         return correoElectronico;
     }
 
-    /**
-     * @param correoElectronico the correoElectronico to set
-     */
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
     }
-/**
-     * @return the idNacionalidad
-     */
-    public String getIdNacionalidad() {
-        return idNacionalidad;
-    }
 
-    /**
-     * @param idNacionalidad the idNacionalidad to set
-     */
-    public void setIdNacionalidad(String idNacionalidad) {
-        this.idNacionalidad = idNacionalidad;
-    }
-
-    /**
-     * @return the nombres
-     */
-    public String getNombres() {
-        return nombres;
-    }
-
-    /**
-     * @param nombres the nombres to set
-     */
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
-    }
-
-    /**
-     * @return the apellidos
-     */
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    /**
-     * @param apellidos the apellidos to set
-     */
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
-    /**
-     * @return the fechaNto
-     */
-    public String getFechaNto() {
-        return fechaNto;
-    }
-
-    /**
-     * @param fechaNto the fechaNto to set
-     */
-    public void setFechaNto(String fechaNto) {
-        this.fechaNto = fechaNto;
-    }
-
-    /**
-     * @return the telefono
-     */
-    public int getTelefono() {
-        return telefono;
-    }
-
-    /**
-     * @param telefono the telefono to set
-     */
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
-    }
-
-    /**
-     * @return the contraseña
-     */
-    public String getContraseña() {
-        return contraseña;
-    }
-
-    /**
-     * @param contraseña the contraseña to set
-     */
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
-    }
-
-    /**
-     * @return the pais
-     */
     public String getPais() {
         return pais;
     }
 
-    /**
-     * @param pais the pais to set
-     */
     public void setPais(String pais) {
         this.pais = pais;
     }
 
-    /**
-     * @return the estado
-     */
-    public String getEstado() {
-        return estado;
+    public String getIdNacionalidad() {
+        return idNacionalidad;
     }
 
-    /**
-     * @param estado the estado to set
-     */
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setIdNacionalidad(String idNacionalidad) {
+        this.idNacionalidad = idNacionalidad;
     }
 
-    /**
-     * @return the observaciones
-     */
+    public String getNombres() {
+        return nombres;
+    }
+
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
+    }
+
+    public String getFechaNto() {
+        return fechaNto;
+    }
+
+    public void setFechaNto(String fechaNto) {
+        this.fechaNto = fechaNto;
+    }
+
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getContraseña() {
+        return contraseña;
+    }
+
+    public void setContraseña(String contraseña) {
+        this.contraseña = contraseña;
+    }
+
+    public String getIdestadousuarios() {
+        return idestadousuarios;
+    }
+
+    public void setIdestadousuarios(String idestadousuarios) {
+        this.idestadousuarios = idestadousuarios;
+    }
+
     public String getObservaciones() {
         return observaciones;
     }
 
-    /**
-     * @param observaciones the observaciones to set
-     */
     public void setObservaciones(String observaciones) {
         this.observaciones = observaciones;
     }
+
+   
+
+  
 
 }

@@ -19,17 +19,17 @@
                 <nav>
                     <nav> 
                     <ul id="main">  
-                        <li><div align="center"><a href="Index1.html"><span class="glyphicon glyphicon-home"></span> Home </a></li>
-                        <li><div align="center"><a href="#"><span class="glyphicon glyphicon-plane"></span> Reservations</a>
+                        <li><div align="center"><a href="Index1.html" style="text-decoration: none;"><span class="glyphicon glyphicon-home"></span> Home </a></li>
+                        <li><div align="center"><a href="#" style="text-decoration: none;"><span class="glyphicon glyphicon-plane"></span> Reservations</a>
                             <ul class="submain">
-                                <li><a href="#">New Reservation</a></li>
-                                <li><a href="#">Modify Reservation</a> </li>
-                                <li><a href="#">New Reservation</a></li>
+                                <li><a href="#" style="text-decoration: none;">New Reservation</a></li>
+                                <li><a href="#" style="text-decoration: none;">Modify Reservation</a> </li>
+                                <li><a href="#" style="text-decoration: none;">New Reservation</a></li>
                             </ul>
                                 <nav> 
                         </li>                    
                        
-                        <li><div align="center"><a href="menu1.jsp"><span class="glyphicon glyphicon-list"></span> Main</a> 
+                        <li><div align="center"><a href="menu1.jsp" style="text-decoration: none;"><span class="glyphicon glyphicon-list"></span> Main</a> 
                         </li>                      
                     </ul>
                     

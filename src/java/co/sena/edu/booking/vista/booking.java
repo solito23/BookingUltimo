@@ -134,7 +134,7 @@ public class booking {
                 rdto.setFechaReserva(in.next());
                 System.out.println("direccionDestino");
                 rdto.setDireccionDestino(in.next());
-                System.out.println(rdao.actualizarRegistro(rdto));
+                System.out.println(rdao.actualizarReserva(rdto));
 
                 
                 int regb = per.contarRegistros();
@@ -688,6 +688,11 @@ public class booking {
                 System.out.println("idTransporteLlegada");
                 trans.setIdTransporteLlegada(in.next());
                 System.out.println(transp.eliminar(trans));
+                break;
+            case 81:
+                System.out.println("correo");
+                pers.setCorreoElectronico(in.next());
+                System.out.println(per.EnviarCorreo(pers.getCorreoElectronico()));
                 break;
 
         }

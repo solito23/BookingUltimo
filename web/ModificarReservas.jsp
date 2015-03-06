@@ -26,7 +26,7 @@
             
         
 <li>
- <div align="center"> <a href="Index.html"><span class="glyphicon glyphicon-home"></span> Inicio </a>
+ <div align="center"> <a href="Index.html" style="text-decoration: none;"><span class="glyphicon glyphicon-home"></span> Inicio </a>
 </li>
 </ul>     
             </nav>

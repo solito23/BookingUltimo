@@ -18,20 +18,20 @@
 </div>
 <nav> 
     <ul id="main">
-<li><div align="center"><a href="Index.html"><span class="glyphicon glyphicon-home"></span> Inicio</li></a>
-<li><div align="center"><a href="#"><span class="glyphicon glyphicon-plane"></span> Reservas</a>
+<li><div align="center"><a href="Index.html" style="text-decoration: none;"><span class="glyphicon glyphicon-home"></span> Inicio</li></a>
+<li><div align="center"><a href="#" style="text-decoration: none;"><span class="glyphicon glyphicon-plane"></span> Reservas</a>
 <ul class="submain">
-<li><a href="reserva.jsp">Nueva Solicitud </a></li>
-<li><a href="mreserva.html">Mis Reservas</a></li>
+<li><a href="reserva.jsp" style="text-decoration: none;">Nueva Solicitud </a></li>
+<li><a href="mreserva.html" style="text-decoration: none;">Mis Reservas</a></li>
 </ul>
 </li>
-<li><div align="center"><a href="#"><span class="glyphicon glyphicon-list-alt"></span> Mi Cuenta</a>
+<li><div align="center"><a href="#" style="text-decoration: none;"><span class="glyphicon glyphicon-list-alt"></span> Mi Cuenta</a>
     
 <ul class="submain">
-<li><a href="actualizarDatos1.jsp">Mis Datos</a></li>
+<li><a href="actualizarDatos1.jsp" style="text-decoration: none;">Mis Datos</a></li>
 </ul>
 </li> 
-<li><div align="center"><a href="menu.jsp"><span class="glyphicon glyphicon-list"></span> Menu</a></li>
+<li><div align="center"><a href="menu.jsp" style="text-decoration: none;"><span class="glyphicon glyphicon-list"></span> Menu</a></li>
 </ul>
     </nav> 
      <%

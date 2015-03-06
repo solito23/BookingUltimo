@@ -18,7 +18,7 @@
             <nav>  
             <ul id="main">  
                     <li>
-                        <div align="center"><a href="Index1.html"><span class="glyphicon glyphicon-home"></span> Home</a>    
+                        <div align="center"><a href="Index1.html" style="text-decoration: none;"><span class="glyphicon glyphicon-home"></span> Home</a>    
                         </div>
                     </li>
               </ul>

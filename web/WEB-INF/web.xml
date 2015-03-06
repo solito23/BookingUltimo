@@ -24,6 +24,10 @@
         <servlet-name>poolBooking</servlet-name>
         <servlet-class>Controlador.poolBooking</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EnviarCorreo</servlet-name>
+        <servlet-class>Controlador.EnviarCorreo</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>poolBooking</servlet-name>
         <url-pattern>/poolBooking</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EnviarCorreo</servlet-name>
+        <url-pattern>/EnviarCorreo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

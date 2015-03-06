@@ -43,7 +43,6 @@ public class modificarRerserva extends HttpServlet {
            reserDAO dao = new reserDAO();
            
            to.setIdReserva(Integer.parseInt(request.getParameter("reser")));
-           to.setIdEstadoReserva(request.getParameter("estado"));
            to.setIdServicio(request.getParameter("ser"));
            to.setIdTransporteLlegada(request.getParameter("aer"));
            to.setResponsable(request.getParameter("res"));
@@ -51,8 +50,9 @@ public class modificarRerserva extends HttpServlet {
            to.setHoraReserva(request.getParameter("hora"));
            to.setDireccionDestino(request.getParameter("aerop"));
             
-            String mensaje = dao.actualizarRegistro(to);
-            
+            String mensaje = dao.actualizarReserva(to);
+            HttpSession misesion =request.getSession(true);
+            misesion.setAttribute("logueado", mensaje);
             response.sendRedirect("menu.jsp?msg="+mensaje);
     }
           else if(request.getParameter("idReserva")!= null){

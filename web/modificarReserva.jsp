@@ -4,9 +4,7 @@
     Author     : fabian
 --%>
 
-<%@page import="co.sena.edu.booking.DTO.personasDTO"%>
 <%@page import="co.sena.edu.booking.DAO.reserDAO"%>
-<%@page import="co.sena.edu.booking.DAO.personasDAO"%>
 <%@page import="co.sena.edu.booking.DTO.reserDTO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -26,17 +24,17 @@
 </div>
                 <nav> 
                     <ul id="main">  
-                        <li><a align="center" href="Index.html"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
-                        <li><a align="center" href="#"><span class="glyphicon glyphicon-plane"></span> Reservas</a>
+                        <li><a align="center" href="Index.html" style="text-decoration: none;"><span class="glyphicon glyphicon-home"></span> Inicio</a></li>
+                        <li><a align="center" href="#" style="text-decoration: none;"><span class="glyphicon glyphicon-plane"></span> Reservas</a>
                             <ul class="submain">
-                                <li><a href="reserva.jsp">Solicitar Reservas </a></li>
-                                <li><a href="#">Modificar Reserva</a> </li>
-                                <li><a href="#">Cancelar Reserva</a></li>
+                                <li><a href="reserva.jsp" style="text-decoration: none;">Solicitar Reservas </a></li>
+                                <li><a href="#" style="text-decoration: none;">Modificar Reserva</a> </li>
+                                <li><a href="#" style="text-decoration: none;">Cancelar Reserva</a></li>
                             </ul>
                         </li>                       
-                        <li><div align="center"><a href="menu.jsp"><span class="glyphicon glyphicon-list"></span> Menu</a> 
+                        <li><div align="center"><a href="menu.jsp" style="text-decoration: none;"><span class="glyphicon glyphicon-list"></span> Menu</a> 
                         </li>
-                        <li><div align="center"><a href="Index.html"><span class="glyphicon glyphicon-remove-sign"></span> Salir</a> 
+                        <li><div align="center"><a href="Index.html" style="text-decoration: none;"><span class="glyphicon glyphicon-remove-sign"></span> Salir</a> 
                         </li>
                         </ul> 
                     </nav>
@@ -57,8 +55,12 @@
 <div class="ba">
     <h1><center>Modificar Reserva</center></h1>
 </div>
-<form name="form1" action="modificarReserva" method="post" > 
+<form name="form1" action="modificarRerserva" method="post" > 
 <table width="744" align="center" id="registro">
+<tr>
+<td><label for="reser" class="labele"><strong>idReserva<font color="#FF0000">*</strong></label></font></td>
+<td><input name="reser" type="text" id="reser" value="<%=pdto.getIdReserva()%>" style="width:250px; height:25px"  readonly="readonly"  placeholder="Responsable" autofocus  required class="form-control inputtext"></td>   
+</tr>    
 <tr>
 <td><label for="ser" class="labele"><strong>Servicio<font color="#FF0000">*</strong></label></font></td>
 <td><input name="ser" id="ser" value="<%=pdto.getIdServicio()%>" style="width:250px; height:35px" placeholder="Seleccione servicio" autofocus required class="form-control inputtext" list="servis" tabindex="9" size="30">   
@@ -98,7 +100,7 @@
 </td>
 </tr>
 <tr>
-<td><input type="submit" name="registro"  id="registro" class="btn btn-success"  value="Registrar" onclick="validar(registro)" style="position:relative; left:330px">
+<td><input type="submit" name="registro"  id="registro" class="btn btn-success"  value="Actualizar"  style="position:relative; left:330px">
 </tr>
 </table>
 </fieldset>
