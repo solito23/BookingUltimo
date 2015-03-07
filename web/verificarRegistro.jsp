@@ -75,7 +75,7 @@
      %>  
       
 <div class="ba">
-<h1><center>Usuarios Registrados</center></h1>
+<h1><center>Registrados</center></h1>
 </div>
      <br>
      <div class="busqueda">
