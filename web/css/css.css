@@ -375,6 +375,16 @@ main
     text-align: center;
     box-shadow: 0 3px 5px #000;
 }
+.valido1{
+    background: #d9534f;
+    width: 30%;
+    height: 65px;
+    margin-left: 34%;
+    margin-top: 10px;
+    border-radius: 9px;
+    text-align: center;
+    box-shadow: 0 3px 5px #000;
+}
 .idioma{
     width:100%;
     background: #0C4391;

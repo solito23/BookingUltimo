@@ -84,7 +84,7 @@ public class personasDAO {
             pstmt.setString(6, newPersona.getApellidos());
             pstmt.setString(7, newPersona.getFechaNto());
             pstmt.setInt(8, newPersona.getTelefono());
-             pstmt.setString(9, newPersona.getContraseña());
+            pstmt.setString(9, newPersona.getContraseña());
             pstmt.setString(10, newPersona.getIdestadousuarios());
             pstmt.setString(11, newPersona.getObservaciones());
            
@@ -390,6 +390,38 @@ public String EnviarCorreo(String Correo){
             }
        return clave;  
 }  
+public List<personasDTO> contarPersonas(String pais, String nombres) {
+        ArrayList<personasDTO> productos = new ArrayList();
+        try {
+            StringBuilder sb = new StringBuilder("select p.nombres as Nombre, p.apellidos as Apellido, "
+                    + "c.nacionalidad as nacionalidad "
+                    + "from personas as p join "
+                    + "nacionalidades as c on"
+                    + " p.idNacionalidad = c.idNacionalidad ");
 
+            if (pais != null) {
+                sb.append("AND p.nombres LIKE '").append(pais).append("%'");
+            }
+            if (nombres!= null) {
+                sb.append("AND c.nacionalidad LIKE '").append(nombres).append("%'");
+            }
+
+            sb.append("order by nacionalidad desc limit 0,10");
+            pstmt = cnn.prepareStatement(sb.toString());
+            rs = pstmt.executeQuery();
+            if (rs != null) {
+                while (rs.next()) {
+                    personasDTO producto = new personasDTO();
+                    producto.setNombres(rs.getString("Nombre"));
+                    producto.setApellidos(rs.getString("Apellido"));
+                    producto.setPais(rs.getString("nacionalidad"));
+                    productos.add(producto);
+                }
+            }
+        } catch (SQLException ex) {
+
+        }
+        return productos;
+    }
 
 }

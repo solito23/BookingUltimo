@@ -53,6 +53,9 @@ public class Controlador extends HttpServlet {
             pdto.setPais(request.getParameter("ciunac"));
             pdto.setTelefono(Integer.parseInt(request.getParameter("tel")));
             pdto.setContraseña(request.getParameter("con"));
+            pdto.setIdestadousuarios("valido");
+            pdto.setObservaciones("0");
+  
             
             String mensaje = pdao.crearPersona(pdto);
             HttpSession misesion = request.getSession(true);
