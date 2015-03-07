@@ -53,7 +53,7 @@
 
                                 %>
 <div class="ba">
-    <h1><center>Modificar Reserva</center></h1>
+    <h1><center>Modificar Reservas</center></h1>
 </div>
 <form name="form1" action="modificarRerserva" method="post" > 
 <table width="744" align="center" id="registro">
