@@ -68,7 +68,7 @@
         <tr>
             <td><%=producto.getNombres()%></td>
             <td><%=producto.getApellidos()%></td>
-            <td><%=producto.getPais()%></td>
+            <td><%=producto.getIdCiudad()%></td>
 
         </tr>
         <%            }

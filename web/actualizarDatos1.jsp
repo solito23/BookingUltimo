@@ -73,24 +73,27 @@
                                          </tr>
                                          <tr>
                                          <td><label for="paisnac" class="labele">País<font color="#ff0000"></label></td>
-                                         <td><input name="paisnac" id="paisnac" value="<%=persona.getIdNacionalidad()%>" style="width:250px; height:30px"list="paises" readonly="readonly"  autofocus required class="form-control inputtext"></td>
-                                         <datalist id="paises">
-                                                        <option value="Argentina">Argentina</option>
-                                                        <option value="Brasil">Brasil</option>
-                                                        <option value="Chile">Chile</option>
-                                                        <option value="Colombia">Colombia</option>
-                                                        <option value="Ecuador">Ecuador</option>
-                                                        <option value="Perú">Perú</option>
-                                                        </datalist>                                               
+                                         <td>
+                                         <select id="paises" value="<%=persona.getIdNacionalidad()%>" name="paisnac" id="paisnac" style="width:250px; height:35px" autofocus required class="form-control inputtext" list="paises" tabindex="8" >
+                                                <option value="1">Colombia</option>
+                                                <option value="2">España</option>
+                                                <option value="3">Peru</option>
+                                                <option value="4">Japon</option>
+                                                <option value="5">Ecuador</option>
+                                                <option value="6">Alemania</option>
+                                            </select>                                           
                                                    
                                          <td><label for="ciunac" class="labele">Ciudad<font color="#FF0000"></label></td>
-                                         <td><input name="ciunac" id="ciunac"value="<%=persona.getPais()%>" style="width:250px; height:30px"  list="ciudades" autofocus required class="form-control inputtext"></td>
-                                        <datalist id="ciudades">
-                                                    <option label="BOG">Bogota</option>
-                                                    <option label="CLO">Cali</option>
-                                                    <option label="MED">Medellin</option>
-                                                    <option label="BAR">Barranquilla</option>
-                                                    </datalist>                                     
+                                         <td>
+                                        
+                                         <select id="ciudades" name="ciunac" value="<%=persona.getIdCiudad()%>" id="ciunac" style="width:250px; height:35px" autofocus required class="form-control inputtext"  list="ciudades" tabindex="9">
+                                            <option value="1">Bogota</option>
+                                            <option value="2">Madrid</option>
+                                            <option value="3">Lima</option>
+                                            <option value="4">Tokio</option>
+                                            <option value="5">Quito</option>
+                                            <option value="6">Berlin</option>
+                                        </select>                                     
                                      </tr>
                                           
                          

@@ -14,9 +14,9 @@ package co.sena.edu.booking.DTO;
 public class reserDTO {
 
     private int idReserva;
-    private String idEstadoReserva;
-    private String idServicio;
-    private String idTransporteLlegada;
+    private int idEstadoReserva;
+    private int idServicio;
+    private int idTransporteLlegada;
     private String responsable;    
     private String fechaReserva;
     private String horaReserva;
@@ -39,42 +39,42 @@ public class reserDTO {
     /**
      * @return the idEstadoReserva
      */
-    public String getIdEstadoReserva() {
+    public int getIdEstadoReserva() {
         return idEstadoReserva;
     }
 
     /**
      * @param idEstadoReserva the idEstadoReserva to set
      */
-    public void setIdEstadoReserva(String idEstadoReserva) {
+    public void setIdEstadoReserva(int idEstadoReserva) {
         this.idEstadoReserva = idEstadoReserva;
     }
 
     /**
      * @return the idServicio
      */
-    public String getIdServicio() {
+    public int getIdServicio() {
         return idServicio;
     }
 
     /**
      * @param idServicio the idServicio to set
      */
-    public void setIdServicio(String idServicio) {
+    public void setIdServicio(int idServicio) {
         this.idServicio = idServicio;
     }
 
     /**
      * @return the idTransporteLlegada
      */
-    public String getIdTransporteLlegada() {
+    public int getIdTransporteLlegada() {
         return idTransporteLlegada;
     }
 
     /**
      * @param idTransporteLlegada the idTransporteLlegada to set
      */
-    public void setIdTransporteLlegada(String idTransporteLlegada) {
+    public void setIdTransporteLlegada(int idTransporteLlegada) {
         this.idTransporteLlegada = idTransporteLlegada;
     }
 

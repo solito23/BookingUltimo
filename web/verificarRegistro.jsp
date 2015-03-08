@@ -108,7 +108,7 @@
         <td data-sortable="true"><%=so.getNombres()%></td>
         <td data-sortable="true"><%=so.getApellidos()%></td>
         <td data-sortable="true"><%=so.getFechaNto()%></td>
-        <td data-sortable="true"><%=so.getPais()%></td>
+        <td data-sortable="true"><%=so.getIdCiudad()%></td>
         <td data-sortable="true"><%=so.getIdNacionalidad()%></td>
         <td data-sortable="true"><%=so.getTelefono()%></td>
         <td data-sortable="true"><%=so.getCorreoElectronico()%></td>

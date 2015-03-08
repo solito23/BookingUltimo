@@ -43,8 +43,8 @@ public class modificarRol extends HttpServlet {
             pdto.setApellidos(request.getParameter("apellidos"));
             pdto.setCorreoElectronico(request.getParameter("cor"));
             pdto.setFechaNto(request.getParameter("date"));
-            pdto.setIdNacionalidad(request.getParameter("paisnac"));
-            pdto.setPais(request.getParameter("ciunac"));
+            pdto.setIdNacionalidad(Integer.parseInt(request.getParameter("paisnac")));
+            pdto.setIdCiudad(Integer.parseInt(request.getParameter("ciunac")));
             pdto.setTelefono(Integer.parseInt(request.getParameter("tel")));
             pdto.setContraseña(request.getParameter("tel"));          
             pdto.setObservaciones(request.getParameter("info"));

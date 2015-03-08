@@ -13,117 +13,180 @@ public class personasDTO {
    
     private long idPersona;
     private String correoElectronico;
-    private String pais;
-    private String idNacionalidad;
+    private int idCiudad;
+    private int idNacionalidad;
     private String nombres;
     private String apellidos;
     private String fechaNto;
     private int telefono;
     private String contraseña;
-    private String idestadousuarios;
+    private int idestadousuarios;
     private String observaciones;
 
     @Override
     public String toString() {
-        return "personasDTO{" + "idPersona=" + idPersona + ","
-                + " correoElectronico=" + correoElectronico + 
-                ", pais=" + pais + ", idNacionalidad=" + idNacionalidad + 
-                ", nombres=" + nombres + ", apellidos=" + apellidos + ", "
-                + "fechaNto=" + fechaNto + ", telefono=" + telefono + ", "
-                + "contrase\u00f1a=" + contraseña + ", idestadousuarios=" + 
-                idestadousuarios + ", observaciones=" + observaciones + '}';
+        return "personasDTO{" + "idPersona=" + getIdPersona() + ","
+                + " correoElectronico=" + getCorreoElectronico() + 
+                ", pais=" + getIdCiudad() + ", idNacionalidad=" + getIdNacionalidad() + 
+                ", nombres=" + getNombres() + ", apellidos=" + getApellidos() + ", "
+                + "fechaNto=" + getFechaNto() + ", telefono=" + getTelefono() + ", "
+                + "contrase\u00f1a=" + getContraseña() + ", idestadousuarios=" + 
+                getIdestadousuarios() + ", observaciones=" + getObservaciones() + '}';
     }
 
+    /**
+     * @return the idPersona
+     */
     public long getIdPersona() {
         return idPersona;
     }
 
+    /**
+     * @param idPersona the idPersona to set
+     */
     public void setIdPersona(long idPersona) {
         this.idPersona = idPersona;
     }
 
+    /**
+     * @return the correoElectronico
+     */
     public String getCorreoElectronico() {
         return correoElectronico;
     }
 
+    /**
+     * @param correoElectronico the correoElectronico to set
+     */
     public void setCorreoElectronico(String correoElectronico) {
         this.correoElectronico = correoElectronico;
     }
 
-    public String getPais() {
-        return pais;
+    /**
+     * @return the idCiudad
+     */
+    public int getIdCiudad() {
+        return idCiudad;
     }
 
-    public void setPais(String pais) {
-        this.pais = pais;
+    /**
+     * @param idCiudad the idCiudad to set
+     */
+    public void setIdCiudad(int idCiudad) {
+        this.idCiudad = idCiudad;
     }
 
-    public String getIdNacionalidad() {
+    /**
+     * @return the idNacionalidad
+     */
+    public int getIdNacionalidad() {
         return idNacionalidad;
     }
 
-    public void setIdNacionalidad(String idNacionalidad) {
+    /**
+     * @param idNacionalidad the idNacionalidad to set
+     */
+    public void setIdNacionalidad(int idNacionalidad) {
         this.idNacionalidad = idNacionalidad;
     }
 
+    /**
+     * @return the nombres
+     */
     public String getNombres() {
         return nombres;
     }
 
+    /**
+     * @param nombres the nombres to set
+     */
     public void setNombres(String nombres) {
         this.nombres = nombres;
     }
 
+    /**
+     * @return the apellidos
+     */
     public String getApellidos() {
         return apellidos;
     }
 
+    /**
+     * @param apellidos the apellidos to set
+     */
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
     }
 
+    /**
+     * @return the fechaNto
+     */
     public String getFechaNto() {
         return fechaNto;
     }
 
+    /**
+     * @param fechaNto the fechaNto to set
+     */
     public void setFechaNto(String fechaNto) {
         this.fechaNto = fechaNto;
     }
 
+    /**
+     * @return the telefono
+     */
     public int getTelefono() {
         return telefono;
     }
 
+    /**
+     * @param telefono the telefono to set
+     */
     public void setTelefono(int telefono) {
         this.telefono = telefono;
     }
 
+    /**
+     * @return the contraseña
+     */
     public String getContraseña() {
         return contraseña;
     }
 
+    /**
+     * @param contraseña the contraseña to set
+     */
     public void setContraseña(String contraseña) {
         this.contraseña = contraseña;
     }
 
-    public String getIdestadousuarios() {
+    /**
+     * @return the idestadousuarios
+     */
+    public int getIdestadousuarios() {
         return idestadousuarios;
     }
 
-    public void setIdestadousuarios(String idestadousuarios) {
+    /**
+     * @param idestadousuarios the idestadousuarios to set
+     */
+    public void setIdestadousuarios(int idestadousuarios) {
         this.idestadousuarios = idestadousuarios;
     }
 
+    /**
+     * @return the observaciones
+     */
     public String getObservaciones() {
         return observaciones;
     }
 
+    /**
+     * @param observaciones the observaciones to set
+     */
     public void setObservaciones(String observaciones) {
         this.observaciones = observaciones;
     }
 
-   
-
-  
-
+    
 }

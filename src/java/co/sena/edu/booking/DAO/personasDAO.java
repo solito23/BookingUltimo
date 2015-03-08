@@ -41,18 +41,18 @@ public class personasDAO {
     public String actualizarRegistro(personasDTO personas) {
         try {
 
-            pstmt = cnn.prepareStatement("UPDATE personas SET correoElectronico=?,pais=?,"
+            pstmt = cnn.prepareStatement("UPDATE personas SET correoElectronico=?,idCiudad=?,"
                     + "idNacionalidad=?,nombres=?,apellidos=?,fechaNto=?,telefono=?,observaciones=? WHERE idPersona=?");
 
             pstmt.setString(1, personas.getCorreoElectronico());
-            pstmt.setString(2, personas.getPais());
-            pstmt.setString(3, personas.getIdNacionalidad());
+            pstmt.setInt(2, personas.getIdCiudad());
+            pstmt.setInt(3, personas.getIdNacionalidad());
             pstmt.setString(4, personas.getNombres());
             pstmt.setString(5, personas.getApellidos());
             pstmt.setString(6, personas.getFechaNto());
             pstmt.setInt(7, personas.getTelefono());
 //          pstmt.setString(8, personas.getContraseña());
-//          pstmt.setString(9, personas.getIdestadousuarios());
+//          pstmt.setInt(9, personas.getIdestadousuarios());
             pstmt.setString(8, personas.getObservaciones());
             pstmt.setLong(9, personas.getIdPersona());
             
@@ -78,14 +78,14 @@ public class personasDAO {
             pstmt = cnn.prepareStatement("INSERT INTO personas VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             pstmt.setLong(1, newPersona.getIdPersona());
             pstmt.setString(2, newPersona.getCorreoElectronico());
-            pstmt.setString(3, newPersona.getPais());
-            pstmt.setString(4, newPersona.getIdNacionalidad());
+            pstmt.setInt(3, newPersona.getIdCiudad());
+            pstmt.setInt(4, newPersona.getIdNacionalidad());
             pstmt.setString(5, newPersona.getNombres());
             pstmt.setString(6, newPersona.getApellidos());
             pstmt.setString(7, newPersona.getFechaNto());
             pstmt.setInt(8, newPersona.getTelefono());
             pstmt.setString(9, newPersona.getContraseña());
-            pstmt.setString(10, newPersona.getIdestadousuarios());
+            pstmt.setInt(10, newPersona.getIdestadousuarios());
             pstmt.setString(11, newPersona.getObservaciones());
            
             
@@ -116,7 +116,7 @@ public class personasDAO {
         LinkedList<personasDTO> listaPersonas = new LinkedList<personasDTO>();
         try {
 
-            String query = "SELECT  idPersona, correoElectronico, pais, idNacionalidad, nombres, apellidos, fechaNto, telefono, contraseña, idestadousuarios, observaciones "
+            String query = "SELECT  idPersona, correoElectronico, idCiudad, idNacionalidad, nombres, apellidos, fechaNto, telefono, contraseña, idestadousuarios, observaciones "
                     + " FROM personas ";
             pstmt = cnn.prepareStatement(query);
             rs = pstmt.executeQuery();
@@ -125,14 +125,14 @@ public class personasDAO {
                 personasDTO newPersona = new personasDTO();
                 newPersona.setIdPersona(rs.getLong("idPersona"));
                 newPersona.setCorreoElectronico(rs.getString("correoElectronico"));
-                newPersona.setPais(rs.getString("pais"));
-                newPersona.setIdNacionalidad(rs.getString("idNacionalidad"));
+                newPersona.setIdCiudad(rs.getInt("idCiudad"));
+                newPersona.setIdNacionalidad(rs.getInt("idNacionalidad"));
                 newPersona.setNombres(rs.getString("nombres"));
                 newPersona.setApellidos(rs.getString("apellidos"));
                 newPersona.setFechaNto(rs.getString("fechaNto"));
                 newPersona.setTelefono(rs.getInt("telefono"));
                 newPersona.setContraseña(rs.getString("contraseña"));
-                newPersona.setIdestadousuarios(rs.getString("idestadousuarios"));
+                newPersona.setIdestadousuarios(rs.getInt("idestadousuarios"));
                 newPersona.setObservaciones(rs.getString("observaciones"));
                 listaPersonas.add(newPersona);
             }
@@ -148,7 +148,7 @@ public class personasDAO {
     public personasDTO ListarUnaPersona(Long cedula) throws SQLException {
         personasDTO Rdao = null;
         try {
-            pstmt = cnn.prepareStatement("select idPersona, correoElectronico, pais, idNacionalidad, "
+            pstmt = cnn.prepareStatement("select idPersona, correoElectronico, idCiudad, idNacionalidad, "
                     + " nombres, apellidos, fechaNto, telefono, contraseña, idestadousuarios, observaciones from personas where idPersona=?;");
             pstmt.setLong(1, cedula);
             pstmt.executeQuery();
@@ -159,14 +159,14 @@ public class personasDAO {
                 Rdao = new personasDTO();
                 Rdao.setIdPersona(rs.getLong("idPersona"));
                 Rdao.setCorreoElectronico(rs.getString("correoElectronico"));
-                Rdao.setPais(rs.getString("pais"));
-                Rdao.setIdNacionalidad(rs.getString("idNacionalidad"));
+                Rdao.setIdCiudad(rs.getInt("idCiudad"));
+                Rdao.setIdNacionalidad(rs.getInt("idNacionalidad"));
                 Rdao.setNombres(rs.getString("nombres"));
                 Rdao.setApellidos(rs.getString("apellidos"));
                 Rdao.setFechaNto(rs.getString("fechaNto"));
                 Rdao.setTelefono(rs.getInt("telefono"));
                 Rdao.setContraseña(rs.getString("contraseña"));
-                Rdao.setIdestadousuarios(rs.getString("idestadousuarios"));
+                Rdao.setIdestadousuarios(rs.getInt("idestadousuarios"));
                 Rdao.setObservaciones(rs.getString("observaciones"));
             }
         } catch (SQLException ex) {
@@ -179,7 +179,7 @@ public class personasDAO {
         ArrayList<personasDTO> listarPersonas = new ArrayList();
 
         try {
-            String query = "select idPersona, correoElectronico, pais, idNacionalidad, "
+            String query = "select idPersona, correoElectronico, idCiudad, idNacionalidad, "
                     + " nombres, apellidos, fechaNto, telefono, contraseña, idestadousuarios, observaciones from personas";
             pstmt = cnn.prepareStatement(query);
             rs = pstmt.executeQuery();
@@ -188,14 +188,14 @@ public class personasDAO {
                 personasDTO Rdao = new personasDTO();
                 Rdao.setIdPersona(rs.getLong("idPersona"));
                 Rdao.setCorreoElectronico(rs.getString("correoElectronico"));
-                Rdao.setPais(rs.getString("pais"));
-                Rdao.setIdNacionalidad(rs.getString("idNacionalidad"));
+                Rdao.setIdCiudad(rs.getInt("idCiudad"));
+                Rdao.setIdNacionalidad(rs.getInt("idNacionalidad"));
                 Rdao.setNombres(rs.getString("nombres"));
                 Rdao.setApellidos(rs.getString("apellidos"));
                 Rdao.setFechaNto(rs.getString("fechaNto"));
                 Rdao.setTelefono(rs.getInt("telefono"));
                 Rdao.setContraseña(rs.getString("contraseña"));
-                Rdao.setIdestadousuarios(rs.getString("idestadousuarios"));
+                Rdao.setIdestadousuarios(rs.getInt("idestadousuarios"));
                 Rdao.setObservaciones(rs.getString("observaciones"));
                 listarPersonas.add(Rdao);
 
@@ -214,7 +214,7 @@ public class personasDAO {
 
         try {
             
-            pstmt = cnn.prepareStatement("select idPersona, correoElectronico, pais, idNacionalidad, "
+            pstmt = cnn.prepareStatement("select idPersona, correoElectronico, idCiudad, idNacionalidad, "
                     + " nombres, apellidos, fechaNto, telefono, contraseña, idestadousuarios, observaciones from personas limit "+(pg-1)*limited+","+limited+";");
             rs = pstmt.executeQuery();
 
@@ -222,14 +222,14 @@ public class personasDAO {
                 personasDTO Rdao = new personasDTO();
                 Rdao.setIdPersona(rs.getLong("idPersona"));
                 Rdao.setCorreoElectronico(rs.getString("correoElectronico"));
-                Rdao.setPais(rs.getString("pais"));
-                Rdao.setIdNacionalidad(rs.getString("idNacionalidad"));
+                Rdao.setIdCiudad(rs.getInt("idCiudad"));
+                Rdao.setIdNacionalidad(rs.getInt("idNacionalidad"));
                 Rdao.setNombres(rs.getString("nombres"));
                 Rdao.setApellidos(rs.getString("apellidos"));
                 Rdao.setFechaNto(rs.getString("fechaNto"));
                 Rdao.setTelefono(rs.getInt("telefono"));
                 Rdao.setContraseña(rs.getString("contraseña"));
-                Rdao.setIdestadousuarios(rs.getString("idestadousuarios"));
+                Rdao.setIdestadousuarios(rs.getInt("idestadousuarios"));
                 Rdao.setObservaciones(rs.getString("observaciones"));
                 Paginacion.add(Rdao);
 
@@ -414,7 +414,7 @@ public List<personasDTO> contarPersonas(String pais, String nombres) {
                     personasDTO producto = new personasDTO();
                     producto.setNombres(rs.getString("Nombre"));
                     producto.setApellidos(rs.getString("Apellido"));
-                    producto.setPais(rs.getString("nacionalidad"));
+                    producto.setIdCiudad(rs.getInt("nacionalidad"));
                     productos.add(producto);
                 }
             }

@@ -43,8 +43,8 @@ public class modificarRerserva extends HttpServlet {
            reserDAO dao = new reserDAO();
            
            to.setIdReserva(Integer.parseInt(request.getParameter("reser")));
-           to.setIdServicio(request.getParameter("ser"));
-           to.setIdTransporteLlegada(request.getParameter("aer"));
+           to.setIdServicio(Integer.parseInt(request.getParameter("ser")));
+           to.setIdTransporteLlegada(Integer.parseInt(request.getParameter("aer")));
            to.setResponsable(request.getParameter("res"));
            to.setFechaReserva(request.getParameter("fec"));
            to.setHoraReserva(request.getParameter("hora"));

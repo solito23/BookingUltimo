@@ -43,10 +43,10 @@ public class Reserva1 extends HttpServlet {
            reserDTO to = new reserDTO();
            reserDAO dao = new reserDAO();
            
-           to.setIdReserva(Integer.parseInt(request.getParameter("reser")));
-           to.setIdEstadoReserva(request.getParameter("estado"));
-           to.setIdServicio(request.getParameter("ser"));
-           to.setIdTransporteLlegada(request.getParameter("aer"));
+           
+           to.setIdEstadoReserva (1);
+           to.setIdServicio(Integer.parseInt(request.getParameter("ser")));
+           to.setIdTransporteLlegada(Integer.parseInt(request.getParameter("aer")));
            to.setResponsable(request.getParameter("res"));
            to.setFechaReserva(request.getParameter("fec"));
            to.setHoraReserva(request.getParameter("hora"));

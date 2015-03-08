@@ -84,7 +84,7 @@
         <td><%=so.getNombres()%></td>
         <td><%=so.getApellidos()%></td>
         <td><%=so.getFechaNto()%></td>
-        <td><%=so.getPais()%></td>
+        <td><%=so.getIdCiudad()%></td>
         <td><%=so.getIdNacionalidad()%></td>
         <td><%=so.getTelefono()%></td>
         <td><%=so.getContraseña()%></td>

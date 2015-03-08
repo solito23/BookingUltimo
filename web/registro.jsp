@@ -59,24 +59,28 @@
                                     </tr>    
                                     <tr>
                                         <td><label for="paisnac" class="labele"><strong>País <font color="#FF0000">* </strong></label></font></td>
-                                        <td><input name="paisnac" id="paisnac" style="width:250px; height:35px" placeholder="Seleccione país" autofocus required class="form-control inputtext" list="paises" tabindex="8" onChange="requisitos(paisnac)">
-                                            <datalist id="paises">
-                                                <option value="Argentina">Argentina</option>
-                                                <option value="Brasil">Brasil</option>
-                                                <option value="Chile">Chile</option>
-                                                <option value="Colombia">Colombia</option>
-                                                <option value="Ecuador">Ecuador</option>
-                                                <option value="Perú">Perú</option>
-                                            </datalist>
+                                        <td>
+                                            <%--<input name="paisnac" id="paisnac" style="width:250px; height:35px" placeholder="Seleccione país" autofocus required class="form-control inputtext" list="paises" tabindex="8" onChange="requisitos(paisnac)">--%>
+                                            <select id="paises" name="paisnac" id="paisnac" style="width:250px; height:35px" autofocus required class="form-control inputtext" list="paises" tabindex="8" >
+                                                <option value="1">Colombia</option>
+                                                <option value="2">España</option>
+                                                <option value="3">Peru</option>
+                                                <option value="4">Japon</option>
+                                                <option value="5">Ecuador</option>
+                                                <option value="6">Alemania</option>
+                                            </select>
                                         </td>
                                     <td><label for="ciunac" class="labele"><strong>Ciudad<font color="#FF0000">*</strong></label></font></td>
-                                    <td><input name="ciunac" id="ciunac" style="width:250px; height:35px" placeholder="Seleccione ciudad" autofocus required class="form-control inputtext"  list="ciudades" tabindex="9" size="30" onChange="requisitos(ciunac)">
-                                        <datalist id="ciudades">
-                                            <option value="Bogota">Bogota</option>
-                                            <option value="Cali">Cali</option>
-                                            <option value="Medellin">Medellin</option>
-                                            <option value="Barranquilla">Barranquilla</option>
-                                        </datalist>
+                                    <td>
+                                        <%--<input name="ciunac" id="ciunac" style="width:250px; height:35px" placeholder="Seleccione ciudad" autofocus required class="form-control inputtext"  list="ciudades" tabindex="9" size="30" onChange="requisitos(ciunac)">--%>
+                                        <select id="ciudades" name="ciunac" id="ciunac" style="width:250px; height:35px" autofocus required class="form-control inputtext"  list="ciudades" tabindex="9">
+                                            <option value="1">Bogota</option>
+                                            <option value="2">Madrid</option>
+                                            <option value="3">Lima</option>
+                                            <option value="4">Tokio</option>
+                                            <option value="5">Quito</option>
+                                            <option value="6">Berlin</option>
+                                        </select>
                                     </td>
                                     <td nowrap>&nbsp;</td>
                                     <td>&nbsp;</td>

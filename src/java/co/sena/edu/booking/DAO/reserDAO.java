@@ -78,8 +78,8 @@ public class reserDAO {
                     + ",direccionDestino=?  WHERE IdReserva = ?; ");
          
             
-            pstmt.setString(1, resert.getIdServicio());
-            pstmt.setString(2, resert.getIdTransporteLlegada());
+            pstmt.setInt(1, resert.getIdServicio());
+            pstmt.setInt(2, resert.getIdTransporteLlegada());
             pstmt.setString(3, resert.getResponsable());           
             pstmt.setString(4, resert.getHoraReserva());
             pstmt.setString(5, resert.getFechaReserva());
@@ -135,9 +135,9 @@ public class reserDAO {
             int resultado = 0;
             pstmt = cnn.prepareStatement("INSERT INTO reservas VALUES (?,?,?,?,?,?,?,?);");            
             pstmt.setInt(1, rdto.getIdReserva());
-            pstmt.setString(2, rdto.getIdEstadoReserva());
-            pstmt.setString(3, rdto.getIdServicio());
-            pstmt.setString(4, rdto.getIdTransporteLlegada());
+            pstmt.setInt(2, rdto.getIdEstadoReserva());
+            pstmt.setInt(3, rdto.getIdServicio());
+            pstmt.setInt(4, rdto.getIdTransporteLlegada());
             pstmt.setString(5, rdto.getResponsable());            
             pstmt.setString(6, rdto.getFechaReserva());
             pstmt.setString(7, rdto.getHoraReserva());
@@ -179,9 +179,9 @@ public class reserDAO {
        while (rs.next()){
            reserDTO Rdao = new reserDTO();
              Rdao.setIdReserva(rs.getInt("idReserva"));
-                   Rdao.setIdEstadoReserva(rs.getString("idEstadoReserva"));
-                   Rdao.setIdServicio(rs.getString("idServicio"));
-                   Rdao.setIdTransporteLlegada(rs.getString("idTransporteLlegada"));
+                   Rdao.setIdEstadoReserva(rs.getInt("idEstadoReserva"));
+                   Rdao.setIdServicio(rs.getInt("idServicio"));
+                   Rdao.setIdTransporteLlegada(rs.getInt("idTransporteLlegada"));
                    Rdao.setResponsable(rs.getString("responsable"));                
                    Rdao.setFechaReserva(rs.getString("fechaReserva"));
                    Rdao.setHoraReserva(rs.getString("horaReserva"));
@@ -207,9 +207,9 @@ public class reserDAO {
        while (rs.next()){
            reserDTO Rdao = new reserDTO();
              Rdao.setIdReserva(rs.getInt("idReserva"));
-                   Rdao.setIdEstadoReserva(rs.getString("idEstadoReserva"));
-                   Rdao.setIdServicio(rs.getString("idServicio"));
-                   Rdao.setIdTransporteLlegada(rs.getString("idTransporteLlegada"));
+                   Rdao.setIdEstadoReserva(rs.getInt("idEstadoReserva"));
+                   Rdao.setIdServicio(rs.getInt("idServicio"));
+                   Rdao.setIdTransporteLlegada(rs.getInt("idTransporteLlegada"));
                    Rdao.setResponsable(rs.getString("responsable"));                
                    Rdao.setFechaReserva(rs.getString("fechaReserva"));
                    Rdao.setHoraReserva(rs.getString("horaReserva"));
@@ -235,9 +235,9 @@ public class reserDAO {
                while(rs.next()){
                  
                    Rdao.setIdReserva(rs.getInt("idReserva"));
-                   Rdao.setIdEstadoReserva(rs.getString("idEstadoReserva"));
-                   Rdao.setIdServicio(rs.getString("idServicio"));
-                   Rdao.setIdTransporteLlegada(rs.getString("idTransporteLlegada"));
+                   Rdao.setIdEstadoReserva(rs.getInt("idEstadoReserva"));
+                   Rdao.setIdServicio(rs.getInt("idServicio"));
+                   Rdao.setIdTransporteLlegada(rs.getInt("idTransporteLlegada"));
                    Rdao.setResponsable(rs.getString("responsable"));                
                    Rdao.setFechaReserva(rs.getString("fechaReserva"));
                    Rdao.setHoraReserva(rs.getString("horaReserva"));
