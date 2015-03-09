@@ -6,6 +6,7 @@
 package co.sena.edu.booking.DAO;
 
 import cao.sena.edu.booking.util.reserConex;
+import co.sena.edu.booking.DTO.ciudadesDTO;
 import java.sql.Connection;
 import co.sena.edu.booking.DTO.nacionalidadesDTO;
 import java.sql.PreparedStatement;
@@ -154,6 +155,33 @@ public List <nacionalidadesDTO> listarNacionalidades () throws SQLException{
         
     }return listarNacionalidades;
 }  
+
+ public LinkedList<ciudadesDTO> listarCiudades(int Nacionalidad)  {
+        LinkedList<ciudadesDTO> listaCiu = new LinkedList<>();
+        try {
+            String query = "SELECT  idCiudad , Ciudad , idNacionalidad  "                    
+                    + " FROM ciudades "
+                    + " WHERE idNacionalidad=?";
+            pstmt = cnn.prepareStatement(query);
+            pstmt.setInt(1, Nacionalidad);
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                ciudadesDTO ciu = new ciudadesDTO();
+                ciu.setIdCiudad(rs.getString("idCiudad"));
+                ciu.setCiudad(rs.getString("Ciudad"));
+                ciu.setidNacionalidad(rs.getString("idNacionalidad"));
+                listaCiu.add(ciu);
+            }
+        } catch (SQLException ex) {
+           System.out.println("Ocurrio un error" + ex.getMessage());
+        } finally {
+            
+        }
+
+        return listaCiu;
+    }
+
 public String eliminar(nacionalidadesDTO nacionali) {
         try {
             

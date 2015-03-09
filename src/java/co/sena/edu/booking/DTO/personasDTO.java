@@ -23,16 +23,7 @@ public class personasDTO {
     private int idestadousuarios;
     private String observaciones;
 
-    @Override
-    public String toString() {
-        return "personasDTO{" + "idPersona=" + getIdPersona() + ","
-                + " correoElectronico=" + getCorreoElectronico() + 
-                ", pais=" + getIdCiudad() + ", idNacionalidad=" + getIdNacionalidad() + 
-                ", nombres=" + getNombres() + ", apellidos=" + getApellidos() + ", "
-                + "fechaNto=" + getFechaNto() + ", telefono=" + getTelefono() + ", "
-                + "contrase\u00f1a=" + getContraseña() + ", idestadousuarios=" + 
-                getIdestadousuarios() + ", observaciones=" + getObservaciones() + '}';
-    }
+    
 
     /**
      * @return the idPersona

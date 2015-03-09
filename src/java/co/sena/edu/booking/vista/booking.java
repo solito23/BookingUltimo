@@ -203,7 +203,7 @@ public class booking {
                 System.out.println("ciudad");
                 ciud.setCiudad(in.next());
                 System.out.println("id");
-                ciud.setidPais(in.next());
+                ciud.setidNacionalidad(in.next());
                 System.out.println(ciu.crearCiudad(ciud));
                 break;
             case 7:

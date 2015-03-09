@@ -101,7 +101,7 @@
                                                         </datalist>                                               
                                                    
                                          <td><label for="ciunac" class="labele">Ciudad<font color="#FF0000"></label></td>
-                                         <td><input name="ciunac" id="ciunac"value="<%=persona.getPais()%>" style="width:250px; height:30px"  list="ciudades" readonly="readonly"  autofocus required class="form-control inputtext"></td>
+                                         <td><input name="ciunac" id="ciunac"value="<%=persona.getIdCiudad()%>" style="width:250px; height:30px"  list="ciudades" readonly="readonly"  autofocus required class="form-control inputtext"></td>
                                         <datalist id="ciudades">
                                                     <option label="BOG">Bogota</option>
                                                     <option label="CLO">Cali</option>

@@ -13,7 +13,7 @@ public class ciudadesDTO {
     
     private String idCiudad;
     private String Ciudad;
-    private String idPais;
+    private String idNacionalidad;
 
     /**
      * @return the idCiudad
@@ -46,20 +46,20 @@ public class ciudadesDTO {
     /**
      * @return the Pais_idPais
      */
-    public String getidPais() {
-        return idPais;
+    public String getidNacionalidad() {
+        return idNacionalidad;
     }
 
     /**
-     * @param idPais the Pais_idPais to set
+     * @param idNacionalidad the Pais_idPais to set
      */
-    public void setidPais(String idPais) {
-        this.idPais = idPais;
+    public void setidNacionalidad(String idNacionalidad) {
+        this.idNacionalidad = idNacionalidad;
     }
     @Override
  public String toString (){
      return "idCiudad  "+this.idCiudad
              +"\nCiudad "+this.Ciudad
-             +"\nidPais "+ this.idPais;
+             +"\nidPais "+ this.idNacionalidad;
  }
 }

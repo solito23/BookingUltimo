@@ -394,7 +394,7 @@ public List<personasDTO> contarPersonas(String pais, String nombres) {
         ArrayList<personasDTO> productos = new ArrayList();
         try {
             StringBuilder sb = new StringBuilder("select p.nombres as Nombre, p.apellidos as Apellido, "
-                    + "c.nacionalidad as nacionalidad "
+                    + "c.Nacionalidad as Nacionalidad "
                     + "from personas as p join "
                     + "nacionalidades as c on"
                     + " p.idNacionalidad = c.idNacionalidad ");
@@ -403,10 +403,10 @@ public List<personasDTO> contarPersonas(String pais, String nombres) {
                 sb.append("AND p.nombres LIKE '").append(pais).append("%'");
             }
             if (nombres!= null) {
-                sb.append("AND c.nacionalidad LIKE '").append(nombres).append("%'");
+                sb.append("AND c.Nacionalidad LIKE '").append(nombres).append("%'");
             }
 
-            sb.append("order by nacionalidad desc limit 0,10");
+            sb.append("order by Nacionalidad desc limit 0,10");
             pstmt = cnn.prepareStatement(sb.toString());
             rs = pstmt.executeQuery();
             if (rs != null) {
@@ -414,7 +414,7 @@ public List<personasDTO> contarPersonas(String pais, String nombres) {
                     personasDTO producto = new personasDTO();
                     producto.setNombres(rs.getString("Nombre"));
                     producto.setApellidos(rs.getString("Apellido"));
-                    producto.setIdCiudad(rs.getInt("nacionalidad"));
+                    producto.setIdCiudad(rs.getInt("Nacionalidad"));
                     productos.add(producto);
                 }
             }

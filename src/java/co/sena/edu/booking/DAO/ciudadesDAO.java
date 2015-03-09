@@ -36,10 +36,10 @@ public class ciudadesDAO {
      public String actualizarRegistro(ciudadesDTO ciudad) {
 
         try {
-    pstm = cnn.prepareStatement("UPDATE ciudades SET  ciudad =?, idPais=?  where idciudad=?;");
+    pstm = cnn.prepareStatement("UPDATE ciudades SET  ciudad =?, idNacionalidad=?  where idciudad=?;");
           
             pstm.setString(1, ciudad.getCiudad());
-            pstm.setString(2, ciudad.getidPais());
+            pstm.setString(2, ciudad.getidNacionalidad());
             pstm.setString(3, ciudad.getIdCiudad());
             
             ciu= pstm.executeUpdate();
@@ -75,7 +75,7 @@ public class ciudadesDAO {
             pstm = cnn.prepareStatement("INSERT INTO ciudades VALUES ( ?, ?, ?)");
             pstm.setString(1, newCiudad.getIdCiudad());
             pstm.setString(2, newCiudad.getCiudad());
-            pstm.setString(3, newCiudad.getidPais());
+            pstm.setString(3, newCiudad.getidNacionalidad());
            
             resultado = pstm.executeUpdate();
 
@@ -117,7 +117,7 @@ public class ciudadesDAO {
                 ciudadesDTO newCiudad = new ciudadesDTO();
                 newCiudad.setIdCiudad(rs.getString("id"));
                 newCiudad.setCiudad(rs.getString("ciudad"));
-                newCiudad.setidPais(rs.getString("pais"));
+                newCiudad.setidNacionalidad(rs.getString("pais"));
                 listaciudades.add(newCiudad);
             }
         } catch (SQLException ex) {
@@ -140,7 +140,7 @@ public class ciudadesDAO {
            ciudadesDTO reser = new ciudadesDTO();
                reser.setIdCiudad(rs.getString("idCiudad"));
                    reser.setCiudad(rs.getString("ciudad"));
-                   reser.setidPais(rs.getString("idPais"));
+                   reser.setidNacionalidad(rs.getString("idPais"));
                    listarCiudades.add(reser);
        }
        
@@ -163,7 +163,7 @@ public String  ListarUno (ciudadesDTO Rdao) throws SQLException{
                  while(rs.next()){
                    Rdao.setIdCiudad(rs.getString("idCiudad"));
                    Rdao.setCiudad(rs.getString("Ciudad"));
-                   Rdao.setidPais(rs.getString("idPais"));
+                   Rdao.setidNacionalidad(rs.getString("idPais"));
                    
                    
                }
