@@ -386,23 +386,25 @@ main
     box-shadow: 0 3px 5px #000;
 }
 .idioma{
+    text-align: center;
     width:100%;
     background: #0C4391;
-    height: 30px; 
+    height:70px; 
     margin-top:15%; 
     padding-top:5px; 
     border-radius:3px;
-    color:#e2c60f;
+    color:white;
    
 }
 .idioma1{
+    text-align: center;
     width:100%;
     background: #0C4391;
-    height: 30px; 
+    height: 60px; 
     margin-top:6%; 
     padding-top:5px; 
     border-radius:3px;
-    color:#e2c60f;
+    color:white;
 }
 .idioma3{
     width:100%;
@@ -503,7 +505,7 @@ div.pager span.active {
     text-decoration: none;
 }
 .pagination a:hover, .pagination .active a {
-    background-color: #F5F5F5;
+    background-color: #9F9D9D ;
 }
 .pagination .active a {
     color: #999999;

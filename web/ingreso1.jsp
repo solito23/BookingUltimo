@@ -48,8 +48,15 @@
 <%
  }
 %>
-<div class="idioma"> 
-    <img src="imagenes/dddd.png"><a href="verificarRegistro1.jsp">English</a> ||  <img src="imagenes/original.jpg"><a href="verificarRegistro.jsp">Spanish</a>
-</div>
+<div class="idioma">
+        <span>Booking Routers &copy; 2015</span><br>
+        Integrantes :<span class="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Yilber Hernandez 
+        <span class="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Cristian Moreno 
+        <span class="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Sergio Stiven Urbiba
+        
+       <span class="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Andres Feipe Guerrero<br>
+       <img src="imagenes/dddd.png"><a href="ingreso1.jsp" style=" color: #ffffff; text-decoration: none;"  >English</a> --  <img src="imagenes/original.jpg"><a href="ingreso.jsp" style=" color: #ffffff; text-decoration: none;" >Spanish</a>
+   
+ </div>
 </body>
 </html>
