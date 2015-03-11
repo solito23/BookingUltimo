@@ -7,6 +7,7 @@
 package Controlador;
 
 import co.sena.edu.booking.DAO.personasDAO;
+import co.sena.edu.booking.DTO.listarPersonasDTO;
 import co.sena.edu.booking.DTO.personasDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -36,13 +37,13 @@ public class buscarPersona extends HttpServlet {
             throws ServletException, IOException {
          if (request.getParameter("buscar") != null) {
             
-            ArrayList<personasDTO> productos = new ArrayList();
+            ArrayList<listarPersonasDTO> productos = new ArrayList();
            personasDAO cDao = new personasDAO();
             
             String producto = request.getParameter("producto");
             String categoria = request.getParameter("categoria");
             
-            productos = (ArrayList<personasDTO>) cDao.contarPersonas(producto, categoria);
+            productos = (ArrayList<listarPersonasDTO>) cDao.contarPersonas(producto, categoria);
             request.setAttribute("productos", productos);
             RequestDispatcher rd = request.getRequestDispatcher("/listarPersonas.jsp");
             rd.forward(request, response);      

@@ -9,6 +9,7 @@
 package co.sena.edu.booking.DAO;
 
 import cao.sena.edu.booking.util.reserConex;
+import co.sena.edu.booking.DTO.listarPersonasDTO;
 import co.sena.edu.booking.DTO.nacionalidadesDTO;
 import co.sena.edu.booking.DTO.personasDTO;
 import java.sql.Connection;
@@ -390,31 +391,28 @@ public String EnviarCorreo(String Correo){
             }
        return clave;  
 }  
-public List<personasDTO> contarPersonas(String pais, String nombres) {
-        ArrayList<personasDTO> productos = new ArrayList();
+public List<listarPersonasDTO> contarPersonas(String  nacionalidad, String nombres) {
+        ArrayList<listarPersonasDTO> productos = new ArrayList();
         try {
-            StringBuilder sb = new StringBuilder("select p.nombres as Nombre, p.apellidos as Apellido, "
-                    + "c.Nacionalidad as Nacionalidad "
-                    + "from personas as p join "
-                    + "nacionalidades as c on"
-                    + " p.idNacionalidad = c.idNacionalidad ");
+            StringBuilder sb = new StringBuilder("select p.nombres, p.apellidos, c.nacionalidad "
+                    + "from personas p inner join nacionalidades c on p.idNacionalidad = c.idNacionalidad ");
 
-            if (pais != null) {
-                sb.append("AND p.nombres LIKE '").append(pais).append("%'");
+            if (nacionalidad != null) {
+                sb.append("AND c.nacionalidad LIKE '").append(nacionalidad).append("%'");
             }
             if (nombres!= null) {
-                sb.append("AND c.Nacionalidad LIKE '").append(nombres).append("%'");
+                sb.append("AND p.nombres LIKE '").append(nombres).append("%'");
             }
 
-            sb.append("order by Nacionalidad desc limit 0,10");
+            sb.append("order by nacionalidad desc limit 0,10");
             pstmt = cnn.prepareStatement(sb.toString());
             rs = pstmt.executeQuery();
             if (rs != null) {
                 while (rs.next()) {
-                    personasDTO producto = new personasDTO();
-                    producto.setNombres(rs.getString("Nombre"));
-                    producto.setApellidos(rs.getString("Apellido"));
-                    producto.setIdCiudad(rs.getInt("Nacionalidad"));
+                    listarPersonasDTO producto = new listarPersonasDTO();
+                    producto.setNombres(rs.getString("nombres"));
+                    producto.setApellidos(rs.getString("apellidos"));
+                    producto.setNacionalidad(rs.getString("nacionalidad"));
                     productos.add(producto);
                 }
             }
