@@ -216,7 +216,7 @@ public class personasDAO {
         try {
             
             pstmt = cnn.prepareStatement("select idPersona, correoElectronico, idCiudad, idNacionalidad, "
-                    + " nombres, apellidos, fechaNto, telefono, contraseña, idestadousuarios, observaciones from personas limit "+(pg-1)*limited+","+limited+";");
+                    + " nombres, apellidos, fechaNto, telefono, contraseña, idestadousuarios, observaciones from personas order by Nombres asc limit "+(pg-1)*limited+","+limited+";");
             rs = pstmt.executeQuery();
 
             while (rs.next()) {

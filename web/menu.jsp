@@ -8,6 +8,14 @@
 	<script  src="jquery/jquery.js"></script>
 	<script src="jquery/jquery.validate.js"></script>
 	<script src="jquery/additional-methods.js"></script>
+        <script type="javascript">
+
+            window.onBeforeUnload = cierraSesion;
+            function cierraSesion(){
+            location.href="menu.jsp";
+            }
+
+</script>
 <meta charset="utf-8">
 <link rel="shortcut icon" href="imagenes/br.ico" />
 <title>..::Booking Routers::..</title>
@@ -31,23 +39,15 @@
                             <ul class="submain">
                                 <li><a href="actualizarDatos1.jsp" style="text-decoration: none;">Mis Datos</a></li>
                                 <li><a href="cambiarContraseña.jsp" style="text-decoration: none;">Cambiar Contraseña</a> </li>
-                                </ul>
+                                <li><a href="" style="text-decoration: none;">Cerrar sesion</a> </li>
+    
+                            </ul>
                      </li>  
                      <center>
                      <table>
-                     <tr>
-                     <td colspan="2">
-            <% if(request.getParameter("msg") != null) {%>
-            <% if(!request.getParameter("msg").equals("")) { %> 
-           <div class="alert alert-success" role="alert">
-            <%= request.getParameter("msg") %>
-            </div>
-            <%}%>
-            <%}%> 
-            </tr>
+                     
                      </table>
             </center>
-           
                        
          
 </ul>
@@ -79,9 +79,23 @@
 <div class="foto">
 <img id="foto" src="imagenes/user.jpg">
 </div>
-<h6>Ultima Conexion: 20/09/2014 10.25</h6>
-
+<div class="nombre">
+<td><input type="text" value="USUARIO" style="width:166px; height:25px; text-align:center; text-transform:uppercase;"  autofocus disabled  class="form-control inputtext">
+</td>
 </div>
+</div>
+
+<tr>
+                     <td colspan="4">
+            <% if(request.getParameter("msg") != null) {%>
+            <% if(!request.getParameter("msg").equals("")) { %> 
+           <div class="alert alert-success" role="alert">
+            <%= request.getParameter("msg") %>
+            </div>
+            <%}%>
+            <%}%> 
+            </tr>
+            
 <div class="novedades">
 <h4>Novedades</h4>
 <h6>_________________________________________________________</h6>
@@ -93,13 +107,19 @@
 
 <span class="glyphicon glyphicon-euro"> </span> &nbsp; $2900 &nbsp; <span class="glyphicon glyphicon-arrow-up"> </span> 
 </div>
+
 </div>
           
-   
+  <div style="width:100%; background: #0C4391; height: 30px; margin-top:10px; padding-top:5px; border-radius:3px;color:#e2c60f; margin-bottom:1%; float:left; text-align: center;height:70px;color:white;">
+        <span>Booking Routers &copy; 2015</span><br>
+        Integrantes :<span class="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Yilber Hernandez 
+        <span classs="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Cristian Moreno 
+        <span class="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Sergio Stiven Urbiba
+        <span class="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Andres Feipe Guerrero<br>
+        <img src="imagenes/dddd.png"><a href="menu1.jsp" style=" color: #ffffff; text-decoration: none;"  >English</a> --  <img src="imagenes/original.jpg"><a href="menu.jsp" style=" color: #ffffff; text-decoration: none;" >Spanish</a>
 
-<div style="width:100%; background: #0C4391; height: 30px; margin-top:10px; padding-top:5px; border-radius:3px;color:#e2c60f; margin-bottom:1%; float:left">
-    <img src="imagenes/dddd.png"><a href="menu1.jsp">English</a> ||  <img src="imagenes/original.jpg"><a href="menu.jsp">Spanish</a>
 </div>
+
  <%
    }
  %>

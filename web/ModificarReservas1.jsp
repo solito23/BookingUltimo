@@ -41,17 +41,16 @@
 <div class="ba">
       <h1> My Reservations</h1>
 </div>
-<table border="6" class="paginated" id="divTabla">
+<table border="1" class="paginated" id="divTabla">
     <tr>
-        <th style="background: #0C4391;">id Reserve</th>
-     
-        <th style="background: #0C4391;">id Service</th>
-        <th style="background: #0C4391;">id TransportArrival</th>
-        <th style="background: #0C4391;">Responsible</th>
-        <th style="background: #0C4391;">Date Reserve</th>
-        <th style="background: #0C4391;">Time Reserve</th>
-        <th style="background: #0C4391;">Direction Destination</th>
-        <th style="background: #0C4391;">Remove</th>
+        <th st-ratio="20" st-sort="idReserva">idReserva</th>
+        <th st-ratio="20" st-sort="idServicio">idServicio</th>
+        <th st-ratio="20" st-sort="idTrasnporteLlegada">idTrasnporteLlegada</th>
+        <th st-ratio="20" st-sort="responsable">responsable</th>
+        <th st-ratio="20" st-sort="fechaReserva">fechaReserva</th>
+        <th st-ratio="20" st-sort="horaReserva">horaReserva</th>
+        <th st-ratio="20" st-sort="direccionDestino">direccionDestino</th>
+        <th st-ratio="20" st-sort="Modificar">Modificar</th>
     </tr>
     <%
       for(reserDTO so: misReservas){
@@ -75,8 +74,18 @@
     }
     %>
 </table>
-<div style="width:100%; background: #0C4391; height: 30px; margin-top:10px; padding-top:5px; border-radius:3px;color:#e2c60f; margin-bottom:1%; float:left">
-    <img src="imagenes/dddd.png"><a href="ModificarReservas1.jsp">English</a> ||  <img src="imagenes/original.jpg"><a href="ModificarReservas.jsp">Spanish</a>
+<br>
+<br>
+<br>
+<br>
+<div style="width:100%; background: #0C4391; height: 30px; margin-top:10px; padding-top:5px; border-radius:3px;color:#e2c60f; margin-bottom:1%; float:left; text-align: center;height:70px;color:white;">
+        <span>Booking Routers &copy; 2015</span><br>
+        Integrantes :<span class="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Yilber Hernandez 
+        <span classs="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Cristian Moreno 
+        <span class="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Sergio Stiven Urbiba
+        <span class="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Andres Feipe Guerrero<br>
+        <img src="imagenes/dddd.png"><a href="ModificarReservas1.jsp" style=" color: #ffffff; text-decoration: none;"  >English</a> --  <img src="imagenes/original.jpg"><a href="ModificarReservas.jsp" style=" color: #ffffff; text-decoration: none;" >Spanish</a>
+
 </div>
 
 </table>

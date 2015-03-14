@@ -52,7 +52,7 @@
                     </tr>
                     <tr>
                         <td><label for="doc" class="labele"><strong>Documento <font color="#FF0000">*</strong></label></font></td>
-                        <td><input name="doc" type="number" style="width:250px; height:30px" autofocus id="doc" placeholder="Doc Identidad" required class="form-control inputtext" tabindex="3" onChange="requisitos(doc)" minlenght=8></td>    
+                        <td><input name="doc" type="text" style="width:250px; height:30px" autofocus id="doc" placeholder="Doc Identidad" required class="form-control inputtext" tabindex="3" onChange="requisitos(doc)" minlenght=8></td>    
                         <td><label for="date" class="labele"><strong>Fecha Nacimiento<font color="#FF0000">* </strong></label></font></td>
                         <td><input name="date" type="date" id="date" style="width:250px; height:25px" required class="form-control inputtext" tabindex="4" onChange="edad(date)"></td>    
                     </tr>
@@ -117,8 +117,14 @@
             </form>
 
         </div> 
-        <div class="idioma1">
-            <img src="imagenes/dddd.png"><a href="registro1.jsp">English</a> ||  <img src="imagenes/original.jpg"><a href="ingreso.jsp">Spanish</a>
-        </div>
+                            <div style="width:100%; background: #0C4391; height: 30px; margin-top:10px; padding-top:5px; border-radius:3px;color:#e2c60f; margin-bottom:1%; float:left; text-align: center;height:70px;color:white;">
+                                <span>Booking Routers &copy; 2015</span><br>
+                                Integrantes :<span class="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Yilber Hernandez 
+                                <span classs="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Cristian Moreno 
+                                <span class="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Sergio Stiven Urbiba
+                                <span class="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Andres Feipe Guerrero<br>
+                                <img src="imagenes/dddd.png"><a href="registro1.jsp" style=" color: #ffffff; text-decoration: none;"  >English</a> --  <img src="imagenes/original.jpg"><a href="registro.jsp" style=" color: #ffffff; text-decoration: none;" >Spanish</a>
+
+                            </div>
     </body>
     <html>

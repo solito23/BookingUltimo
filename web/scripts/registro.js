@@ -44,6 +44,14 @@ else {
 	vcon.value="";
 }
 }
+function Eliminar(){
+
+	alert('Decea Eliminar Este Usuario!!');
+	con.style.border="1px solid green";
+	vcon.style.border="1px solid green";
+        
+}
+
 
 function validar(){
 	if (nombres.value==""){		

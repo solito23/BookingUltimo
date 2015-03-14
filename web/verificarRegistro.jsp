@@ -31,7 +31,7 @@
 <body>
 <div class ="contenedor">
 <div class="banner"> 
-<p><a href="Index.html"><img src="imagenes/Logo.png" alt="Booking Routers" width="1360" height="126" title="Forget the rest, call the best"  /></a></p>
+    <p><a href="Index.html"><img src="imagenes/Logo.png" alt="Booking Routers" width="1360" height="126" title="Forget the rest, call the best"  /></a></p>
 </div>
     <nav>
     <ul id="main">
@@ -56,13 +56,16 @@
      </li>
   </ul>
 </li>
+ <li><div align="center"><a href="Index.html" style="text-decoration: none;">Cerrar sesion</li></a>
  </ul>
         </nav>
 <center>
     <%
      personasDTO  per= new personasDTO();
-     personasDAO pers = new personasDAO(); 
+     personasDAO pers = new personasDAO();
+     personasDTO persona = null;
      ArrayList<personasDTO> misPersonas= new ArrayList();
+     persona = pers.ListarUnaPersona(per.getIdPersona());                                       
      int numreg = pers.contarRegistros();
      int numpg = numreg/5;  
      int pg =0; //pagona a mostrar
@@ -71,24 +74,40 @@
      }else{
      pg=Integer.valueOf(request.getParameter("pg"));
      }
-     misPersonas =(ArrayList<personasDTO>) pers.Paginacion(pg,5);      
+     misPersonas =(ArrayList<personasDTO>) pers.Paginacion(pg,3);      
      %>  
       
+
+     
 <div class="ba">
 <h1><center>Registrados</center></h1>
+</div>
+ <br>     
+     <div class="lateral">
+ <h4>Bienvenido</h4>
+<div class="nombre">
+<td><input type="text" value="Yilber Fabian" style="width:166px; height:25px; text-align:center; text-transform:uppercase;"  autofocus disabled  class="form-control inputtext">
+</td>
+</div>
+<div class="foto">
+<img id="foto" src="imagenes/user.jpg">
+</div>
+<div class="nombre">
+<td><input type="text" value="ADMINISTRADOR" style="width:166px; height:25px; text-align:center; text-transform:uppercase;"  autofocus disabled  class="form-control inputtext">
+</td>
+</div>
 </div>
      <br>
      <div class="busqueda">
 			<span style="font-weight:bold;">Búsqueda:&nbsp;</span>
 			<input id="inputFiltro" type="text" />
 		</div>
-      <table border="1"  class="paginated" id="divTabla" >
+      <table border="1" border="6" class="paginated" id="divTabla" >
           <thead>
           <tr id="titulo">
         <th st-ratio="20" st-sort="cedula">CEDULA</th>
         <th st-ratio="20" st-sort="nombres">NOMBRES</th>
         <th st-ratio="20" st-sort="apellidos">APELLIDOS</th>
-        <th st-ratio="20" st-sort="fechanto">FECHANTO</th>
         <th st-ratio="20" st-sort="ciudad">CIUDAD</th>
         <th st-ratio="20" st-sort="pais">PAIS</th>
         <th st-ratio="20" st-sort="telefono">TELEFONO</th>
@@ -107,13 +126,12 @@
         <td data-sortable="true"><%=so.getIdPersona()%></td>
         <td data-sortable="true"><%=so.getNombres()%></td>
         <td data-sortable="true"><%=so.getApellidos()%></td>
-        <td data-sortable="true"><%=so.getFechaNto()%></td>
         <td data-sortable="true"><%=so.getIdCiudad()%></td>
         <td data-sortable="true"><%=so.getIdNacionalidad()%></td>
         <td data-sortable="true"><%=so.getTelefono()%></td>
         <td data-sortable="true"><%=so.getCorreoElectronico()%></td>
         <td><a href="Controlador?id=<%=so.getIdPersona()%>"><img src="imagenes/Eliminar.png" align="middle" width="32" height="32" title="Eliminar"></a></td>
-        <td><a href="Controlador?idPersona=<%=so.getIdPersona()%>"><img src="imagenes/user.jpg" align="middle" width="32" height="32" title="Verificar"></a></td>
+        <td><a href="Controlador?idPersona=<%=so.getIdPersona()%>"><img src="imagenes/user.jpg" align="middle" width="32" height="32" title="Verificar" onclick="contrase()"></a></td>
     </tr>
      </tbody>
 <%
