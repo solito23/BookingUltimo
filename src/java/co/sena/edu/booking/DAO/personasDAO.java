@@ -343,7 +343,7 @@ public String getHTMLAll(String Id) throws SQLException {
             String query = "SELECT  idPersona as Id,CONCAT(nombres ,  '  ' , apellidos )  as cliente" +"FROM personas" ;
             pstmt = cnn.prepareStatement(query);
             rs = pstmt.executeQuery();
-
+            
             while (rs.next()) {
                 String idRes = rs.getString("id");
                 HTMLTipos =HTMLTipos + " <option value='"+rs.getString("id")+"' "+ (Id.equals(idRes) ? "selected":"") +" >"+ rs.getString("cliente") +"</option>";

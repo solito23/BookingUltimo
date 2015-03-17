@@ -271,7 +271,7 @@ public String crearRuta(rutasDTO newRuta)throws SQLException{
      
      try {
 
-            String query = "select placaVehiculo,idRuta, concat(tipoVehiculo,'-',modelo,'-',marca) as TipoVehiculo,concat(p.pais,'-',p.nombres,' ',p.apellidos) as cliente,concat(c.idConductor,' ',pc.nombres,' ',pc.apellidos) as conductor,direccionDestino as reserva " 
+            String query = "select placaVehiculo,idRuta, concat(tipoVehiculo,'-',modelo,'-',marca) as TipoVehiculo,concat(p.nombres,' ',p.apellidos) as cliente,concat(c.idConductor,' ',pc.nombres,' ',pc.apellidos) as conductor,direccionDestino as reserva " 
                     + "from  rutas r inner join tipovehiculos tv on r.idtipoVehiculo = tv.idtipoVehiculo inner join  personas p on r.idPersona = p.idPersona inner join conductores c on r.idConductor = c.idConductor inner join reservas rr on r.idreserva = rr.idReserva inner join personas pc on c.idPersona = pc.idPersona"; 
             pstmt = cnn.prepareStatement(query);
             rs = pstmt.executeQuery();
