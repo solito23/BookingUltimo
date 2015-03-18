@@ -16,9 +16,9 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author user
+ * @author Sena
  */
-public class EnviarCorreo extends HttpServlet {
+public class EnviarCorreos extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,19 +31,38 @@ public class EnviarCorreo extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
         response.setContentType("text/html;charset=UTF-8");
-        personasDTO per = new personasDTO();
-        String correo = request.getParameter("correo");
-        
-        personasDAO pers = new personasDAO();
-        String clave=pers.EnviarCorreo("correo");
-        boolean envio=Correo.sendMail("asunto del mensaje",clave, correo);
-        
-        if (envio) {
-            response.sendRedirect("RecuperarContra.jsp?ms=enviado");
-        }else{
-            response.sendRedirect("RecuperarContra.jsp?ms=noenviado");
+        PrintWriter out = response.getWriter();
+        try {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet EnviarCorreos</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet EnviarCorreos at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
+
+            // response.setContentType("text/html;charset=UTF-8");
+            personasDTO per = new personasDTO();
+            String correo = request.getParameter("correo").trim();
+
+            personasDAO pers = new personasDAO();
+            String clave = pers.EnviarCorreo(correo);
+            out.println(correo +" -> "+clave);
+            
+            boolean sal
+                    = Correo.sendMail("Recuperacion de Contraseña Booking Routers", clave, correo);
+            if (sal) {
+                response.sendRedirect("RecuperarContra.jsp?ms=enviado");
+            } else {
+                response.sendRedirect("RecuperarContra.jsp?ms=noenviado");
+            }
+        } catch (Exception ex) {
+            out.println(ex.getMessage());
+
         }
     }
 
@@ -85,5 +104,4 @@ public class EnviarCorreo extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
 }

@@ -1,15 +1,9 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Controlador;
-
-/**
- *
- * @author Correo
- * @author Booking Routers
- */
 
 import java.security.Security;
 import java.util.Properties;
@@ -20,7 +14,6 @@ import javax.mail.Session;
 import javax.mail.Transport;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
-
 
 /**
  * @author
@@ -63,7 +56,8 @@ Properties propiedad = new Properties();
    propiedades.setProperty("mail.smtp.quitwait",props.getString("mail.smtp.quitwait"));
 
    //Preparamos la Sesion autenticando al usuario
-   Session session = Session.getDefaultInstance(propiedades,new javax.mail.Authenticator() {
+   Session session = Session.getInstance(propiedades,new javax.mail.Authenticator() {
+    @Override
     protected PasswordAuthentication getPasswordAuthentication(){
      return new PasswordAuthentication(props.getString("mail.user"),props.getString("mail.password"));
     }
@@ -96,7 +90,8 @@ Properties propiedad = new Properties();
    e.printStackTrace();
 
   }finally{
-   return envio;
+   
   }
+  return envio;
  }
 }

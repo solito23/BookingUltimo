@@ -47,7 +47,7 @@ public class poolBooking extends HttpServlet {
       out.println("<center>");
       out.println("<h1>POOL BOOKING </h1>");
       Context ctx = new InitialContext();
-      DataSource ds = (DataSource) ctx.lookup("jdbc/mydbb");
+      DataSource ds = (DataSource) ctx.lookup("jdbc/mydb2");
       Connection cn = ds.getConnection();
       out.println("<p style='color:blue'>" + "Conexión ok." + "</p>");
       cn.close();

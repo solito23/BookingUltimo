@@ -28,7 +28,7 @@
 </ul>
     </nav> 
 <center>
-<form name="form1" action="EnviarCorreo" method="post" > 
+<form name="form1" action="EnviarCorreos" method="post" > 
 
 <div class="ba">
 <h1>Recuperar Contraseña</h1>

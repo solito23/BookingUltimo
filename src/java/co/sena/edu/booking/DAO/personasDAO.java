@@ -375,21 +375,23 @@ public int contarRegistros(){
         return registros;
     }
 
-public String EnviarCorreo(String Correo){
-        String clave = null;
-       try{
+public String EnviarCorreo(String correo) {
+        String clave = "";
+        try {
+
+            pstmt = cnn.prepareStatement("select contrasenia as clave from personas where correoElectronico = ?");
             
-        pstmt=cnn.prepareStatement("select contraseña from personas where correoElectronico=?");
-        pstmt.setString(1, Correo);
-        rs = pstmt.executeQuery();
-            while (rs.next()) {               
-                clave = rs.getString("contraseña");
-           }         
-        }catch(SQLException sqle){
-            msgSalida = sqle.getMessage();
+            pstmt.setString(1, correo);
+            rs = pstmt.executeQuery();
+            while (rs.next()) {
+                clave = rs.getString("clave");
             }
-       return clave;  
-}  
+        } catch (SQLException sqle) {
+           sqle.printStackTrace();
+        }
+       
+        return  clave;
+}
 public List<listarPersonasDTO> contarPersonas(String  nacionalidad, String nombres) {
         ArrayList<listarPersonasDTO> productos = new ArrayList();
         try {

@@ -32,6 +32,10 @@
         <servlet-name>buscarPersona</servlet-name>
         <servlet-class>Controlador.buscarPersona</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EnviarCorreos</servlet-name>
+        <servlet-class>Controlador.EnviarCorreos</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
@@ -63,6 +67,10 @@
     <servlet-mapping>
         <servlet-name>buscarPersona</servlet-name>
         <url-pattern>/buscarPersona</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EnviarCorreos</servlet-name>
+        <url-pattern>/EnviarCorreos</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

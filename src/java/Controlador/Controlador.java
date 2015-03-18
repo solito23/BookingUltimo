@@ -109,6 +109,13 @@ public class Controlador extends HttpServlet {
             misesion.setAttribute("logueado", eliminado);
             response.sendRedirect("asignarRol.jsp?eliminado="+eliminado);
             }
+        else if (request.getParameter("action") != null) {
+            HttpSession sesion = request.getSession(false);
+            sesion.removeAttribute("logueado");
+            sesion.invalidate();
+            response.sendRedirect("Index.html");
+
+        }
         
        }
 

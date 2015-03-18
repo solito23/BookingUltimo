@@ -3,6 +3,12 @@
 <!doctype html>
 <html>
 <head>
+    <%
+                                        response.setHeader("Cache-Control", "no-cache");
+                                        response.setHeader("Cache-Control", "no-store");
+                                        response.setDateHeader("Expires", 0);
+                                %>
+    
 <link type="text/css" rel="stylesheet" href="bootstrap-3.2.0-dist/bootstrap-3.2.0-dist/css/bootstrap.css">
 <link type="text/css" rel="stylesheet" href="css/css.css">
 	<script  src="jquery/jquery.js"></script>
@@ -39,7 +45,7 @@
                             <ul class="submain">
                                 <li><a href="actualizarDatos1.jsp" style="text-decoration: none;">Mis Datos</a></li>
                                 <li><a href="cambiarContraseña.jsp" style="text-decoration: none;">Cambiar Contraseña</a> </li>
-                                <li><a href="" style="text-decoration: none;">Cerrar sesion</a> </li>
+                                <li><a href="Controlador?action=logout" style="text-decoration: none;">Cerrar sesion</a> </li>
     
                             </ul>
                      </li>  
@@ -121,7 +127,11 @@
 </div>
 
  <%
-   }
+   }else {
+                misesion.removeAttribute("logueado");
+                misesion.invalidate();
+                 response.sendRedirect("Index.html?msg= Sesion cerrada");
+            }
  %>
 </body>
 </html>
