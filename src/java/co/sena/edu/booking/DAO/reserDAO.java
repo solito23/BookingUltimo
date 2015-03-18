@@ -254,7 +254,7 @@ public class reserDAO {
      String HTMLTipos = "<option value='0' "+( Id=="0" ? "selected":"") +" > Seleccione reserva </option>";   
      try {
 
-            String query = "select idreserva,concat (fechaReserva, ' - ',servicio) as reserva " 
+            String query = "select idreserva, concat(fechaReserva, ' - ',servicio) as reserva " 
                     + "from reservas a inner join servicios b on a.idServicio = b.idServicio ";
             pstmt = cnn.prepareStatement(query);
             rs = pstmt.executeQuery();

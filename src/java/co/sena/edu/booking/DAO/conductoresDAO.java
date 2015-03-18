@@ -213,7 +213,7 @@ public List <conductoresDTO> listarCoductores () throws SQLException{
      String HTMLTipos = "<option value='0' "+ (Id.equals("0") ? "selected":"") +"> Seleccione Conductor </option>";   
      try {
 
-            String query = "select idConductor ,concat (idConductor,'- ',nombres,' ',apellidos) as conductor" +
+            String query = "select idConductor , concat(idConductor,'- ',nombres,' ',apellidos) as conductor" +
                  " from conductores c inner join personas p on c.idPersona = p.idPersona"; 
             pstm = cnn.prepareStatement(query);
             rs = pstm.executeQuery();
