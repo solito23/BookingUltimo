@@ -340,7 +340,7 @@ public String getHTMLAll(String Id) throws SQLException {
      String HTMLTipos = "<option value='0' "+ (Id.equals("0") ? "selected":"") +" > Seleccione Cliente </option>";   
      try {
 
-            String query = "select idPersona as Id, concat(nombres ,'  ', apellidos )  as cliente" +"FROM personas" ;
+            String query = "select idPersona as Id, concat(nombres ,'  ', apellidos )  as cliente " +" from personas" ;
             pstmt = cnn.prepareStatement(query);
             rs = pstmt.executeQuery();
             
