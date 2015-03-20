@@ -77,7 +77,7 @@ public class personasDAO {
         try {
 
             int resultado = 0;
-            pstmt = cnn.prepareStatement("INSERT INTO personas VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            pstmt = cnn.prepareStatement("INSERT INTO personas VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, md5(?), ?, ?)");
             pstmt.setLong(1, newPersona.getIdPersona());
             pstmt.setString(2, newPersona.getCorreoElectronico());
             pstmt.setInt(3, newPersona.getIdCiudad());
