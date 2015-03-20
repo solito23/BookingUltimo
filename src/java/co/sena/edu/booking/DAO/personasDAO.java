@@ -8,6 +8,7 @@
  */
 package co.sena.edu.booking.DAO;
 
+import cao.sena.edu.booking.util.Conexion;
 import cao.sena.edu.booking.util.reserConex;
 import co.sena.edu.booking.DTO.listarPersonasDTO;
 import co.sena.edu.booking.DTO.nacionalidadesDTO;
@@ -35,7 +36,7 @@ public class personasDAO {
     int per;
 
     public personasDAO() {
-        cnn = reserConex.getInstance();
+        cnn = Conexion.getConnection();
 
     }
 

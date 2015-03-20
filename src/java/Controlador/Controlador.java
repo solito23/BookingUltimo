@@ -27,8 +27,7 @@ import javax.servlet.http.HttpSession;
 public class Controlador extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      *
      * @param request servlet request
      * @param response servlet response
@@ -43,7 +42,7 @@ public class Controlador extends HttpServlet {
 
             personasDTO pdto = new personasDTO();
             personasDAO pdao = new personasDAO();
-            
+
             pdto.setIdPersona(Long.parseLong(request.getParameter("doc")));
             pdto.setNombres(request.getParameter("nombres"));
             pdto.setApellidos(request.getParameter("apellidos"));
@@ -55,70 +54,60 @@ public class Controlador extends HttpServlet {
             pdto.setContraseña(request.getParameter("con"));
             pdto.setIdestadousuarios(1);
             pdto.setObservaciones("Ninguna");
-  
-            
+
             String mensaje = pdao.crearPersona(pdto);
             HttpSession misesion = request.getSession(true);
             misesion.setAttribute("logueado", pdto);
-            response.sendRedirect("menu.jsp?msg="+mensaje);
-        }
-        else if(request.getParameter("id")!= null){
+            response.sendRedirect("menuCliente.jsp?msg=" + mensaje);
+        } else if (request.getParameter("id") != null) {
             personasDAO pdao = new personasDAO();
-            String eliminado= pdao.eliminar(Long.parseLong(request.getParameter("id")));
-            response.sendRedirect("verificarRegistro.jsp?eliminado="+eliminado);
+            String eliminado = pdao.eliminar(Long.parseLong(request.getParameter("id")));
+            response.sendRedirect("verificarRegistro.jsp?eliminado=" + eliminado);
+        } else if (request.getParameter("submit10") != null) {
+            personasDAO pert = new personasDAO();
+
+            long x = pert.isAcountExists(request.getParameter("contraseña"), Long.parseLong(request.getParameter("idPersona")));
+
+            if (x != 0 && x != 10301023) {
+                personasDTO per = new personasDTO();
+
+                per = pert.ListarUnaPersona(Long.parseLong(request.getParameter("idPersona")));
+                HttpSession misesion = request.getSession(true);
+                misesion.setAttribute("logueado", per);
+                response.sendRedirect("menuCliente.jsp");
+
+            } else if (x == 0) {
+
+                response.sendRedirect("ingreso.jsp?invalida=" + x);
+
+            } else if (x == 10301023 && x != 0) {
+                personasDTO per = new personasDTO();
+
+                per = pert.ListarUnaPersona(Long.parseLong(request.getParameter("idPersona")));
+                HttpSession misesion = request.getSession(true);
+                misesion.setAttribute("logueado", per);
+                response.sendRedirect("verificarRegistro.jsp");
             }
-        
-          else if (request.getParameter("submit10") != null){
-           personasDAO pert = new personasDAO();
-   
-           
-       long x =   pert.isAcountExists(request.getParameter("contraseña"),Long.parseLong(request.getParameter("idPersona")));
-           
-           if ( x != 0 && x != 10301023) {
-               personasDTO per = new personasDTO();
-               
-               per= pert.ListarUnaPersona(Long.parseLong(request.getParameter("idPersona")));
-               HttpSession misesion =request.getSession(true);
-               misesion.setAttribute("logueado", per);
-               response.sendRedirect("menu.jsp");
-               
-           }
-           else if (x == 0) {
-               
-               response.sendRedirect("ingreso.jsp?invalida="+x);
-               
-           }
-           else if(x==10301023 && x != 0){
-               personasDTO per = new personasDTO();
-               
-               per= pert.ListarUnaPersona(Long.parseLong(request.getParameter("idPersona")));
-                HttpSession misesion =request.getSession(true);
-               misesion.setAttribute("logueado", per);
-               response.sendRedirect("verificarRegistro.jsp");
-           }
-           }else if(request.getParameter("idReserva")!= null){
+        } else if (request.getParameter("idReserva") != null) {
             reserDAO pdao = new reserDAO();
-            String eliminado= pdao.eliminar(Integer.parseInt(request.getParameter("idReserva")));
-            response.sendRedirect("CancelarR.jsp?eliminado="+eliminado);
-            }
-         else if(request.getParameter("idPersona")!= null){
+            String eliminado = pdao.eliminar(Integer.parseInt(request.getParameter("idReserva")));
+            response.sendRedirect("CancelarR.jsp?eliminado=" + eliminado);
+        } else if (request.getParameter("idPersona") != null) {
             personasDAO pdao = new personasDAO();
-            personasDTO eliminado= new personasDTO();
-            eliminado= pdao.ListarUnaPersona(Long.parseLong(request.getParameter("idPersona")));
-            HttpSession misesion =request.getSession(true);
+            personasDTO eliminado = new personasDTO();
+            eliminado = pdao.ListarUnaPersona(Long.parseLong(request.getParameter("idPersona")));
+            HttpSession misesion = request.getSession(true);
             misesion.setAttribute("logueado", eliminado);
-            response.sendRedirect("asignarRol.jsp?eliminado="+eliminado);
-            }
-        else if (request.getParameter("action") != null) {
+            response.sendRedirect("asignarRol.jsp?eliminado=" + eliminado);
+        } else if (request.getParameter("action") != null) {
             HttpSession sesion = request.getSession(false);
             sesion.removeAttribute("logueado");
             sesion.invalidate();
             response.sendRedirect("Index.html");
 
         }
-        
-       }
 
+    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

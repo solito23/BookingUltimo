@@ -56,9 +56,7 @@
         <th st-ratio="20" st-sort="Modificar">Modificar</th>
     </tr>
     <%
-      for(reserDTO so: misReservas){
-          
-      
+      for(reserDTO so: misReservas){      
     %>
     <tr>
         <td><%=so.getIdReserva()%></td>
@@ -70,7 +68,8 @@
         <td><%=so.getHoraReserva()%></td>
         <td><%=so.getDireccionDestino()%></td>
         
-        <td><a href="modificarRerserva?idReserva=<%=so.getIdReserva()%>"><img src="imagenes/Modificar.png" align="middle" width="32" height="32" title="Verificar"></td></a>
+        <td><a href="modificarReserva.jsp?idReserva=<%=so.getIdReserva()%>&idServicio=<%=so.getIdServicio()%>&IdTransporteLlegada=<%=so.getIdTransporteLlegada()%>
+               &Responsable=<%=so.getResponsable()%>&FechaReserva=<%=so.getFechaReserva()%>&HoraReserva=<%=so.getHoraReserva()%>&DireccionDestino=<%=so.getDireccionDestino()%>"> <img src="imagenes/Modificar.png" align="middle" width="32" height="32" title="Verificar"></a></td>
     
     </tr>
     <%

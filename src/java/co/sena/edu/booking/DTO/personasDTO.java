@@ -22,9 +22,7 @@ public class personasDTO {
     private String contraseña;
     private int idestadousuarios;
     private String observaciones;
-
-    
-
+   
     /**
      * @return the idPersona
      */

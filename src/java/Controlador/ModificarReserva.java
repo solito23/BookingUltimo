@@ -3,7 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Controlador;
 
 import co.sena.edu.booking.DAO.reserDAO;
@@ -21,13 +20,12 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author fabian
+ * @author Sena
  */
-public class modificarRerserva extends HttpServlet {
+public class ModificarReserva extends HttpServlet {
 
     /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code> methods.
      *
      * @param request servlet request
      * @param response servlet response
@@ -35,11 +33,10 @@ public class modificarRerserva extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException {
+            throws ServletException, IOException, SQLException{
         response.setContentType("text/html;charset=UTF-8");
-                
-          if (request.getParameter("registro") != null) {
-
+        if (request.getParameter("registro") != null) {
+            
            reserDTO to = new reserDTO();
            reserDAO dao = new reserDAO();
            
@@ -52,18 +49,11 @@ public class modificarRerserva extends HttpServlet {
            to.setDireccionDestino(request.getParameter("aerop"));
             
             String mensaje = dao.actualizarReserva(to);
+            response.sendRedirect("menuCliente.jsp?msg"+mensaje);
             
-            response.sendRedirect("menuCliente.jsp?msg="+mensaje);
+        }
     }
-          else if(request.getParameter("idReserva")!= null){
-            reserDAO pdao = new reserDAO();
-            reserDTO eliminado= new reserDTO();
-            eliminado= pdao.ListarUnaReserva(Integer.parseInt(request.getParameter("idReserva")));
-            HttpSession misesion =request.getSession(false);
-            misesion.setAttribute("logueado", eliminado);
-            response.sendRedirect("modificarReserva.jsp?eliminado="+eliminado);
-            }
-    }
+
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
@@ -79,7 +69,7 @@ public class modificarRerserva extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(modificarRerserva.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ModificarReserva.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -97,7 +87,7 @@ public class modificarRerserva extends HttpServlet {
         try {
             processRequest(request, response);
         } catch (SQLException ex) {
-            Logger.getLogger(modificarRerserva.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ModificarReserva.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 

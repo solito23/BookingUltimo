@@ -107,7 +107,10 @@ li{
 li:hover{
     font-size: 15px;
     background: #9F9D9D;
+    
+    
 }
+
 @-webkit-keyframes submain{0%{ 
             opacity:0%; left:-150px;
         } 50%{-webkit-transform:skew(10deg);}100%{ opacity:100%; left:1px;}} 
@@ -142,18 +145,18 @@ li:hover{
     -webkit-box-shadow: 4px 4px 4px #333;   
 }
 .submain li:hover{
-    background-color:#fefefe; 
+    background-color:#fff; 
     -webkit-transform:scale(1,1);
     z-index:2;
     border-radius: 10px 10px 10px 10px;
 }
 #main>li:hover{ 
-  background-color:#fefefe; 
-  color:#e2c60f;
+    background-color: #fff; 
+  color:#0C4391;
   border:2px outset #000; 
   border-radius: 10px 5px 10px 5px;
-
 }
+
 /*input[type="submit"]:hover{
    border: thin solid transparent; 
 }*/

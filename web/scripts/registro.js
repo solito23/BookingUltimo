@@ -45,7 +45,7 @@ else {
 }
 }
 function Eliminar(){
-
+if(eliminar.value=="")
 	alert('Decea Eliminar Este Usuario!!');
 	con.style.border="1px solid green";
 	vcon.style.border="1px solid green";

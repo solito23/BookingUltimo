@@ -909,10 +909,12 @@ textarea {
   font-size: inherit;
   line-height: inherit;
 }
-nav a {
-  color:  white;
+nav a{
+    color:  #fff;
   text-decoration: none;
 }
+
+
 a:hover,
 a:focus {
   color: #2a6496;

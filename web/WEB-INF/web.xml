@@ -36,6 +36,14 @@
         <servlet-name>EnviarCorreos</servlet-name>
         <servlet-class>Controlador.EnviarCorreos</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ModificarReserva</servlet-name>
+        <servlet-class>Controlador.ModificarReserva</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Conexion</servlet-name>
+        <servlet-class>cao.sena.edu.booking.util.Conexion</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Controlador</servlet-name>
         <url-pattern>/Controlador</url-pattern>
@@ -72,6 +80,14 @@
         <servlet-name>EnviarCorreos</servlet-name>
         <url-pattern>/EnviarCorreos</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ModificarReserva</servlet-name>
+        <url-pattern>/ModificarReserva</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Conexion</servlet-name>
+        <url-pattern>/Conexion</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
@@ -81,4 +97,5 @@
         <error-code>404</error-code>
         <location>/error404.html</location>
     </error-page>
+    
 </web-app>

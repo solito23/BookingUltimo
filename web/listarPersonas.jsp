@@ -62,8 +62,8 @@
                             <td>NACIONALIDAD</td>
                         </tr>
                     </thead>
-                    <%            for (listarPersonasDTO producto : productos) {
-
+                    <%            for (listarPersonasDTO producto: productos) {
+                        
 
                     %>
                     <tr>
