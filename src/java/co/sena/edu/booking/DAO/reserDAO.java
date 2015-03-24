@@ -37,6 +37,7 @@ public class reserDAO {
 
     public reserDAO() {
         cnn = Conexion.getConnection();
+//        cnn = reserConex.getInstance();
     }
 
 //    public String actualizarRegistro(reserDTO resert) {

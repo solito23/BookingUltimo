@@ -44,7 +44,7 @@ public class Conexion extends HttpServlet {
         Connection cnn = null;
         try {
             ctx = new InitialContext();
-            ds = (DataSource) ctx.lookup("jdbc/poolbooking");
+            ds = (DataSource) ctx.lookup("jdbc/pool");
             cnn = ds.getConnection();
         } catch (NamingException ex) {
 
