@@ -142,7 +142,6 @@ public class reserDAO {
             pstmt.setString(6, rdto.getFechaReserva());
             pstmt.setString(7, rdto.getHoraReserva());
             pstmt.setString(8, rdto.getDireccionDestino());
-
             resultado = pstmt.executeUpdate();
 
             if (resultado != 0) {

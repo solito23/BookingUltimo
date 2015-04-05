@@ -4,6 +4,35 @@
 <link type="text/css" rel="stylesheet" href="bootstrap-3.2.0-dist/bootstrap-3.2.0-dist/css/bootstrap.css">
 <link type="text/css" rel="stylesheet" href="css/css.css">
 <script src="scripts/registro.js" type="text/javascript"></script>
+<script src="js/FuncionesIngles.js" type="text/javascript">
+    
+    function validarFechaIn() {
+    var temp = document.getElementById("fecNac").value;
+    var y = temp.split("-")
+    var fechaSolicitud=new Date(y[0],y[1]-1,y[2]); // se forma la fecha que viene del formulario
+    var fechaActual = new Date();   //Fecha actual
+    var ftemp = new Date(); // Variable con la fecha actual
+     var ftemp2 = new Date();
+    var fechaMinima = new Date(ftemp.getTime() + (5 * 24 * 3600 * 1000));   //Sumo 5 dias a la fecha actual para obtener la fecha mínima
+    var fechaMaxima = new Date (ftemp2.getTime() + (30 * 24 * 3600 * 1000));  // sumo 30 días a la fecha actual para
+
+   //alert("Actual  : "+fechaActual + "  fecha calendario : "+fechaSolicitud+ "la fecha mínima es : "+fechaMinima);
+
+    if (fechaSolicitud < fechaActual){
+        document.getElementById("result").innerHTML="Esta seleccionando una fecha anterior a la actual";
+        document.getElementById("fecNac").focus();
+    } else if (fechaSolicitud >= fechaActual && fechaSolicitud <fechaMinima){
+        document.getElementById("result").innerHTML="En ese tiempo no se alcanzaa tenr el pedido";
+        document.getElementById("fecNac").focus();
+    }else if(fechaSolicitud >=fechaMaxima){
+       document.getElementById("result").innerHTML="NO hacemos pedidos con tanta Anticipacicion";
+       document.getElementById("fecNac").focus();
+    }else{
+        document.getElementById("result").innerHTML="ok";
+    }
+
+}
+</script>
 <meta charset="utf-8">
 <link rel="shortcut icon" href="imagenes/br.ico" />
 <title>..::Booking Routers::..</title>
@@ -65,8 +94,9 @@
 <tr>
 <td><label for="res" class="labele"><strong>Responsible for<font color="#FF0000">*</strong></label></font></td>
 <td><input name="res" type="text" id="res" style="width:250px; height:25px" placeholder="Responsible for" autofocus  required class="form-control inputtext"></td>   
-<td><label for="fec" class="labele"><strong>Date reservation<font color="#FF0000">* </strong></label></font></td>
-<td><input name="fec" type="date" id="fec" style="width:250px; height:25px" required class="form-control inputtext" tabindex="4" onChange="edad()"></td>    
+<td><label for="fecNac"><strong>Date  Reservation<font color="#FF0000">*</strong></label></td>
+<td><input type="date" id="fecNac" name="fecNac" style="width:250px; height:25px"  required="" value="30-12-1900" class="form-control inputtext" tabindex="4" onblur="javascript:validarFechaIn()"><br></td>
+<div id="result" class="mensajegError"></div> 
 </tr> 
 <td><label for="hora" class="labele">Time of flight</label></td>
 <td><input type="time" name="hora" id="hora" style="width:250px; height:25px" class="form-control" required></td>

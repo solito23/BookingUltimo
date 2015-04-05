@@ -1,9 +1,49 @@
- 	 	<!doctype html>
+ 
+
+
+<%@page import="co.sena.edu.booking.DAO.personasDAO"%>
+<%@page import="co.sena.edu.booking.DTO.personasDTO"%> 	 	
+
 <html>
 <head>
+     <%
+            response.setHeader("Cache-Control", "no-cache");
+            response.setHeader("Cache-Control", "no-store");
+            response.setDateHeader("Expires", 0);
+        %>
 <link type="text/css" rel="stylesheet" href="bootstrap-3.2.0-dist/bootstrap-3.2.0-dist/css/bootstrap.css">
 <link type="text/css" rel="stylesheet" href="css/css.css">
 <script src="scripts/registro.js" type="text/javascript"></script>
+<script src="js/Funciones.js" type="text/javascript">
+    
+    function validarFecha() {
+    var temp = document.getElementById("fecNac").value;
+    var y = temp.split("-")
+    var fechaSolicitud=new Date(y[0],y[1]-1,y[2]); // se forma la fecha que viene del formulario
+    var fechaActual = new Date();   //Fecha actual
+    var ftemp = new Date(); // Variable con la fecha actual
+     var ftemp2 = new Date();
+    var fechaMinima = new Date(ftemp.getTime() + (5 * 24 * 3600 * 1000));   //Sumo 5 dias a la fecha actual para obtener la fecha mínima
+    var fechaMaxima = new Date (ftemp2.getTime() + (30 * 24 * 3600 * 1000));  // sumo 30 días a la fecha actual para
+
+   //alert("Actual  : "+fechaActual + "  fecha calendario : "+fechaSolicitud+ "la fecha mínima es : "+fechaMinima);
+
+    if (fechaSolicitud < fechaActual){
+        document.getElementById("result").innerHTML="Esta seleccionando una fecha anterior a la actual";
+        document.getElementById("fecNac").focus();
+    } else if (fechaSolicitud >= fechaActual && fechaSolicitud <fechaMinima){
+        document.getElementById("result").innerHTML="En ese tiempo no se alcanzaa tenr el pedido";
+        document.getElementById("fecNac").focus();
+    }else if(fechaSolicitud >=fechaMaxima){
+       document.getElementById("result").innerHTML="NO hacemos pedidos con tanta Anticipacicion";
+       document.getElementById("fecNac").focus();
+    }else{
+        document.getElementById("result").innerHTML="ok";
+    }
+
+}
+</script>
+
 <meta charset="utf-8">
 <link rel="shortcut icon" href="imagenes/br.ico" />
 <title>..::Booking Routers::..</title>
@@ -22,7 +62,7 @@
                                 <li><a href="CancelarR.jsp" style="text-decoration: none;">Mis Reservas</a> </li>
                                 </ul>
                         </li>
-                        <li><div align="center"><a href="menu.jsp" style="text-decoration: none;"><span class="glyphicon glyphicon-list-alt"></span> Menu</a>
+                        <li><div align="center"><a href="menuCliente.jsp" style="text-decoration: none;"><span class="glyphicon glyphicon-list-alt"></span> Menu</a>
                             <ul class="submain">
                                 <li><a href="actualizarDatos1.jsp" style="text-decoration: none;">Mis Datos</a></li>
                                 <li><a href="cambiarContraseña.jsp" style="text-decoration: none;">Cambiar Contraseña</a> </li>
@@ -30,7 +70,19 @@
                         
         </ul>
     </nav> 
+<%
+            HttpSession misesion = request.getSession(false);
 
+            if (misesion.getAttribute("logueado") != null) {
+                personasDTO pdto = null;
+                personasDTO persona = null;
+                personasDAO pdao = new personasDAO();
+                pdto =(personasDTO) misesion.getAttribute("logueado");
+               //String mgs =misesion.getAttribute("logueado").toString();
+                persona = pdao.ListarUnaPersona(pdto.getIdPersona());
+
+
+        %>
 
 
 <form name="form1" action="Reserva" method="post" > 
@@ -64,12 +116,12 @@
  </td>
 </tr>
 
-<tr>
-    
+<tr>    
 <td><label for="res" class="labele"><strong>Responsable<font color="#FF0000">*</strong></label></font></td>
 <td><input name="res" type="text" id="res" style="width:250px; height:25px" placeholder="Responsable" autofocus  required class="form-control inputtext"></td>   
-<td><label for="fec" class="labele"><strong>Fecha Reserva<font color="#FF0000">* </strong></label></font></td>
-<td><input name="fec" type="date" id="fec" style="width:250px; height:25px" required class="form-control inputtext" tabindex="4" onChange="edad()"></td>    
+<td><label for="fecNac"><strong>Fecha Reserva<font color="#FF0000">*</strong></label></td>
+<td><input type="date" id="fecNac" name="fecNac" style="width:250px; height:25px"  required="" value="30-12-1900" class="form-control inputtext" tabindex="4" onblur="javascript:validarFecha()"><br></td>
+<div id="result" class="mensajegError"></div>
 </tr> 
 <tr>
 <td><label for="hora" class="labele">Hora de Vuelo</label></td>
@@ -83,10 +135,13 @@
 </tr>
 <tr>
 
-<td><input type="submit" name="registro"  id="registro" class="btn btn-success"  value="Generar Reserva" onclick="validar(registro)" style="position:relative; left:330px">
+<td><input type="submit" name="registroR"  id="registro" class="btn btn-success"  value="Generar Reserva" onclick="validar(registro)" style="position:relative; left:330px">
 
 </table>
 
+    
+    
+    
 </form>
 </div> 
 
@@ -103,6 +158,12 @@
 
                             </div>
 </main>
-
+<%
+            } else {
+                misesion.removeAttribute("logueado");
+                misesion.invalidate();
+                response.sendRedirect("Index.html?msg= Sesion cerrada");
+            }
+        %>
 </body>
 </html>

@@ -27,11 +27,11 @@
 <body>
 <div class ="contenedor">
 <div class="banner"> 
-<p><a href="Index.html"><img src="imagenes/Logo.png" alt="Booking Routers" width="100%" height="150" title="Forget the rest, call the best"  /></a></p>
+    <p><a href="Index.jsp"><img src="imagenes/Logo.png" alt="Booking Routers" width="100%" height="150" title="Forget the rest, call the best"  /></a></p>
 </div>
 <nav>
 <ul id="main">
-    <li><a href="Index.html" style="text-decoration: none;">Home</li></a>
+    <li><a href="Index.jsp" style="text-decoration: none;">Home</li></a>
        <li><a align="center" href="#">Bookings</a>
                             <ul class="submain">
                                 <li><a href="reserva.jsp" style="text-decoration: none;">New Application </a></li>

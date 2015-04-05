@@ -6,9 +6,17 @@
 
 <%@page import="co.sena.edu.booking.DAO.reserDAO"%>
 <%@page import="co.sena.edu.booking.DTO.reserDTO"%>
+<%@page import="co.sena.edu.booking.DAO.personasDAO"%>
+<%@page import="co.sena.edu.booking.DTO.personasDTO"%> 	
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
+    <head>
+         <%
+            response.setHeader("Cache-Control", "no-cache");
+            response.setHeader("Cache-Control", "no-store");
+            response.setDateHeader("Expires", 0);
+        %>
     <meta charset="utf-8" />
     <title>Booking Routers</title>
     <link type="text/css" rel="stylesheet" href="css/css.css" />
@@ -108,7 +116,11 @@
             </table>
             </fieldset>
             <%
-                }
+                } else {
+                misesion.removeAttribute("logueado");
+                misesion.invalidate();
+                response.sendRedirect("Index.html?msg= Sesion cerrada");
+            }
             %>
         </form>
     </div> 

@@ -10,11 +10,11 @@
 <body>
 <div class ="contenedor"></div>
  <div class="banner">
- <p><a href="Index.html"><img src="imagenes/Logo.png" alt="Bookin Routers" width="1360" height="126" title="Forget the rest, call the best" /></a></p>
+     <p><a href="Index.jsp"><img src="imagenes/Logo.png" alt="Bookin Routers" width="1360" height="126" title="Forget the rest, call the best" /></a></p>
  </div>
 <nav> 
 <ul id="main"> 
-    <li> <div align="center"> <a href="Index.html" style="text-decoration:none;"><span class="glyphicon glyphicon-home"></span> Inicio</a>
+    <li> <div align="center"> <a href="Index.jsp" style="text-decoration:none;"><span class="glyphicon glyphicon-home"></span> Inicio</a>
  </div>
 </li>
 <li>
@@ -29,7 +29,7 @@
 <div class="ba">
 <h1>Ingreso Usuarios Registrados</h1>
 </div>
-     <div style=" background:#98A0A8;  text-align: center; border-radius: 15; padding-top: 5px; border-radius: 15px; ">
+     <div style=" background:#DDDDDD;  text-align: center; border-radius: 15; padding-top: 5px; border-radius: 15px; ">
                                   <a href="Index.html" style="color:black; text-decoration: none;">Inicio</a>
                                   -->
                                   <a href="registro.jsp" style="color: black; text-decoration: none;">Ingreso</a>

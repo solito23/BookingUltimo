@@ -18,11 +18,11 @@
 <body>
 <div class ="contenedor">
 <div class="banner"> 
-<p><a href="Index1.html"><img src="imagenes/Logo.png" alt="Booking Routers" width="1360" height="126" title="Forget the rest, call the best"  /></a></p>
+    <p><a href="Index1.jsp"><img src="imagenes/Logo.png" alt="Booking Routers" width="1360" height="126" title="Forget the rest, call the best"  /></a></p>
 </div>
     <nav>
 <ul id="main">
-    <li><a href="Index1.html">Home</li></a>
+    <li><a href="Index1.jsp">Home</li></a>
        <li><a align="center" href="#" style="text-decoration: none;">Reservations</a>
                             <ul class="submain">
                                 <li><a href="reserva1.jsp" style="text-decoration: none;">Request reserve</a></li>

@@ -36,7 +36,7 @@
                     <div class="ba">
                         <h1><center>Registro de Usuarios</center></h1>
                     </div>
-                    <div style=" background:#98A0A8;  text-align: center; border-radius: 15; padding-top: 5px; border-radius: 15px; ">
+                    <div style=" background:#DDDDDD;  text-align: center; border-radius: 15; padding-top: 5px; border-radius: 15px; ">
                         <a href="Index.html" style="color:black; text-decoration: none;">Inicio</a>
                         -->
                         <a href="registro.jsp" style="color: black; text-decoration: none;">Registro Usuario</a>
@@ -67,7 +67,7 @@
                         <td>
                             <%--<input name="paisnac" id="paisnac" style="width:250px; height:35px" placeholder="Seleccione país" autofocus required class="form-control inputtext" list="paises" tabindex="8" onChange="requisitos(paisnac)">--%>
                             <select id="paises" name="paisnac" id="paisnac" style="width:250px; height:35px" autofocus required class="form-control inputtext" list="paises" tabindex="8" onchange="getCiudades(this.value);">
-                               <option value="0" >------</option>
+                                <option value="0" >------</option>
 
                                 <%
                                     nacionalidadesDAO cdao = new nacionalidadesDAO();
@@ -85,8 +85,8 @@
                         <td>
                             <%--<input name="ciunac" id="ciunac" style="width:250px; height:35px" placeholder="Seleccione ciudad" autofocus required class="form-control inputtext"  list="ciudades" tabindex="9" size="30" onChange="requisitos(ciunac)">--%>
                             <select  name="ciunac" id="ciunac" style="width:250px; height:35px" autofocus required class="form-control inputtext"  list="ciudades" tabindex="9">
-                               <option value="0" >Elija Ciudad</option>
-                               
+                                <option value="0" >Elija Ciudad</option>
+
                             </select>
                         </td>
                         <td nowrap>&nbsp;</td>
@@ -117,14 +117,14 @@
             </form>
 
         </div> 
-                            <div style="width:100%; background: #0C4391; height: 30px; margin-top:10px; padding-top:5px; border-radius:3px;color:#e2c60f; margin-bottom:1%; float:left; text-align: center;height:70px;color:white;">
-                                <span>Booking Routers &copy; 2015</span><br>
-                                Integrantes :<span class="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Yilber Hernandez 
-                                <span classs="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Cristian Moreno 
-                                <span class="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Sergio Stiven Urbiba
-                                <span class="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Andres Feipe Guerrero<br>
-                                <img src="imagenes/dddd.png"><a href="registro1.jsp" style=" color: #ffffff; text-decoration: none;"  >English</a> --  <img src="imagenes/original.jpg"><a href="registro.jsp" style=" color: #ffffff; text-decoration: none;" >Spanish</a>
+        <div style="width:100%; background: #0C4391; height: 30px; margin-top:10px; padding-top:5px; border-radius:3px;color:#e2c60f; margin-bottom:1%; float:left; text-align: center;height:70px;color:white;">
+            <span>Booking Routers &copy; 2015</span><br>
+            Integrantes :<span class="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Yilber Hernandez 
+            <span classs="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Cristian Moreno 
+            <span class="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Sergio Stiven Urbiba
+            <span class="glyphicon glyphicon-user" style="padding-top: 4px;"></span> Andres Feipe Guerrero<br>
+            <img src="imagenes/dddd.png"><a href="registro1.jsp" style=" color: #ffffff; text-decoration: none;"  >English</a> --  <img src="imagenes/original.jpg"><a href="registro.jsp" style=" color: #ffffff; text-decoration: none;" >Spanish</a>
 
-                            </div>
+        </div>
     </body>
     <html>

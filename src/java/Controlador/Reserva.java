@@ -40,7 +40,7 @@ public class Reserva extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
            throws ServletException, IOException, SQLException {
            response.setContentType("text/html;charset=UTF-8");
-           if (request.getParameter("registro") != null) {
+           if (request.getParameter("registroR") != null) {
 
            reserDTO to = new reserDTO();
            reserDAO dao = new reserDAO();
@@ -50,13 +50,13 @@ public class Reserva extends HttpServlet {
            to.setIdServicio(Integer.parseInt(request.getParameter("ser")));
            to.setIdTransporteLlegada(Integer.parseInt(request.getParameter("aer")));
            to.setResponsable(request.getParameter("res"));
-           to.setFechaReserva(request.getParameter("fec"));
+           to.setFechaReserva(request.getParameter("fecNac"));
            to.setHoraReserva(request.getParameter("hora"));
            to.setDireccionDestino(request.getParameter("aerop"));
             
             String mensaje = dao.insertar(to);
             
-            response.sendRedirect("menu.jsp?msg="+mensaje);
+            response.sendRedirect("menuCliente.jsp?msg="+mensaje);
         }
     }
 
