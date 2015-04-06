@@ -304,7 +304,7 @@ public String crearRuta(rutasDTO newRuta)throws SQLException{
            rutasDTO rudto = new rutasDTO();  
         
            
-           String sql = "SELECT count(idtipovehiculo) from rutas where idtipoVehiculo=?";        
+           String sql = "SELECT count(idtipovehiculo)as tipo from rutas where idtipoVehiculo=?";        
            pstmt = cnn.prepareStatement(sql);           
            pstmt.setInt(1, idtipovehiculo);           
            rs = pstmt.executeQuery();
@@ -314,7 +314,7 @@ public String crearRuta(rutasDTO newRuta)throws SQLException{
                
                while (rs.next()) {
 
-                   rudto.setIdtipoVehiculo(rs.getInt("idtipovehiculo"));
+                   rudto.setIdtipoVehiculo(rs.getInt("tipo"));
                   
                  }
                y = rudto.getIdtipoVehiculo();

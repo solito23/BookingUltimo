@@ -39,36 +39,47 @@ public class CreaRuta extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
-        
+
         rutasDAO cRuta = new rutasDAO();
         rutasDTO objRuta = new rutasDTO();
         String msj = "";
-       
+
         if (request.getParameter("Placa") != null) {
             objRuta.setPlacaVehiculo(request.getParameter("Placa"));
-            if (!"0".equals(request.getParameter("Tipo"))) {            
+            if (!"0".equals(request.getParameter("Tipo"))) {
                 objRuta.setIdtipoVehiculo(Integer.parseInt(request.getParameter("Tipo")));
                 if (!"0".equals(request.getParameter("Cliente"))) {
                     objRuta.setIdPersona(request.getParameter("Cliente"));
                     if (!"0".equals(request.getParameter("Conductor"))) {
                         objRuta.setIdConductor(request.getParameter("Conductor"));
                         if (!"0".equals(request.getParameter("Reserva"))) {
-                            
+
                             objRuta.setidReserva(Integer.parseInt(request.getParameter("Reserva")));
                             objRuta.setIdEstadoRuta(1);
-                            
-                            
-                            
-                            
-                            msj = cRuta.crearRuta(objRuta);
+
+                            int ru = cRuta.validarruta(Integer.parseInt(request.getParameter("Tipo")));
+                            if (ru == 0) {
+                                
+                              msj = cRuta.crearRuta(objRuta);
+                                  response.sendRedirect ("CreaRuta.jsp?msj=" + msj);
+                             
+                            } else if (ru == 1) {
+                                
+                                response.sendRedirect("CreaRuta.jsp");
+
+                            }
                         }
+
+                        
                     }
-                }  
-            }   
+                }
+            }
         }
-        
-         response.sendRedirect("CreaRuta.jsp?msj=" + msj);
+    
+
+           
     }
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -80,12 +91,16 @@ public class CreaRuta extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+        protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(CreaRuta.class.getName()).log(Level.SEVERE, null, ex);
+        
+
+} catch (SQLException ex) {
+            Logger.getLogger(CreaRuta.class  
+
+.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -98,12 +113,16 @@ public class CreaRuta extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+        protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         try {
             processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(CreaRuta.class.getName()).log(Level.SEVERE, null, ex);
+        
+
+} catch (SQLException ex) {
+            Logger.getLogger(CreaRuta.class  
+
+.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -113,7 +132,7 @@ public class CreaRuta extends HttpServlet {
      * @return a String containing servlet description
      */
     @Override
-    public String getServletInfo() {
+        public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
 
