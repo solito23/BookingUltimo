@@ -36,8 +36,8 @@ public class reserDAO {
     int rtdo; // almacena el resultado de la ejecución en la BD
 
     public reserDAO() {
-        cnn = Conexion.getConnection();
-//        cnn = reserConex.getInstance();
+     //  cnn = Conexion.getConnection();
+   cnn= reserConex.getInstance();
     }
 
 //    public String actualizarRegistro(reserDTO resert) {

@@ -89,7 +89,7 @@
                 <strong>Placa Vehículo</strong><font color="#FF0000">*</font>
                 <br>
             </td>
-            <td><input id="Placa" name="Placa" type="text" style="width:250px; height:30px " autofocus  placeholder="Ingrese placa" required class="form-control inputtext"  /> </td>
+            <td><input id="Placa" maxlength="6" name="Placa" type="text" style="width:250px; height:30px " autofocus  placeholder="Ingrese placa" required class="form-control inputtext"  /> </td>
         </tr>
         <tr>
             <td>

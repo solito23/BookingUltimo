@@ -36,8 +36,8 @@ public class personasDAO {
     int per;
 
     public personasDAO() {
-        cnn = Conexion.getConnection();
-//        cnn = reserConex.getInstance();
+       // cnn = Conexion.getConnection();
+     cnn = reserConex.getInstance();
 
     }
 

@@ -57,6 +57,7 @@ public class CreaRuta extends HttpServlet {
                             objRuta.setidReserva(Integer.parseInt(request.getParameter("Reserva")));
                             objRuta.setIdEstadoRuta(1);
                             
+                            
                             msj = cRuta.crearRuta(objRuta);
                         }
                     }
