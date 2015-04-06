@@ -83,7 +83,7 @@ public String crearRuta(rutasDTO newRuta)throws SQLException{
             if (resultado != 0) {
                 salida = "La ruta a sido creada exitosamente"  ;
             } else {
-                // salida = "Ha ocurrido un problema al crear el profesor. Contacte al administrador";
+               salida = "Ha ocurrido un problema al crear la ruta. Contacte al administrador";
                 
             }
         } catch (SQLException sqle) {

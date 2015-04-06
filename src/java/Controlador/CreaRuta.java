@@ -65,7 +65,7 @@ public class CreaRuta extends HttpServlet {
                              
                             } else if (ru == 1) {
                                 
-                                response.sendRedirect("CreaRuta.jsp");
+                                response.sendRedirect("CreaRuta.jsp?no=");
 
                             }
                         }
