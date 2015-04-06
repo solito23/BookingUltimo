@@ -98,7 +98,20 @@
         </td>
     </tr>
     </table>
-        
+        <br>
+         <tr>
+         <td colspan="2">
+        <%
+ if(request.getParameter("no") != null  ) {
+%>
+<div>
+    <b class="alert alert-danger"  role="alert" style="position:relative; left:10px"> Esta ruta ya ha sido asignada</b>
+</div>
+<%
+ }
+%>  
+        </td>
+    </tr>
         
      <br>     
     </center>

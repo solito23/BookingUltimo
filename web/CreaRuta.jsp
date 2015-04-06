@@ -32,12 +32,7 @@
 <nav>
 <ul id="main">
     <li><a href="Index.jsp">Inicio</li></a>
-       <li><a align="center" href="#" style="text-decoration: none;">Reservas</a>
-                            <ul class="submain">
-                                <li><a href="reserva.jsp" style="text-decoration: none;">Nueva Solicitud </a></li>
-                                <li><a href="mreserva.html" style="text-decoration: none;">Mis Reservas</a> </li>
-                                </ul>
-                        </li>
+     
         <li><a align="center" href="#" style="text-decoration: none;">Gestion de Rutas</a>
                             <ul class="submain">
                                 <li><a href="CreaRuta.jsp?msj=" style="text-decoration: none;">Creación de Rutas</a></li>

@@ -53,15 +53,30 @@ public class ModRuta extends HttpServlet {
                             
                             objRuta.setidReserva(Integer.parseInt(request.getParameter("Reserva")));
                             objRuta.setIdRuta(Integer.parseInt(request.getParameter("Rutamod")));
-                            
+                            int ru = cRuta.validarruta(Integer.parseInt(request.getParameter("Tipo")));
+                            if (ru == 0) {
+                                
                             msj = cRuta.actualizarRegistro(objRuta);
+                              response.sendRedirect("ModRuta.jsp?msj=" + msj);
+                            } else if (ru == 1) {
+                                
+                                response.sendRedirect("ModRuta.jsp?no=");
+                         }
                         }
+
+                        
                     }
-                }  
-            }   
+                }
+            }
         }
-        response.sendRedirect("ModRuta.jsp?msj=" + msj);
+    
+
+           
     }
+            
+        
+       
+    
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
