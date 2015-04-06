@@ -58,6 +58,8 @@ public class CreaRuta extends HttpServlet {
                             objRuta.setIdEstadoRuta(1);
                             
                             
+                            
+                            
                             msj = cRuta.crearRuta(objRuta);
                         }
                     }

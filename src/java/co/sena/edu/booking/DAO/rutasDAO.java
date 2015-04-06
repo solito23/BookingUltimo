@@ -296,8 +296,45 @@ public String crearRuta(rutasDTO newRuta)throws SQLException{
         return   HTMLTipos;
 
 }
+     public int validarruta(int idtipovehiculo){
+         
+     int y=1;
+     try {
+
+           rutasDTO rudto = new rutasDTO();  
+        
+           
+           String sql = "SELECT count(idtipovehiculo) from rutas where idtipoVehiculo=?";        
+           pstmt = cnn.prepareStatement(sql);           
+           pstmt.setInt(1, idtipovehiculo);           
+           rs = pstmt.executeQuery();
+           
+          
+           if (rs != null) {
+               
+               while (rs.next()) {
+
+                   rudto.setIdtipoVehiculo(rs.getInt("idtipovehiculo"));
+                  
+                 }
+               y = rudto.getIdtipoVehiculo();
+           }
+           else {
+               y = 0;
+           }
+       
+       
+       } catch (SQLException ex) {
+
+            msgSalida = "Error " + ex.getMessage() + "Codigo de error" + ex.getErrorCode();
+           
+           
+       }
+return y;
+   }
 
 }
+     
 
     
     
