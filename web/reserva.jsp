@@ -88,7 +88,7 @@
 <form name="form1" action="Reserva" method="post" > 
 <table width="744" align="center" id="registro">
 <div class="ba">
-    <h1><center>Reservas</center></h1>
+    <h1><center>Generar Reservas</center></h1>
 </div>
 
 <tr>
