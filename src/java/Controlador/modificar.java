@@ -54,7 +54,7 @@ public class modificar extends HttpServlet {
          
             
             String mensaje = pdao.actualizarRegistro(pdto);
-            response.sendRedirect("menu.jsp?msg="+mensaje);
+            response.sendRedirect("menuCliente.jsp?msgSalida="+mensaje);
     }
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

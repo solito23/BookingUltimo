@@ -58,11 +58,11 @@ public class Controlador extends HttpServlet {
             String mensaje = pdao.crearPersona(pdto);
             HttpSession misesion = request.getSession(true);
             misesion.setAttribute("logueado", pdto);
-            response.sendRedirect("menuCliente.jsp?msg=" + mensaje);
+            response.sendRedirect("menuCliente.jsp?msgSalida=" + mensaje);
         } else if (request.getParameter("id") != null) {
             personasDAO pdao = new personasDAO();
             String eliminado = pdao.eliminar(Long.parseLong(request.getParameter("id")));
-            response.sendRedirect("verificarRegistro.jsp?eliminado=" + eliminado);
+            response.sendRedirect("verificarRegistro.jsp?msgSalida=" + eliminado);
         } else if (request.getParameter("submit10") != null) {
             personasDAO pert = new personasDAO();
 
@@ -91,7 +91,7 @@ public class Controlador extends HttpServlet {
         } else if (request.getParameter("idReserva") != null) {
             reserDAO pdao = new reserDAO();
             String eliminado = pdao.eliminar(Integer.parseInt(request.getParameter("idReserva")));
-            response.sendRedirect("CancelarR.jsp?eliminado=" + eliminado);
+            response.sendRedirect("CancelarR.jsp?msgSalida=" + eliminado);
         } else if (request.getParameter("idPersona") != null) {
             personasDAO pdao = new personasDAO();
             personasDTO eliminado = new personasDTO();

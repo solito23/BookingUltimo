@@ -72,8 +72,8 @@ function validar(){
 		doc.style.border="1px solid red";
 		doc.value="";
 	}
-        else if(doc.value.length<=8){     
-         alert ('Debe ingresar mas de 8 digitos');
+        else if(doc.value.length<=6){     
+         alert ('Para registrar su documento debe ingresar mas de 6 digitos');
           doc.style.border="1px solid red";
           doc.value="";
         }
@@ -91,8 +91,10 @@ function validar(){
 		tel.style.border="1px solid red";
 		tel.value="";
 	}
-	else {
-	tel.style.border="1px solid green";
+	else if(tel.value.length>9){     
+         alert ('Para registrar su telefono debe ingresar menos de 9 digitos');
+          tel.style.border="1px solid red";
+          tel.value="";
 	}
 	if (cor.value==""){		
 		cor.style.border="1px solid red";

@@ -53,7 +53,7 @@ public class modificarRerserva extends HttpServlet {
             
             String mensaje = dao.actualizarReserva(to);
             
-            response.sendRedirect("menuCliente.jsp?msg="+mensaje);
+            response.sendRedirect("menuCliente.jsp?msgSalida="+mensaje);
     }
           else if(request.getParameter("idReserva")!= null){
             reserDAO pdao = new reserDAO();
@@ -61,7 +61,7 @@ public class modificarRerserva extends HttpServlet {
             eliminado= pdao.ListarUnaReserva(Integer.parseInt(request.getParameter("idReserva")));
             HttpSession misesion =request.getSession(false);
             misesion.setAttribute("logueado", eliminado);
-            response.sendRedirect("modificarReserva.jsp?eliminado="+eliminado);
+            response.sendRedirect("modificarReserva.jsp?msgSalida="+eliminado);
             }
     }
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

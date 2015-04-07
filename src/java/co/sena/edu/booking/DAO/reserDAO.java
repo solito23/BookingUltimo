@@ -36,8 +36,8 @@ public class reserDAO {
     int rtdo; // almacena el resultado de la ejecución en la BD
 
     public reserDAO() {
-     //  cnn = Conexion.getConnection();
-   cnn= reserConex.getInstance();
+        //cnn = Conexion.getConnection();
+       cnn = reserConex.getInstance();
     }
 
 //    public String actualizarRegistro(reserDTO resert) {
@@ -89,7 +89,7 @@ public class reserDAO {
 
             rtdo = pstmt.executeUpdate();
             if (rtdo > 0) {
-                msgSalida = "se modificaron (" + rtdo + ") registros";
+                msgSalida = "Su reserva se a modificado";
             } else {
                 msgSalida = "NO se pudo actualizar el registro";
             }
@@ -145,7 +145,7 @@ public class reserDAO {
             resultado = pstmt.executeUpdate();
 
             if (resultado != 0) {
-                salida = "El usuario a sido registrado exitosamente. " + resultado + "filas afectadas";
+                salida = "La reserva a sido registrada exitosamente. ";
             } else {
                 // salida = "Ha ocurrido un problema al crear el profesor. Contacte al administrador";
 

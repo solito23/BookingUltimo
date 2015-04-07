@@ -49,7 +49,7 @@ public class ModificarReserva extends HttpServlet {
            to.setDireccionDestino(request.getParameter("aerop"));
             
             String mensaje = dao.actualizarReserva(to);
-            response.sendRedirect("menuCliente.jsp?msg"+mensaje);
+            response.sendRedirect("menuCliente.jsp?msgSalida="+mensaje);
             
         }
     }

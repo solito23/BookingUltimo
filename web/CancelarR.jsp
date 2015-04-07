@@ -46,12 +46,16 @@
       reserDAO pers = new reserDAO(); 
       ArrayList<reserDTO> misReservas= new ArrayList();      
       misReservas =(ArrayList<reserDTO>) pers.listarReservas();
-
-      
-      
-      
-      %> 
-      
+%> 
+<br>
+      <td colspan="4">
+                    <% if (request.getParameter("msgSalida") != null) {%>
+                    <% if (!request.getParameter("msgSalida").equals("")) {%> 
+                    <div class="alert alert-success" role="alert">
+                        <%= request.getParameter("msgSalida")%>
+                    </div>
+                    <%}%>
+                    <%}%> 
       <div class="ba">
       <h1>Reservas</h1>
       </div>

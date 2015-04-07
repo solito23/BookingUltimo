@@ -92,16 +92,16 @@
                 </div>
             </div>
 
-            <tr>
+           
                 <td colspan="4">
-                    <% if (request.getParameter("msg") != null) {%>
-                    <% if (!request.getParameter("msg").equals("")) {%> 
+                    <% if (request.getParameter("msgSalida") != null) {%>
+                    <% if (!request.getParameter("msgSalida").equals("")) {%> 
                     <div class="alert alert-success" role="alert">
-                        <%= request.getParameter("msg")%>
+                        <%= request.getParameter("msgSalida")%>
                     </div>
                     <%}%>
                     <%}%> 
-            </tr>
+           
 
             <div class="novedades">
                 <h4>Novedades</h4>

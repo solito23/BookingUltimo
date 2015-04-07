@@ -56,7 +56,7 @@ public class Reserva extends HttpServlet {
             
             String mensaje = dao.insertar(to);
             
-            response.sendRedirect("menuCliente.jsp?msg="+mensaje);
+            response.sendRedirect("menuCliente.jsp?msgSalida="+mensaje);
         }
     }
 

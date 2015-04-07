@@ -36,7 +36,7 @@ public class personasDAO {
     int per;
 
     public personasDAO() {
-       // cnn = Conexion.getConnection();
+        //cnn = Conexion.getConnection();
      cnn = reserConex.getInstance();
 
     }
@@ -61,7 +61,7 @@ public class personasDAO {
             
             per = pstmt.executeUpdate();
             if (per > 0) {
-                msgSalida = "se modificaron (" + per + ") registros";
+                msgSalida = "Sus datos se modificaron";
             } else {
                 msgSalida = "NO se pudo actualizar el registro";
             }
@@ -74,7 +74,7 @@ public class personasDAO {
     }
 
     public String crearPersona(personasDTO newPersona) throws SQLException {
-        String salida = "";
+        //String salida = "";
         try {
 
             int resultado = 0;
@@ -95,13 +95,13 @@ public class personasDAO {
             resultado = pstmt.executeUpdate();
 
             if (resultado != 0) {
-                salida = "El usuario a sido registrado exitosamente. ";
+               msgSalida = "El usuario a sido registrado exitosamente. ";
             } else {
                 // salida = "Ha ocurrido un problema al crear el profesor. Contacte al administrador";
 
             }
         } catch (SQLException sqle) {
-            salida = "Ocurrió la siguiente exception : " + sqle.getMessage();
+            msgSalida = "Ocurrió la siguiente exception : " + sqle.getMessage();
         } finally {
             try {
                 pstmt.close();
@@ -110,7 +110,7 @@ public class personasDAO {
             }
         }
 
-        return salida;
+        return msgSalida;
 
     }
 
@@ -288,7 +288,7 @@ public class personasDAO {
 
             per = pstmt.executeUpdate();
             if (per > 0) {
-                msgSalida = "se modificaron (" + per + ") registros";
+                msgSalida = "Se modifico su clave";
             } else {
                 msgSalida = "NO se pudo actualizar el registro";
             }
