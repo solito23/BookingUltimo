@@ -10,6 +10,7 @@ package co.sena.edu.booking.DAO;
 
 import cao.sena.edu.booking.util.Conexion;
 import cao.sena.edu.booking.util.reserConex;
+import co.sena.edu.booking.DTO.listarPerDTO;
 import co.sena.edu.booking.DTO.listarPersonasDTO;
 import co.sena.edu.booking.DTO.nacionalidadesDTO;
 import co.sena.edu.booking.DTO.personasDTO;
@@ -78,7 +79,7 @@ public class personasDAO {
         try {
 
             int resultado = 0;
-            pstmt = cnn.prepareStatement("INSERT INTO personas VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, md5(?), ?, ?)");
+            pstmt = cnn.prepareStatement("INSERT INTO personas VALUES ( ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             pstmt.setLong(1, newPersona.getIdPersona());
             pstmt.setString(2, newPersona.getCorreoElectronico());
             pstmt.setInt(3, newPersona.getIdCiudad());
@@ -424,5 +425,101 @@ public List<listarPersonasDTO> contarPersonas(String  nacionalidad, String nombr
         }
         return productos;
     }
+public List<listarPerDTO> filtroPersonas(String nacionalidad, String nombres, String ciudad ) throws SQLException{
+        ArrayList<listarPerDTO> filtroPersonas = new ArrayList();
 
+        try {
+         StringBuilder sb = new StringBuilder("select p.nombres, p.apellidos, p.correoElectronico, a.Ciudad, c.nacionalidad,c.idioma "
+                    + "from personas p inner join "
+                    + "nacionalidades c on p.idNacionalidad = c.idNacionalidad "
+                    + "inner join ciudades a on p.idCiudad = a.idCiudad where 1=1 ");
+
+            if (nacionalidad != null) {
+                sb.append("AND c.nacionalidad LIKE '").append(nacionalidad).append("%'");
+            }
+            if (nombres!= null) {
+                sb.append("AND p.nombres LIKE '").append(nombres).append("%'");
+            }
+            
+            if (ciudad != null) {
+                sb.append("AND a.Ciudad LIKE '").append(ciudad).append("%'");
+            }
+         
+         
+         
+         pstmt = cnn.prepareStatement(sb.toString());
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                listarPerDTO Rdao = new listarPerDTO();
+                
+                
+                Rdao.setNombres(rs.getString("nombres"));
+                Rdao.setApellidos(rs.getString("apellidos")); 
+                Rdao.setCorreoElectronico(rs.getString("correoElectronico"));
+                Rdao.setCiudad(rs.getString("Ciudad"));
+                Rdao.setNacionalidad(rs.getString("nacionalidad"));
+                Rdao.setIdioma(rs.getString("idioma"));
+                filtroPersonas.add(Rdao);
+
+            }
+
+        } catch (SQLException slqE) {
+            System.out.println("Ocurrio un error" + slqE.getMessage());
+        } finally {
+
+        }
+        return filtroPersonas;
+    }
+public int contarNumerosdeRegistros(){
+        int registros = 0;
+        try{
+            pstmt=cnn.prepareStatement("select p.nombres, p.apellidos, p.correoElectronico, "
+                    + "a.Ciudad, c.nacionalidad,c.idioma from personas p inner join nacionalidades c on "
+                    + "p.idNacionalidad = c.idNacionalidad inner join ciudades a on p.idCiudad = a.idCiudad;");
+            rs = pstmt.executeQuery();
+            
+            if (rs!=null) {
+                while(rs.next()){
+                registros++;
+            }
+            return registros;
+            }
+              
+            
+        }catch(SQLException sqle){
+            msgSalida = sqle.getMessage();
+        }
+        return registros;
+    }
+
+public List<listarPerDTO> Paginacion2(int pg , int limited) throws SQLException {
+        ArrayList<listarPerDTO> Paginacion2 = new ArrayList();
+
+        try {
+            
+            pstmt = cnn.prepareStatement("select p.nombres, p.apellidos, p.correoElectronico, "
+                    + "a.Ciudad, c.nacionalidad,c.idioma from personas p inner join "
+                    + "nacionalidades c on p.idNacionalidad = c.idNacionalidad "
+                    + "inner join ciudades a on p.idCiudad = a.idCiudad limit "+(pg-1)*limited+","+limited+";");
+            rs = pstmt.executeQuery();
+
+            while (rs.next()) {
+                listarPerDTO Rdao = new listarPerDTO();
+                Rdao.setNombres(rs.getString("idPersona"));
+                Rdao.setApellidos(rs.getString("correoElectronico"));
+                Rdao.setCorreoElectronico(rs.getString("idCiudad"));
+                Rdao.setNacionalidad(rs.getString("idNacionalidad"));
+                Rdao.setIdioma(rs.getString("nombres"));
+                Paginacion2.add(Rdao);
+
+            }
+
+        } catch (SQLException slqE) {
+            System.out.println("Ocurrio un error" + slqE.getMessage());
+        } finally {
+
+        }
+        return Paginacion2;
+    }
 }

@@ -50,7 +50,7 @@
     <li><div align="center"><a href="#" style="text-decoration: none;">Reservas</a> 
     <li><div align="center"><a href="#" style="text-decoration: none;">Rutas</a>
     <li><div align="center"><a href="#" style="text-decoration: none;">Conductores</a> 
-    <li><div align="center"><a href="listarPersonas.jsp" style="text-decoration: none;">Clientes</a>
+    <li><div align="center"><a href="Filtro.jsp" style="text-decoration: none;">Clientes</a>
     <li><div align="center"><a href="ReporteM.jsp" style="text-decoration: none;">Reporte Multicriterio</a> 
     </div>
      </li>

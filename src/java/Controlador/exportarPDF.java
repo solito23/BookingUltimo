@@ -3,30 +3,35 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 package Controlador;
 
-import co.sena.edu.booking.DAO.personasDAO;
 import co.sena.edu.booking.DTO.listarPerDTO;
-import co.sena.edu.booking.DTO.personasDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.servlet.RequestDispatcher;
+import java.util.List;
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import net.sf.jasperreports.engine.JRExporter;
+import net.sf.jasperreports.engine.JRExporterParameter;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+import net.sf.jasperreports.engine.export.JRPdfExporter;
+import net.sf.jasperreports.engine.util.JRLoader;
 
 /**
  *
- * @author fabian
+ * @author Sergio
  */
-public class buscarPersona extends HttpServlet {
+@WebServlet(name = "exportarPDF", urlPatterns = {"/exportarPDF"})
+public class exportarPDF extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,40 +43,35 @@ public class buscarPersona extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException {
-         
-        HttpSession miseSession = request.getSession(true);
-        
-        
-        if (request.getParameter("buscar") != null) {
-            ArrayList<listarPerDTO> person = new ArrayList();
-            personasDAO perdao = new personasDAO();
+            throws ServletException, IOException {
+        response.setContentType("application/pdf");
+        /*Indicar que sera un archivo con extencion pdf*/
 
-            String nombres = request.getParameter("nombre");
-            String nacionalidad = request.getParameter("pais");
-            String ciudad = request.getParameter("ciudad");
+        ServletOutputStream out = response.getOutputStream();
+        /*Se define para poder darle una respuesta el cliente*/
 
-            person = (ArrayList<listarPerDTO>) perdao.filtroPersonas(nombres,nacionalidad,ciudad);
-            miseSession.setAttribute("nombres", person);
-            response.sendRedirect("Filtro.jsp");
-                 
-           
-           
+        HttpSession miSession = request.getSession(false);
+
+        List<listarPerDTO> person =  (List<listarPerDTO>) miSession.getAttribute("nombres");
+        try {
+
+            JasperReport reporte = (JasperReport) JRLoader.loadObject(getServletContext().getRealPath("WEB-INF/listarPerDTO.jasper"));
+            JasperPrint jasperPrint = JasperFillManager.fillReport(reporte, null, new JRBeanCollectionDataSource(person));
+            /*Poder imprimir el reporte, es decir tomar lo que esta en el arraylist y pasarlo a el reporte*/
+            /*poder cargar el reporte que se enviara*/
+            JRExporter exporter = new JRPdfExporter();
+            /*Un objeto que me podra sacar el reporte a un formato pdf*/
+            exporter.setParameter(JRExporterParameter.JASPER_PRINT, jasperPrint);
+            /*al reporte pasarle todo lo que se encontro en el arraylist*/
+            exporter.setParameter(JRExporterParameter.OUTPUT_STREAM, out);
+            /*El reporte sera enviado de una ves a nuestro cliente*/
+            exporter.exportReport();
+            /*exporta el reporte*/
+        } catch (Exception ex) {
+            ex.printStackTrace();
+
         }
-    if (request.getParameter("generar") != null) {
-            ArrayList<listarPerDTO > person = new ArrayList();
-            personasDAO perdao = new personasDAO();
-
-            String nombres = request.getParameter("nombre");
-            String nacionalidad = request.getParameter("pais");
-            String ciudad = request.getParameter("ciudad");
-
-            person = (ArrayList<listarPerDTO>) perdao.filtroPersonas(nombres,nacionalidad,ciudad);
-            request.setAttribute("personas", person);
-            RequestDispatcher rd = request.getRequestDispatcher("ExportarExcel.jsp");
-            rd.forward(request, response); 
     }
-  }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -85,11 +85,7 @@ public class buscarPersona extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(buscarPersona.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -103,11 +99,7 @@ public class buscarPersona extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(buscarPersona.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -119,5 +111,5 @@ public class buscarPersona extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-}
 
+}

@@ -7,26 +7,22 @@
 package Controlador;
 
 import co.sena.edu.booking.DAO.personasDAO;
-import co.sena.edu.booking.DTO.listarPerDTO;
+import co.sena.edu.booking.DTO.listarPersonasDTO;
 import co.sena.edu.booking.DTO.personasDTO;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author fabian
  */
-public class buscarPersona extends HttpServlet {
+public class buscarPersona1 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,40 +34,23 @@ public class buscarPersona extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException, SQLException {
-         
-        HttpSession miseSession = request.getSession(true);
-        
-        
-        if (request.getParameter("buscar") != null) {
-            ArrayList<listarPerDTO> person = new ArrayList();
-            personasDAO perdao = new personasDAO();
-
-            String nombres = request.getParameter("nombre");
-            String nacionalidad = request.getParameter("pais");
-            String ciudad = request.getParameter("ciudad");
-
-            person = (ArrayList<listarPerDTO>) perdao.filtroPersonas(nombres,nacionalidad,ciudad);
-            miseSession.setAttribute("nombres", person);
-            response.sendRedirect("Filtro.jsp");
-                 
+            throws ServletException, IOException {
+         if (request.getParameter("buscar") != null) {
+            
+            ArrayList<listarPersonasDTO> productos = new ArrayList();
+           personasDAO cDao = new personasDAO();
+            
+            String producto = request.getParameter("producto");
+            String categoria = request.getParameter("categoria");
+            
+            productos = (ArrayList<listarPersonasDTO>) cDao.contarPersonas(producto, categoria);
+            request.setAttribute("productos", productos);
+            RequestDispatcher rd = request.getRequestDispatcher("/listarPersonas.jsp");
+            rd.forward(request, response);      
            
            
         }
-    if (request.getParameter("generar") != null) {
-            ArrayList<listarPerDTO > person = new ArrayList();
-            personasDAO perdao = new personasDAO();
-
-            String nombres = request.getParameter("nombre");
-            String nacionalidad = request.getParameter("pais");
-            String ciudad = request.getParameter("ciudad");
-
-            person = (ArrayList<listarPerDTO>) perdao.filtroPersonas(nombres,nacionalidad,ciudad);
-            request.setAttribute("personas", person);
-            RequestDispatcher rd = request.getRequestDispatcher("ExportarExcel.jsp");
-            rd.forward(request, response); 
     }
-  }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -85,11 +64,7 @@ public class buscarPersona extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(buscarPersona.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -103,11 +78,7 @@ public class buscarPersona extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        try {
-            processRequest(request, response);
-        } catch (SQLException ex) {
-            Logger.getLogger(buscarPersona.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        processRequest(request, response);
     }
 
     /**
@@ -119,5 +90,5 @@ public class buscarPersona extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-}
 
+}
