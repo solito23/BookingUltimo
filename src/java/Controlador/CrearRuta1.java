@@ -54,14 +54,27 @@ public class CrearRuta1 extends HttpServlet {
                             objRuta.setidReserva(Integer.parseInt(request.getParameter("Reserva")));
                             objRuta.setIdEstadoRuta(1);
                             
-                            msj = cRuta.crearRuta(objRuta);
+          int ru = cRuta.validarruta(Integer.parseInt(request.getParameter("Tipo")));
+                            if (ru == 0) {
+                                
+                              msj = cRuta.crearRuta(objRuta);
+                                  response.sendRedirect ("CreaRuta1.jsp?msj=" + msj);
+                             
+                            } else if (ru == 1) {
+                                
+                                response.sendRedirect("CreaRuta1.jsp?no=");
+
+                            }
                         }
+
+                        
                     }
-                }  
-            }   
+                }
+            }
         }
-        
-         response.sendRedirect("CreaRuta1.jsp?msj=" + msj);
+    
+
+           
     }
 
 

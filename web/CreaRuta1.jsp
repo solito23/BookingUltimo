@@ -162,6 +162,19 @@
         </td>
     </tr>
     </table>
+         <tr>
+         <td colspan="2">
+        <%
+ if(request.getParameter("no") != null  ) {
+%>
+<div>
+    <b class="alert alert-danger"  role="alert" style="position:relative; left:60px"> This route has already been allocated</b>
+</div>
+<%
+ }
+%>  
+        </td>
+    </tr>
     </center>            
 </form>
 </div>
