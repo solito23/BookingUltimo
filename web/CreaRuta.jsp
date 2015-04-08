@@ -20,6 +20,7 @@
 	<script  src="jquery/jquery.js"></script>
 	<script src="jquery/jquery.validate.js"></script>
 	<script src="jquery/additional-methods.js"></script>
+    
 <meta charset="utf-8">
 <title>..::Booking Routers::..</title>
 <link rel="shortcut icon" href="img/br.ico" />
@@ -146,7 +147,7 @@
     </tr>
     <tr>
         <td colspan="2">
-            <input class="btn btn-success" name="btnCrea" type="submit" value="Crear Ruta" /> 
+            <input  class="btn btn-success" name="btnCrea" type="submit" value="Crear Ruta" /> 
         </td>
     </tr>
     <tr>
