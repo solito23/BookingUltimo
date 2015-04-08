@@ -90,7 +90,23 @@
 <div class="ba">
     <h1><center>Generar Reservas</center></h1>
 </div>
-
+    <br>
+    <center>
+    <%
+                        if(request.getParameter("noo") != null) {
+                        %>
+                        <div>
+                            <b <div class="alert alert-danger" role="alert">Usted no puede realizar mas de 3 reservas.</b>
+                      </div>
+                        <%
+                         }
+                        %>  
+                        </center>
+                        <br>
+<tr>    
+<td><label for="doc" class="labele"><strong>Documento<font color="#FF0000">*</strong></label></font></td>
+<td><input name="doc" type="text" id="res" style="width:250px; height:25px" placeholder="Cedula" autofocus  required class="form-control inputtext"></td>
+</tr>
 <tr>
 <td><label for="ser" class="labele"><strong>Servicio<font color="#FF0000">*</strong></label></font></td>
 <td>   
@@ -134,19 +150,9 @@
 </td>
 </tr>
 <tr>
-
 <td><input type="submit" name="registroR"  id="registro" class="btn btn-success"  value="Generar Reserva" onclick="validar(registro)" style="position:relative; left:330px">
-
 </table>
-
-    
-    
-    
 </form>
-</div> 
-
-
-
 </div>
 <div style="width:100%; background: #0C4391; height: 30px; margin-top:10px; padding-top:5px; border-radius:3px;color:#e2c60f; margin-bottom:1%; float:left; text-align: center;height:70px;color:white;">
                                 <span>Booking Routers &copy; 2015</span><br>

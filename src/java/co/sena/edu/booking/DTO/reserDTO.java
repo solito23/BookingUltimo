@@ -21,7 +21,7 @@ public class reserDTO {
     private String fechaReserva;
     private String horaReserva;
     private String direccionDestino;
-
+    private int idpersona;
     /**
      * @return the idReserva
      */
@@ -143,7 +143,22 @@ public class reserDTO {
                 + "\nreponsa\"ble " + responsable               
                 + "\nFechareserva " + fechaReserva
                 + "\nhoraReserva " + horaReserva
-                + "\ndireccionDestino " + direccionDestino;
+                + "\ndireccionDestino " + direccionDestino
+                 + "\npersona " + idpersona;
+    }
+
+    /**
+     * @return the idpersona
+     */
+    public int getIdpersona() {
+        return idpersona;
+    }
+
+    /**
+     * @param idpersona the idpersona to set
+     */
+    public void setIdpersona(int idpersona) {
+        this.idpersona = idpersona;
     }
 
 }

@@ -133,7 +133,7 @@ public class reserDAO {
              *
              */
             int resultado = 0;
-            pstmt = cnn.prepareStatement("INSERT INTO reservas VALUES (?,?,?,?,?,?,?,?);");
+            pstmt = cnn.prepareStatement("INSERT INTO reservas VALUES (?,?,?,?,?,?,?,?,?);");
             pstmt.setInt(1, rdto.getIdReserva());
             pstmt.setInt(2, rdto.getIdEstadoReserva());
             pstmt.setInt(3, rdto.getIdServicio());
@@ -142,6 +142,7 @@ public class reserDAO {
             pstmt.setString(6, rdto.getFechaReserva());
             pstmt.setString(7, rdto.getHoraReserva());
             pstmt.setString(8, rdto.getDireccionDestino());
+            pstmt.setInt(9, rdto.getIdpersona());
             resultado = pstmt.executeUpdate();
 
             if (resultado != 0) {
@@ -292,4 +293,23 @@ public class reserDAO {
         }
         return registros;
     }
+    public int validarReservas(int idpersona) throws SQLException {
+       int clave=0;
+       try {         
+           
+           String sql = " select count(idpersona) as clave from reservas where idpersona = ?";    
+           pstmt=cnn.prepareStatement(sql);
+           pstmt.setInt(1, idpersona);
+                          
+               rs = pstmt.executeQuery();
+             
+               while(rs.next()){
+                
+               clave=rs.getInt("clave");
+               }
+           }catch (SQLException ex){
+               msgSalida = "Error " + ex.getMessage() + "Codigo de error" + ex.getErrorCode();
+           }
+       return clave;
+       }
 }

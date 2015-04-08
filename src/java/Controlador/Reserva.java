@@ -44,8 +44,11 @@ public class Reserva extends HttpServlet {
 
            reserDTO to = new reserDTO();
            reserDAO dao = new reserDAO();
-           
-          
+           int t =dao.validarReservas(Integer.parseInt(request.getParameter("doc")));
+           if(t>=3){
+            response.sendRedirect("reserva.jsp?noo="+ t);  
+           }else if(t<3){
+           to.setIdpersona(Integer.parseInt(request.getParameter("doc")));
            to.setIdEstadoReserva(1);
            to.setIdServicio(Integer.parseInt(request.getParameter("ser")));
            to.setIdTransporteLlegada(Integer.parseInt(request.getParameter("aer")));
@@ -58,6 +61,7 @@ public class Reserva extends HttpServlet {
             
             response.sendRedirect("menuCliente.jsp?msgSalida="+mensaje);
         }
+    }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

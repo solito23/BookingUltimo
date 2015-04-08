@@ -37,10 +37,10 @@
                     <ul class="submain">
                         <li><a href="reserva.jsp" style="text-decoration: none;">Solicitar Reservas </a></li>
                         <li><a href="#" style="text-decoration: none;">Modificar Reserva</a> </li>
-                        <li><a href="#" style="text-decoration: none;">Cancelar Reserva</a></li>
+                        <li><a href="CancelarR.jsp" style="text-decoration: none;">Cancelar Reserva</a></li>
                     </ul>
                 </li>                       
-                <li><div align="center"><a href="menu.jsp" style="text-decoration: none;"><span class="glyphicon glyphicon-list"></span> Menu</a> 
+                <li><div align="center"><a href="menuCliente.jsp" style="text-decoration: none;"><span class="glyphicon glyphicon-list"></span> Menu</a> 
                 </li>
                 <li><div align="center"><a href="Index.html" style="text-decoration: none;"><span class="glyphicon glyphicon-remove-sign"></span> Salir</a> 
                 </li>

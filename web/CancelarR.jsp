@@ -31,7 +31,7 @@
                                 <li><a href="ModificarReservas.jsp" style="text-decoration: none;">Modificar Reserva</a> </li>
                                 </ul>
                         </li>
-                          <li><a href="#"><span class="glyphicon glyphicon-list-alt"></span> Mi Cuenta</a>
+                          <li><a href="menuCliente.jsp"><span class="glyphicon glyphicon-list-alt"></span> Mi Cuenta</a>
                             <ul class="submain">
                                 <li><a href="actualizarDatos1.jsp" style="text-decoration: none;">Mis Datos</a></li>
                                 <li><a href="cambiarContraseña.jsp" style="text-decoration: none;">Cambiar Contraseña</a> </li>
